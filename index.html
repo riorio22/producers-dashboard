@@ -447,8 +447,42 @@ function isHighPriority(title, desc) {
   return scoreArticle(title, desc).score >= 3;
 }
 
-// ─── FETCH RSS ────────────────────────────────────────────────────────────────
-async function fetchFeed(feed) {
+// ─── LOAD NEWS (from pre-fetched news.json, fallback to live proxy) ───────────
+async function loadAllFeeds() {
+  document.getElementById('lastUpdate').textContent = 'Loading...';
+  try {
+    const res = await fetch('news.json?_=' + Date.now());
+    if (!res.ok) throw new Error('news.json missing');
+    const data = await res.json();
+    allArticles = data.articles || [];
+    const fetched = new Date(data.fetched_at);
+    document.getElementById('lastUpdate').textContent =
+      'Updated ' + fetched.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}) +
+      ' · ' + fetched.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'});
+  } catch(e) {
+    // Fallback: fetch live via rss2json proxy
+    document.getElementById('lastUpdate').textContent = 'Fetching live...';
+    const results = await Promise.all(RSS_FEEDS.map(fetchFeedLive));
+    allArticles = results.flat();
+    allArticles.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
+    document.getElementById('lastUpdate').textContent =
+      'Live · ' + new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
+  }
+
+  renderFeed('news');
+  renderFeed('german');
+  renderFeed('awards');
+  renderFeed('industry');
+  renderPanelKeywords();
+
+  ['news','german','awards','industry'].forEach(tab => {
+    const el = document.getElementById('cnt-' + tab);
+    if (el) el.textContent = allArticles.filter(a => a.tab === tab).length || '—';
+  });
+}
+
+// Live fallback via rss2json proxy
+async function fetchFeedLive(feed) {
   try {
     const res = await fetch(PROXY + encodeURIComponent(feed.url));
     const data = await res.json();
@@ -460,37 +494,30 @@ async function fetchFeed(feed) {
       description: item.description || item.content || '',
       source: feed.name,
       sourceId: feed.id,
-      category: feed.category,
       tab: feed.tab,
     }));
-  } catch(e) {
-    return [];
-  }
+  } catch(e) { return []; }
 }
 
-async function loadAllFeeds() {
-  document.getElementById('lastUpdate').textContent = 'Loading...';
-  const results = await Promise.all(RSS_FEEDS.map(fetchFeed));
-  allArticles = results.flat();
+// ─── FUNDING CHANGE ALERTS ────────────────────────────────────────────────────
+async function loadFundingReport() {
+  try {
+    const res = await fetch('funding_report.json?_=' + Date.now());
+    if (!res.ok) return;
+    const report = await res.json();
+    if (!report.changed_pages || report.changed_pages.length === 0) return;
 
-  // Sort by date
-  allArticles.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
-
-  renderFeed('news');
-  renderFeed('german');
-  renderFeed('awards');
-  renderFeed('industry');
-  renderPanelKeywords();
-
-  const now = new Date();
-  document.getElementById('lastUpdate').textContent = 'Updated ' + now.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
-
-  // Update counts
-  ['news','german','awards','industry'].forEach(tab => {
-    const articles = allArticles.filter(a => a.tab === tab);
-    const el = document.getElementById('cnt-' + tab);
-    if (el) el.textContent = articles.length || '—';
-  });
+    const container = document.getElementById('feed-foerderung');
+    if (!container) return;
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:rgba(201,107,90,0.12);border:1px solid rgba(201,107,90,0.3);border-radius:4px;padding:0.75rem 1rem;margin-bottom:1rem;font-size:12px;line-height:1.6;';
+    banner.innerHTML = `<strong style="color:#c96b5a">⚠ ${report.changed_pages.length} Förderseite(n) haben sich geändert — bitte manuell prüfen:</strong><br>` +
+      report.changed_pages.map(p =>
+        `<a href="${p.url}" target="_blank" style="color:var(--accent2);display:block;margin-top:4px">↗ ${p.institution}: ${p.label}</a>`
+      ).join('') +
+      `<div style="color:var(--muted);margin-top:6px;font-size:11px">Letzter Check: ${new Date(report.checked_at).toLocaleString('de-DE')}</div>`;
+    container.prepend(banner);
+  } catch(e) { /* not yet generated — that's fine */ }
 }
 
 // ─── RENDER FEED ─────────────────────────────────────────────────────────────
@@ -697,7 +724,7 @@ function showTab(tab) {
   if (nav) nav.classList.add('active');
   activeTab = tab;
   if (tab === 'festivals') renderFestivals();
-  if (tab === 'foerderung') renderFoerderung();
+  if (tab === 'foerderung') { renderFoerderung(); loadFundingReport(); }
 }
 
 function setFilter(tab, val, btn) {
@@ -932,6 +959,7 @@ renderPanelDeadlines();
 renderPanelFoerderung();
 renderBoxOffice();
 loadAllFeeds();
+loadFundingReport();
 
 // Auto-refresh every 30 minutes
 setInterval(loadAllFeeds, 30 * 60 * 1000);

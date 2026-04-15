@@ -1,0 +1,39 @@
+name: Daily Update
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC (= 07:00 CET / 08:00 CEST)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    # Also allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write  # needed to commit news.json back to the repo
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch RSS feeds → news.json
+        run: python fetch_news.py
+
+      - name: Check funding pages → funding_status.json
+        run: python check_funding.py
+
+      - name: Commit updated JSON files
+        run: |
+          git config user.name  "producers-desk-bot"
+          git config user.email "bot@producers-desk"
+          git add news.json funding_status.json funding_report.json
+          # Only commit if something actually changed
+          git diff --cached --quiet || git commit -m "chore: daily update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
