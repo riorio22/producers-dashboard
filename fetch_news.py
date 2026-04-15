@@ -27,6 +27,10 @@ RSS_FEEDS = [
     {"id": "indiewire_awards","name": "IndieWire Awards",    "url": "https://www.indiewire.com/c/awards/feed/",                  "tab": "awards"},
     {"id": "screen_prod",     "name": "Screen Daily",        "url": "https://www.screendaily.com/rss/news.asp",                  "tab": "industry"},
     {"id": "cineuropa",       "name": "Cineuropa",           "url": "https://cineuropa.org/rss/en/",                             "tab": "german"},
+    {"id": "dwdl_all",        "name": "DWDL",                "url": "https://www.dwdl.de/rss/allethemen.xml",                    "tab": "german"},
+    {"id": "dwdl_nachrichten","name": "DWDL Nachrichten",    "url": "https://www.dwdl.de/rss/nachrichten.xml",                   "tab": "german"},
+    {"id": "dwdl_magazin",    "name": "DWDL Magazin",        "url": "https://www.dwdl.de/rss/magazin.xml",                       "tab": "german"},
+    {"id": "dwdl_interviews", "name": "DWDL Interviews",     "url": "https://www.dwdl.de/rss/interviews.xml",                    "tab": "german"},
 ]
 
 HEADERS = {
@@ -136,3 +140,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
