@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Producer's Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0d0b;
+    --surface: #161512;
+    --surface2: #1d1c19;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #ede9e2;
+    --muted: #7a7770;
+    --accent: #c4a35a;
+    --accent2: #6b9eb8;
+    --red: #c96b5a;
+    --green: #6a9e7a;
+    --tag-bg: rgba(196,163,90,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.6; min-height:100vh; }
+
+  /* MASTHEAD */
+  .masthead { border-bottom:1px solid var(--border2); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:56px; position:sticky; top:0; background:rgba(14,13,11,0.97); backdrop-filter:blur(10px); z-index:200; }
+  .logo { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; letter-spacing:0.04em; }
+  .logo span { color:var(--accent); }
+  .masthead-right { display:flex; align-items:center; gap:1.5rem; font-size:12px; color:var(--muted); }
+  .live { display:flex; align-items:center; gap:5px; }
+  .dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .last-update { font-size:11px; color:var(--muted); }
+  .refresh-btn { background:none; border:1px solid var(--border2); color:var(--muted); padding:4px 14px; border-radius:3px; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:11px; transition:all 0.2s; letter-spacing:0.05em; }
+  .refresh-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+  /* LAYOUT */
+  .layout { display:grid; grid-template-columns:200px 1fr 300px; min-height:calc(100vh - 56px); }
+
+  /* SIDEBAR */
+  .sidebar { border-right:1px solid var(--border); padding:1.25rem 0; position:sticky; top:56px; height:calc(100vh - 56px); overflow-y:auto; }
+  .sidebar::-webkit-scrollbar { display:none; }
+  .nav-group { margin-bottom:1.5rem; }
+  .nav-label { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding:0 1.1rem; margin-bottom:0.4rem; }
+  .nav-item { display:flex; align-items:center; justify-content:space-between; padding:6px 1.1rem; cursor:pointer; color:var(--muted); font-size:12.5px; border-left:2px solid transparent; transition:all 0.15s; }
+  .nav-item:hover { color:var(--text); background:var(--surface); }
+  .nav-item.active { color:var(--accent); border-left-color:var(--accent); background:var(--surface); }
+  .nav-count { font-size:10px; background:var(--surface2); padding:1px 6px; border-radius:8px; color:var(--muted); }
+
+  /* MAIN */
+  .main { overflow-y:auto; max-height:calc(100vh - 56px); }
+  .main::-webkit-scrollbar { width:4px; }
+  .main::-webkit-scrollbar-thumb { background:var(--border2); }
+
+  .section-bar { padding:1rem 1.75rem 0.6rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:var(--bg); z-index:10; }
+  .section-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:600; }
+  .section-meta { font-size:11px; color:var(--muted); }
+
+  .filter-bar { display:flex; gap:6px; padding:0.7rem 1.75rem; border-bottom:1px solid var(--border); overflow-x:auto; }
+  .filter-bar::-webkit-scrollbar { display:none; }
+  .filter-pill { background:none; border:1px solid var(--border); color:var(--muted); padding:3px 11px; border-radius:20px; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:11px; white-space:nowrap; transition:all 0.15s; }
+  .filter-pill:hover { border-color:var(--border2); color:var(--text); }
+  .filter-pill.active { border-color:var(--accent); color:var(--accent); background:var(--tag-bg); }
+
+  .feed-area { padding:0.75rem 1.75rem 2rem; }
+  .source-group { margin-bottom:1.5rem; }
+  .source-label { font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; display:flex; align-items:center; gap:8px; }
+  .source-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+  .article { display:flex; gap:10px; padding:0.65rem 0; border-bottom:1px solid var(--border); text-decoration:none; color:inherit; transition:opacity 0.15s; }
+  .article:hover .atitle { color:var(--accent); }
+  .article:hover { opacity:0.9; }
+  .anum { font-size:10px; color:var(--muted); min-width:18px; padding-top:3px; }
+  .abody { flex:1; }
+  .atitle { font-size:13.5px; font-weight:400; line-height:1.4; color:var(--text); transition:color 0.15s; margin-bottom:3px; }
+  .ameta { font-size:11px; color:var(--muted); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .atag { background:var(--tag-bg); color:var(--accent); padding:1px 6px; border-radius:2px; font-size:9px; letter-spacing:0.05em; text-transform:uppercase; }
+  .ahigh { color:var(--red); font-weight:500; }
+
+  .loading-state { padding:2rem 1.75rem; }
+  .skel { background:var(--surface); border-radius:3px; margin-bottom:10px; animation:shimmer 1.4s infinite; }
+  @keyframes shimmer { 0%,100%{opacity:0.4} 50%{opacity:0.8} }
+
+  .empty-state { padding:3rem 1.75rem; text-align:center; color:var(--muted); font-size:13px; }
+
+  /* RIGHT PANEL */
+  .panel { border-left:1px solid var(--border); position:sticky; top:56px; height:calc(100vh - 56px); overflow-y:auto; padding:1.25rem 1.25rem 2rem; }
+  .panel::-webkit-scrollbar { display:none; }
+  .panel-section { margin-bottom:1.75rem; }
+  .panel-heading { font-family:'Playfair Display',serif; font-size:13px; font-weight:600; margin-bottom:0.65rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .panel-badge { font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:0.08em; text-transform:uppercase; background:var(--surface2); color:var(--muted); padding:2px 7px; border-radius:10px; }
+
+  /* FESTIVALS */
+  .fest-item { padding:0.55rem 0; border-bottom:1px solid var(--border); }
+  .fest-name { font-size:12px; font-weight:500; color:var(--text); margin-bottom:2px; line-height:1.3; }
+  .fest-row { display:flex; justify-content:space-between; align-items:center; }
+  .fest-date { font-size:11px; }
+  .fest-deadline { font-size:10px; }
+  .urgent { color:var(--red); font-weight:500; }
+  .soon { color:var(--accent); font-weight:500; }
+  .ok { color:var(--green); }
+  .fest-badge { font-size:9px; letter-spacing:0.06em; text-transform:uppercase; padding:1px 5px; border-radius:2px; }
+  .fest-badge.oscar { background:rgba(196,163,90,0.15); color:var(--accent); }
+  .fest-badge.efa { background:rgba(107,158,184,0.15); color:var(--accent2); }
+
+  /* BOX OFFICE */
+  .box-row { display:flex; align-items:center; gap:7px; padding:5px 0; border-bottom:1px solid var(--border); font-size:11.5px; }
+  .box-rank { font-size:10px; color:var(--muted); min-width:14px; }
+  .box-title { flex:1; color:var(--text); }
+  .box-amt { color:var(--accent); font-size:11px; font-variant-numeric:tabular-nums; }
+  .box-chg { font-size:10px; margin-left:4px; }
+  .up { color:var(--green); }
+  .dn { color:var(--red); }
+
+  /* TABS */
+  .tab-bar { display:flex; border-bottom:1px solid var(--border); margin-bottom:0; }
+  .tab { padding:9px 1.75rem; font-size:12px; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.15s; white-space:nowrap; }
+  .tab:hover { color:var(--text); }
+  .tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .tab-content { display:none; }
+  .tab-content.active { display:block; }
+
+  /* KEYWORD MATCH HIGHLIGHT */
+  .kw-match { background:rgba(196,163,90,0.15); border-radius:2px; }
+
+  /* ERROR */
+  .err { color:var(--red); font-size:11px; padding:4px 0; }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="logo">Producer's <span>Desk</span></div>
+  <div class="masthead-right">
+    <div class="live"><div class="dot"></div><span>Live</span></div>
+    <span class="last-update" id="lastUpdate">Updating...</span>
+    <button class="refresh-btn" onclick="refreshAll()">↺ Refresh</button>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="nav-group">
+      <div class="nav-label">Feed</div>
+      <div class="nav-item active" onclick="showTab('news')" id="nav-news">
+        Top News <span class="nav-count" id="cnt-news">—</span>
+      </div>
+      <div class="nav-item" onclick="showTab('german')" id="nav-german">
+        German & EU <span class="nav-count" id="cnt-german">—</span>
+      </div>
+      <div class="nav-item" onclick="showTab('awards')" id="nav-awards">
+        Awards <span class="nav-count" id="cnt-awards">—</span>
+      </div>
+      <div class="nav-item" onclick="showTab('industry')" id="nav-industry">
+        Industry <span class="nav-count" id="cnt-industry">—</span>
+      </div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">Sections</div>
+      <div class="nav-item" onclick="showTab('festivals')" id="nav-festivals">Festivals</div>
+      <div class="nav-item" onclick="showTab('foerderung')" id="nav-foerderung">Förderung</div>
+      <div class="nav-item" onclick="showTab('boxoffice')" id="nav-boxoffice">Box Office</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">Filter Priority</div>
+      <div class="nav-item" id="prio-all" onclick="setPrio('all')" style="color:var(--text);border-left-color:var(--accent);background:var(--surface);border-left:2px solid var(--accent)">All Stories</div>
+      <div class="nav-item" id="prio-high" onclick="setPrio('high')">High Priority Only</div>
+    </div>
+  </aside>
+
+  <!-- MAIN FEED -->
+  <main class="main">
+    <!-- NEWS TAB -->
+    <div class="tab-content active" id="tab-news">
+      <div class="section-bar">
+        <div class="section-title">Top News</div>
+        <div class="section-meta">Daily · Auto-updates</div>
+      </div>
+      <div class="filter-bar" id="filter-news">
+        <button class="filter-pill active" onclick="setFilter('news','all',this)">All</button>
+        <button class="filter-pill" onclick="setFilter('news','variety',this)">Variety</button>
+        <button class="filter-pill" onclick="setFilter('news','deadline',this)">Deadline</button>
+        <button class="filter-pill" onclick="setFilter('news','thr',this)">THR</button>
+        <button class="filter-pill" onclick="setFilter('news','indiewire',this)">IndieWire</button>
+        <button class="filter-pill" onclick="setFilter('news','screen',this)">Screen Daily</button>
+        <button class="filter-pill" onclick="setFilter('news','cineuropa',this)">Cineuropa</button>
+      </div>
+      <div class="feed-area" id="feed-news"><div class="loading-state" id="loading-news">
+        <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+        <div class="skel" style="height:14px;width:90%;margin-top:14px"></div><div class="skel" style="height:10px;width:50%;margin-top:4px"></div>
+        <div class="skel" style="height:14px;width:75%;margin-top:14px"></div><div class="skel" style="height:10px;width:45%;margin-top:4px"></div>
+      </div></div>
+    </div>
+
+    <!-- GERMAN/EU TAB -->
+    <div class="tab-content" id="tab-german">
+      <div class="section-bar">
+        <div class="section-title">German & European</div>
+        <div class="section-meta">Daily · DWDL, Spot Media, Cineuropa</div>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-pill active" onclick="setFilter('german','all',this)">All</button>
+        <button class="filter-pill" onclick="setFilter('german','dwdl',this)">DWDL</button>
+        <button class="filter-pill" onclick="setFilter('german','spot',this)">Spot Media</button>
+        <button class="filter-pill" onclick="setFilter('german','cineuropa',this)">Cineuropa</button>
+      </div>
+      <div class="feed-area" id="feed-german"><div class="loading-state" id="loading-german">
+        <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+      </div></div>
+    </div>
+
+    <!-- AWARDS TAB -->
+    <div class="tab-content" id="tab-awards">
+      <div class="section-bar">
+        <div class="section-title">Awards & Contenders</div>
+        <div class="section-meta">Daily</div>
+      </div>
+      <div class="feed-area" id="feed-awards"><div class="loading-state" id="loading-awards">
+        <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+      </div></div>
+    </div>
+
+    <!-- INDUSTRY TAB -->
+    <div class="tab-content" id="tab-industry">
+      <div class="section-bar">
+        <div class="section-title">Industry & Funding</div>
+        <div class="section-meta">Daily · Production, Distribution, Streaming</div>
+      </div>
+      <div class="feed-area" id="feed-industry"><div class="loading-state" id="loading-industry">
+        <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+      </div></div>
+    </div>
+
+    <!-- FESTIVALS TAB -->
+    <div class="tab-content" id="tab-festivals">
+      <div class="section-bar">
+        <div class="section-title">Festival Deadlines</div>
+        <div class="section-meta">Monthly overview · 2025 – 2026</div>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-pill active" onclick="setFestFilter('all',this)">All</button>
+        <button class="filter-pill" onclick="setFestFilter('upcoming',this)">Upcoming (60d)</button>
+        <button class="filter-pill" onclick="setFestFilter('oscar',this)">Oscar QFF</button>
+        <button class="filter-pill" onclick="setFestFilter('efa',this)">EFA QFF</button>
+        <button class="filter-pill" onclick="setFestFilter('ffa',this)">FFA Ref.</button>
+      </div>
+      <div class="feed-area" id="feed-festivals"></div>
+    </div>
+
+    <!-- FÖRDERUNG TAB -->
+    <div class="tab-content" id="tab-foerderung">
+      <div class="section-bar">
+        <div class="section-title">Förderung 2026</div>
+        <div class="section-meta">Einreichfristen · Stand April 2026</div>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-pill active" onclick="setFoerderFilter('all',this)">Alle</button>
+        <button class="filter-pill" onclick="setFoerderFilter('ffa',this)">FFA</button>
+        <button class="filter-pill" onclick="setFoerderFilter('fff',this)">FFF Bayern</button>
+        <button class="filter-pill" onclick="setFoerderFilter('nrw',this)">Filmstiftung NRW</button>
+        <button class="filter-pill" onclick="setFoerderFilter('moin',this)">MOIN Hamburg/SH</button>
+        <button class="filter-pill" onclick="setFoerderFilter('mfg',this)">MFG BW</button>
+        <button class="filter-pill" onclick="setFoerderFilter('medienboard',this)">Medienboard BB</button>
+        <button class="filter-pill" onclick="setFoerderFilter('stoffe',this)">Stoffentwicklung</button>
+        <button class="filter-pill" onclick="setFoerderFilter('produktion',this)">Produktion</button>
+      </div>
+      <div class="feed-area" id="feed-foerderung"></div>
+    </div>
+
+    <!-- BOX OFFICE TAB -->
+    <div class="tab-content" id="tab-boxoffice">
+      <div class="section-bar">
+        <div class="section-title">Box Office</div>
+        <div class="section-meta">Weekly · International</div>
+      </div>
+      <div class="feed-area" id="feed-boxoffice">
+        <div class="source-group">
+          <div class="source-label">Global Weekend</div>
+          <div id="boxoffice-data">Loading box office data...</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="panel">
+    <!-- Upcoming deadlines widget -->
+    <div class="panel-section">
+      <div class="panel-heading">Deadlines <span class="panel-badge">Next 30 Days</span></div>
+      <div id="panel-deadlines"></div>
+    </div>
+    <!-- Keyword hits -->
+    <div class="panel-section">
+      <div class="panel-heading">Keyword Hits <span class="panel-badge" id="kw-count">0</span></div>
+      <div id="panel-keywords" style="font-size:11px;color:var(--muted)">Loading feed...</div>
+    </div>
+    <!-- Quick links -->
+    <div class="panel-section">
+      <div class="panel-heading">Quick Links</div>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <a href="https://variety.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Variety</a>
+        <a href="https://deadline.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Deadline</a>
+        <a href="https://www.hollywoodreporter.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Hollywood Reporter</a>
+        <a href="https://www.indiewire.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ IndieWire</a>
+        <a href="https://www.screendaily.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Screen Daily</a>
+        <a href="https://cineuropa.org/en/" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Cineuropa</a>
+        <a href="https://www.dwdl.de" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ DWDL</a>
+        <a href="https://the-spot-mediafilm.com" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ Spot Media</a>
+        <a href="https://www.fff-bayern.de" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ FFF Bayern</a>
+        <a href="https://www.ffa.de" target="_blank" style="color:var(--accent2);font-size:12px;text-decoration:none;">↗ FFA</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const KEYWORDS_HIGH = [
+  // Studios & Labels (High)
+  'A24','Searchlight Pictures','Neon','Focus Features','MUBI','Wild Bunch','Studiocanal','Warner Bros','Sony Pictures Classics','Universal Pictures','Paramount','Disney','Lionsgate','Netflix Film','Amazon MGM','Apple Original',
+  // Festivals (High)
+  'Cannes','Berlinale','Venice','Sundance','Toronto','TIFF','SXSW','Tribeca','Locarno','San Sebastián','Rotterdam','DOK Leipzig','Filmfest München','Hofer Filmtage','Palme d\'Or','Golden Lion','Goldener Bär',
+  // Funding (High)
+  'FFF Bayern','FilmFernsehFonds','FFA','Filmförderungsanstalt','DFFF','Medienboard','MFG','Creative Europe','MEDIA Programme','Eurimages',
+  // Industry (High)
+  'acquisition','Co-production','Koproduktion','Distribution deal','Weltvertrieb','Sales agent','box office','Kinostart','EFM Berlin','Cannes Marché','AFM',
+  // Production (High)
+  'In production','Principal photography','Drehstart','Casting','Regisseur','Director attached','Drehbuch','Screenplay','Produzent','Producer','Film financing',
+  // Genre (High)
+  'Arthouse','Independent film','Indie','Auteur','European cinema','German cinema','Deutsches Kino',
+  // Awards (High)
+  'Academy Awards','Oscar','Deutscher Filmpreis','Lola','BAFTA','César','European Film Awards','Bayerischer Filmpreis','Best Director','Best Picture',
+  // Germany (High)
+  'München','Munich','Bayern','Bavaria','Filmstandort','Bavaria Studios','German film','Filmbranche','Goethe-Institut','German Films','BKM',
+  // Strikes / major industry news
+  'WGA','SAG-AFTRA','strike','merger','acquisition','greenlight','streaming deal'
+];
+
+const KEYWORDS_MED = [
+  'Annapurna','FilmNation','Blumhouse','Bad Robot','Netflix','Amazon Prime','Apple TV+','Disney+','Hulu','HBO Max',
+  'IDFA','Hot Docs','Sheffield','Viennale','CPH:DOX','AFI Fest','Telluride','NYFF','Visions du Réel',
+  'Filmstipendium','Drehbuchförderung','HFF München','Berlinale Talents','ACE Producers','EAVE','Torino Film Lab',
+  'Pitch','Packaging','Greenlight','Marché du Film','European Film Market','MipCom','MipTV','Presale','Output deal',
+  'Pre-production','Executive producer','DOP','Cinematographer','Production designer',
+  'Drama','Documentary','Thriller','Coming-of-age','Auteur cinema',
+  'Golden Globe','Spirit Awards','Gotham','Critics Choice','SAG Awards',
+  'ARD','ZDF','Arte','BR','Sky Deutschland','RTL','ProSieben','ORF'
+];
+
+const RSS_FEEDS = [
+  { id:'variety_film', name:'Variety', url:'https://variety.com/v/film/feed/', category:'news', tab:'news' },
+  { id:'variety_tv', name:'Variety TV', url:'https://variety.com/v/tv/feed/', category:'news', tab:'news' },
+  { id:'variety_cont', name:'Variety Contenders', url:'https://variety.com/e/contenders/feed/', category:'awards', tab:'awards' },
+  { id:'deadline_film', name:'Deadline', url:'https://deadline.com/v/film/feed/', category:'news', tab:'news' },
+  { id:'deadline_tv', name:'Deadline TV', url:'https://deadline.com/v/tv/feed/', category:'news', tab:'news' },
+  { id:'thr_film', name:'THR', url:'https://www.hollywoodreporter.com/c/movies/feed/', category:'news', tab:'news' },
+  { id:'thr_tv', name:'THR TV', url:'https://www.hollywoodreporter.com/c/tv/feed/', category:'news', tab:'news' },
+  { id:'thr_awards', name:'THR Awards', url:'https://www.hollywoodreporter.com/t/awards/feed/', category:'awards', tab:'awards' },
+  { id:'indiewire_film', name:'IndieWire', url:'https://www.indiewire.com/t/film/feed/', category:'news', tab:'news' },
+  { id:'indiewire_tv', name:'IndieWire TV', url:'https://www.indiewire.com/t/tv/feed/', category:'news', tab:'news' },
+  { id:'indiewire_awards', name:'IndieWire Awards', url:'https://www.indiewire.com/c/awards/feed/', category:'awards', tab:'awards' },
+  { id:'screen_prod', name:'Screen Daily', url:'https://www.screendaily.com/rss/news.asp', category:'industry', tab:'industry' },
+  { id:'cineuropa', name:'Cineuropa', url:'https://cineuropa.org/rss/en/', category:'german', tab:'german' },
+];
+
+const FESTIVALS = [
+  { name:'Berlinale', deadline:'2025-11-05', festDate:'12.–22.02.2026', oscar:true, efa:true, ffa:true },
+  { name:'Locarno Film Festival', deadline:'2026-04-23', festDate:'05.–15.08.2026', oscar:true, efa:true, ffa:true },
+  { name:'TIFF – Toronto', deadline:'2026-05-08', festDate:'10.–20.09.2026', oscar:true, ffa:true },
+  { name:'Sundance Film Festival', deadline:'2025-09-23', festDate:'22.01.–01.02.2026', oscar:true, ffa:true },
+  { name:'Tribeca Film Festival', deadline:'2026-02-04', festDate:'03.–14.06.2026', oscar:true },
+  { name:'SXSW Austin', deadline:'2025-10-01', festDate:'12.–18.03.2026', oscar:true, ffa:true },
+  { name:'Cannes – Quinzaine', deadline:'2026-03-13', festDate:'13.–23.05.2026', oscar:true, ffa:true },
+  { name:'Cannes – La Cinef', deadline:'2026-02-15', festDate:'12.–23.05.2026', oscar:true, ffa:true },
+  { name:'Venice – Orizzonti Shorts', deadline:'2025-05-31', festDate:'27.08.–06.09.2025', oscar:true, efa:true, ffa:true },
+  { name:'Hot Docs Toronto', deadline:'2026-01-08', festDate:'23.04.–03.05.2026', oscar:true },
+  { name:'IDFA Amsterdam', deadline:'2026-07-10', festDate:'12.–22.11.2026', oscar:true, ffa:true },
+  { name:'DOK Leipzig', deadline:'2025-07-01', festDate:'27.10.–02.11.2025', oscar:true, ffa:true },
+  { name:'Sheffield Doc/Fest', deadline:'2026-02-20', festDate:'10.–15.06.2026', oscar:true },
+  { name:'Clermont-Ferrand', deadline:'2025-07-25', festDate:'30.01.–07.02.2026', oscar:true, efa:true, ffa:true },
+  { name:'Krakow Film Festival', deadline:'2026-01-31', festDate:'31.05.–07.06.2026', oscar:true, efa:true, ffa:true },
+  { name:'Palm Springs ShortFest', deadline:'2026-02-07', festDate:'23.–29.06.2026', oscar:true, ffa:true },
+  { name:'Rotterdam IFFR', deadline:'2025-09-20', festDate:'29.01.–08.02.2026', efa:true, ffa:true },
+  { name:'Visions du Réel Nyon', deadline:'2025-12-15', festDate:'17.–26.04.2026', oscar:true, ffa:true },
+  { name:'Tampere Film Festival', deadline:'2025-11-03', festDate:'04.–08.03.2026', oscar:true, efa:true, ffa:true },
+  { name:'Go Short Nijmegen', deadline:'2025-12-15', festDate:'07.–12.04.2026', oscar:true, efa:true },
+  { name:'Brussels Short Film Fest', deadline:'2026-01-31', festDate:'23.04.–02.05.2026', oscar:true },
+  { name:'CPH:DOX Copenhagen', deadline:'2025-11-01', festDate:'11.–22.03.2026', ffa:true },
+  { name:'Filmfestival Max Ophüls Preis', deadline:'2025-10-31', festDate:'19.–25.01.2026', ffa:true },
+  { name:'Dok.fest München', deadline:'2025-12-15', festDate:'06.–17.05.2026', ffa:true },
+  { name:'Fünf Seen Film Festival', deadline:'2026-03-31', festDate:'03.–13.09.2026', efa:true, ffa:true },
+  { name:'AFI Fest Los Angeles', deadline:'2026-03-01', festDate:'21.–25.10.2026', oscar:true },
+  { name:'Filmfest Dresden', deadline:'2025-12-01', festDate:'14.–19.04.2026', ffa:true },
+  { name:'Annecy Animation Festival', deadline:'2026-03-15', festDate:'21.–27.06.2026', oscar:true, ffa:true },
+  { name:'Trickfilmfestival Stuttgart', deadline:'2025-11-15', festDate:'05.–10.05.2026', oscar:true, ffa:true },
+  { name:'Slamdance Film Festival', deadline:'2025-10-13', festDate:'19.–25.02.2026', oscar:true },
+  { name:'Flickerfest Australien', deadline:'2025-10-15', festDate:'16.–25.01.2026', oscar:true, ffa:true },
+  { name:'Ann Arbor Film Festival', deadline:'2025-09-30', festDate:'24.–29.03.2026', oscar:true, ffa:true },
+  { name:'Odense Film Festival', deadline:'2026-03-18', festDate:'24.–30.08.2026', oscar:true, efa:true },
+  { name:'VIS Vienna Independent Shorts', deadline:'2026-01-31', festDate:'26.–31.05.2026', oscar:true, efa:true },
+  { name:'San Francisco IFF', deadline:'2025-12-10', festDate:'23.04.–03.05.2026', oscar:true },
+  { name:'Atlanta Film Festival', deadline:'2025-11-07', festDate:'23.04.–03.05.2026', oscar:true },
+  { name:'Montreal FNC', deadline:'2026-05-14', festDate:'07.–18.10.2026', oscar:true, ffa:true },
+  { name:'Encounters Bristol', deadline:'2026-05-18', festDate:'23.–27.09.2026', efa:true, ffa:true },
+  { name:'Doclisboa', deadline:'2026-05-31', festDate:'15.–25.10.2026', oscar:true },
+  { name:'IDFF Jihlava', deadline:'2026-06-30', festDate:'23.10.–01.11.2026', oscar:true },
+  { name:'Docfest NY (DOC NYC)', deadline:'2026-06-18', festDate:'11.–29.11.2026', oscar:true },
+  { name:'Chicago International FF', deadline:'2026-06-30', festDate:'14.–25.10.2026', oscar:true },
+  { name:'Durban International FF', deadline:'2026-02-27', festDate:'23.07.–02.08.2026', oscar:true },
+  { name:'Göteborgs Film Festival', deadline:'2025-10-24', festDate:'24.01.–02.02.2026', oscar:true },
+  { name:'Interfilm / KUKI Berlin', deadline:'2025-05-28', festDate:'02.–09.11.2025', ffa:true, oscar:true },
+  { name:'Leeds International FF', deadline:'2025-07-31', festDate:'30.10.–16.11.2025', oscar:true },
+  { name:'Black Nights Tallinn (PÖFF)', deadline:'2025-08-08', festDate:'01.–19.11.2025', oscar:true, efa:true },
+  { name:'Curtas Vila do Conde', deadline:'2026-04-30', festDate:'17.–26.07.2026', oscar:true, ffa:true },
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let allArticles = [];
+let activeTab = 'news';
+let activeFilters = { news: 'all', german: 'all' };
+let activePrio = 'all';
+let activeFestFilter = 'all';
+
+const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
+
+// ─── KEYWORD SCORING ─────────────────────────────────────────────────────────
+function scoreArticle(title, desc) {
+  const text = (title + ' ' + (desc||'')).toLowerCase();
+  let score = 0;
+  let matched = [];
+  KEYWORDS_HIGH.forEach(k => {
+    if (text.includes(k.toLowerCase())) { score += 3; matched.push(k); }
+  });
+  KEYWORDS_MED.forEach(k => {
+    if (text.includes(k.toLowerCase())) { score += 1; matched.push(k); }
+  });
+  return { score, matched: [...new Set(matched)].slice(0,3) };
+}
+
+function isHighPriority(title, desc) {
+  return scoreArticle(title, desc).score >= 3;
+}
+
+// ─── FETCH RSS ────────────────────────────────────────────────────────────────
+async function fetchFeed(feed) {
+  try {
+    const res = await fetch(PROXY + encodeURIComponent(feed.url));
+    const data = await res.json();
+    if (!data.items) return [];
+    return data.items.slice(0,15).map(item => ({
+      title: item.title || '',
+      link: item.link || item.url || '#',
+      pubDate: item.pubDate || item.published || '',
+      description: item.description || item.content || '',
+      source: feed.name,
+      sourceId: feed.id,
+      category: feed.category,
+      tab: feed.tab,
+    }));
+  } catch(e) {
+    return [];
+  }
+}
+
+async function loadAllFeeds() {
+  document.getElementById('lastUpdate').textContent = 'Loading...';
+  const results = await Promise.all(RSS_FEEDS.map(fetchFeed));
+  allArticles = results.flat();
+
+  // Sort by date
+  allArticles.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+  renderFeed('news');
+  renderFeed('german');
+  renderFeed('awards');
+  renderFeed('industry');
+  renderPanelKeywords();
+
+  const now = new Date();
+  document.getElementById('lastUpdate').textContent = 'Updated ' + now.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
+
+  // Update counts
+  ['news','german','awards','industry'].forEach(tab => {
+    const articles = allArticles.filter(a => a.tab === tab);
+    const el = document.getElementById('cnt-' + tab);
+    if (el) el.textContent = articles.length || '—';
+  });
+}
+
+// ─── RENDER FEED ─────────────────────────────────────────────────────────────
+function renderFeed(tab) {
+  const container = document.getElementById('feed-' + tab);
+  if (!container) return;
+
+  let articles = allArticles.filter(a => a.tab === tab);
+
+  // Filter by source
+  const activeF = activeFilters[tab] || 'all';
+  if (activeF !== 'all') {
+    articles = articles.filter(a => a.sourceId.startsWith(activeF));
+  }
+
+  // Filter by priority
+  if (activePrio === 'high') {
+    articles = articles.filter(a => isHighPriority(a.title, a.description));
+  }
+
+  if (articles.length === 0) {
+    container.innerHTML = '<div class="empty-state">No articles found. Try adjusting filters.</div>';
+    return;
+  }
+
+  // Group by source
+  const bySource = {};
+  articles.forEach(a => {
+    if (!bySource[a.source]) bySource[a.source] = [];
+    bySource[a.source].push(a);
+  });
+
+  let html = '';
+  Object.entries(bySource).forEach(([src, arts]) => {
+    html += `<div class="source-group"><div class="source-label">${src}</div>`;
+    arts.forEach((a, i) => {
+      const { score, matched } = scoreArticle(a.title, a.description);
+      const dateStr = a.pubDate ? new Date(a.pubDate).toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'}) : '';
+      const highFlag = score >= 3 ? '<span class="atag">KEY</span>' : '';
+      const tags = matched.slice(0,2).map(m => `<span class="atag">${m}</span>`).join('');
+      html += `<a class="article" href="${a.link}" target="_blank">
+        <span class="anum">${i+1}</span>
+        <div class="abody">
+          <div class="atitle">${a.title}</div>
+          <div class="ameta">${highFlag}${tags}<span>${dateStr}</span></div>
+        </div>
+      </a>`;
+    });
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+// ─── FESTIVALS ───────────────────────────────────────────────────────────────
+function renderFestivals() {
+  const container = document.getElementById('feed-festivals');
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  let fests = [...FESTIVALS];
+  if (activeFestFilter === 'upcoming') {
+    const limit = new Date(today);
+    limit.setDate(limit.getDate() + 60);
+    fests = fests.filter(f => {
+      const d = new Date(f.deadline);
+      return d >= today && d <= limit;
+    });
+  } else if (activeFestFilter === 'oscar') {
+    fests = fests.filter(f => f.oscar);
+  } else if (activeFestFilter === 'efa') {
+    fests = fests.filter(f => f.efa);
+  } else if (activeFestFilter === 'ffa') {
+    fests = fests.filter(f => f.ffa);
+  }
+
+  // Sort by deadline
+  fests.sort((a,b) => new Date(a.deadline) - new Date(b.deadline));
+
+  if (fests.length === 0) {
+    container.innerHTML = '<div class="empty-state">No festivals match this filter.</div>';
+    return;
+  }
+
+  // Group by month
+  const byMonth = {};
+  fests.forEach(f => {
+    const d = new Date(f.deadline);
+    const key = d.toLocaleDateString('de-DE',{month:'long',year:'numeric'});
+    if (!byMonth[key]) byMonth[key] = [];
+    byMonth[key].push(f);
+  });
+
+  let html = '';
+  Object.entries(byMonth).forEach(([month, list]) => {
+    html += `<div class="source-group"><div class="source-label">${month}</div>`;
+    list.forEach(f => {
+      const deadline = new Date(f.deadline);
+      const diff = Math.round((deadline - today) / 86400000);
+      let cls = 'ok', dstr = '';
+      if (diff < 0) { cls = ''; dstr = 'Past'; }
+      else if (diff <= 7) { cls = 'urgent'; dstr = `${diff}d left`; }
+      else if (diff <= 21) { cls = 'soon'; dstr = `${diff}d left`; }
+      else { dstr = deadline.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'}); }
+
+      const badges = [
+        f.oscar ? '<span class="fest-badge oscar">Oscar QFF</span>' : '',
+        f.efa ? '<span class="fest-badge efa">EFA</span>' : '',
+        f.ffa ? '<span class="fest-badge" style="background:rgba(106,158,122,0.15);color:var(--green)">FFA</span>' : '',
+      ].filter(Boolean).join(' ');
+
+      html += `<div class="fest-item">
+        <div class="fest-name">${f.name}</div>
+        <div class="fest-row">
+          <span class="fest-date" style="font-size:11px;color:var(--muted)">Festival: ${f.festDate}</span>
+          <span class="fest-deadline ${cls}">${dstr}</span>
+        </div>
+        <div style="margin-top:3px">${badges}</div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+// ─── PANEL DEADLINES (next 30d) ──────────────────────────────────────────────
+function renderPanelDeadlines() {
+  const container = document.getElementById('panel-deadlines');
+  const today = new Date(); today.setHours(0,0,0,0);
+  const limit = new Date(today); limit.setDate(limit.getDate() + 30);
+
+  const upcoming = FESTIVALS
+    .filter(f => { const d = new Date(f.deadline); return d >= today && d <= limit; })
+    .sort((a,b) => new Date(a.deadline) - new Date(b.deadline))
+    .slice(0,8);
+
+  if (!upcoming.length) {
+    container.innerHTML = '<div style="font-size:11px;color:var(--muted)">No deadlines in the next 30 days.</div>';
+    return;
+  }
+
+  let html = '';
+  upcoming.forEach(f => {
+    const deadline = new Date(f.deadline);
+    const diff = Math.round((deadline - today) / 86400000);
+    const cls = diff <= 7 ? 'urgent' : diff <= 14 ? 'soon' : 'ok';
+    html += `<div class="fest-item">
+      <div class="fest-name" style="font-size:11.5px">${f.name}</div>
+      <div class="fest-row">
+        <span style="font-size:10px;color:var(--muted)">${deadline.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'})}</span>
+        <span class="fest-deadline ${cls}" style="font-size:10px">${diff === 0 ? 'TODAY' : diff + 'd'}</span>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ─── PANEL KEYWORD HITS ───────────────────────────────────────────────────────
+function renderPanelKeywords() {
+  const hits = allArticles.filter(a => scoreArticle(a.title, a.description).score >= 3).slice(0,10);
+  const container = document.getElementById('panel-keywords');
+  const countEl = document.getElementById('kw-count');
+  countEl.textContent = hits.length;
+
+  if (!hits.length) {
+    container.innerHTML = '<span style="color:var(--muted)">No high-priority hits yet</span>';
+    return;
+  }
+
+  let html = '';
+  hits.forEach(a => {
+    const { matched } = scoreArticle(a.title, a.description);
+    html += `<div style="padding:5px 0;border-bottom:1px solid var(--border)">
+      <a href="${a.link}" target="_blank" style="color:var(--text);text-decoration:none;font-size:12px;line-height:1.3;display:block">${a.title}</a>
+      <div style="color:var(--accent);font-size:10px;margin-top:2px">${matched.slice(0,2).join(' · ')}</div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ─── BOX OFFICE (static weekly data, update manually) ────────────────────────
+function renderBoxOffice() {
+  const data = [
+    { rank:1, title:'[Live data via RSS not available]', gross:'—', change:'' },
+  ];
+  const note = `<div style="font-size:12px;color:var(--muted);padding:0.5rem 0;line-height:1.6">
+    Box office data requires a paid API (Box Office Mojo, The Numbers).<br><br>
+    For live charts, visit:<br>
+    <a href="https://www.boxofficemojo.com/weekend/chart/" target="_blank" style="color:var(--accent2)">↗ Box Office Mojo</a><br>
+    <a href="https://www.the-numbers.com/weekly-chart" target="_blank" style="color:var(--accent2)">↗ The Numbers</a><br>
+    <a href="https://bledy.de/kino/charts/" target="_blank" style="color:var(--accent2)">↗ German Box Office (Bledy)</a>
+  </div>`;
+  document.getElementById('boxoffice-data').innerHTML = note;
+}
+
+// ─── NAVIGATION ───────────────────────────────────────────────────────────────
+function showTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  const content = document.getElementById('tab-' + tab);
+  const nav = document.getElementById('nav-' + tab);
+  if (content) content.classList.add('active');
+  if (nav) nav.classList.add('active');
+  activeTab = tab;
+  if (tab === 'festivals') renderFestivals();
+  if (tab === 'foerderung') renderFoerderung();
+}
+
+function setFilter(tab, val, btn) {
+  activeFilters[tab] = val;
+  const bar = document.getElementById('filter-' + tab) || btn.closest('.filter-bar');
+  bar.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFeed(tab);
+}
+
+function setFestFilter(val, btn) {
+  activeFestFilter = val;
+  btn.closest('.filter-bar').querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFestivals();
+}
+
+function setPrio(val) {
+  activePrio = val;
+  document.getElementById('prio-all').style.color = val === 'all' ? 'var(--accent)' : 'var(--muted)';
+  document.getElementById('prio-all').style.borderLeft = val === 'all' ? '2px solid var(--accent)' : '2px solid transparent';
+  document.getElementById('prio-all').style.background = val === 'all' ? 'var(--surface)' : '';
+  document.getElementById('prio-high').style.color = val === 'high' ? 'var(--accent)' : 'var(--muted)';
+  document.getElementById('prio-high').style.borderLeft = val === 'high' ? '2px solid var(--accent)' : '2px solid transparent';
+  document.getElementById('prio-high').style.background = val === 'high' ? 'var(--surface)' : '';
+  ['news','german','awards','industry'].forEach(t => renderFeed(t));
+}
+
+function refreshAll() {
+  document.getElementById('lastUpdate').textContent = 'Refreshing...';
+  loadAllFeeds();
+}
+
+// ─── FÖRDERUNG DATA ───────────────────────────────────────────────────────────
+const FOERDERUNG = [
+  // FFA
+  { institution:'FFA', bereich:'Kinderfilm: Treatment, Drehbuch, Projektentwicklung, Produktion', typ:'Stoffentwicklung / Produktion', deadline:'2026-01-15', sitzung:'19./20.03.2026', hinweis:'Langfilm & Kurzfilm', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Jurybasierte Treatment- & Drehbuchförderung Spielfilm/Doku', typ:'Stoffentwicklung', deadline:'2026-01-22', sitzung:'26./27.03. & 14./15.04.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Deutsch-Französischer Koproduktionsfonds', typ:'Produktion Langfilm', deadline:'2026-01-22', sitzung:'27.03.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Referenzfilmförderung Langfilm (Produktion)', typ:'Produktion Langfilm', deadline:'2026-03-01', sitzung:'–', hinweis:'Jährlicher Termin', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Minoritärer Koproduktionsfonds', typ:'Produktion Langfilm', deadline:'2026-03-02', sitzung:'07.05.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Jurybasierte Treatment- & Drehbuchförderung Spielfilm/Doku', typ:'Stoffentwicklung', deadline:'2026-04-14', sitzung:'22./23.06.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Produktions- & Projektentwicklungsförderung Spielfilm', typ:'Produktion Langfilm', deadline:'2026-04-14', sitzung:'18./19.06.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Produktions- & Projektentwicklungsförderung Dokumentarfilm', typ:'Produktion Langfilm', deadline:'2026-04-14', sitzung:'15./16.06.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Deutsch-Französischer Koproduktionsfonds', typ:'Produktion Langfilm', deadline:'2026-04-20', sitzung:'tba', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Jurybasierte Treatment- & Drehbuchförderung Spielfilm/Doku', typ:'Stoffentwicklung', deadline:'2026-07-07', sitzung:'23./24.09.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Produktions- & Projektentwicklungsförderung Spielfilm', typ:'Produktion Langfilm', deadline:'2026-07-07', sitzung:'10./11.09.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Kinderfilm: Treatment, Drehbuch, Projektentwicklung, Produktion', typ:'Stoffentwicklung / Produktion', deadline:'2026-09-01', sitzung:'09./10.11.2026', hinweis:'Langfilm & Kurzfilm', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Produktions- & Projektentwicklungsförderung Dokumentarfilm', typ:'Produktion Langfilm', deadline:'2026-09-08', sitzung:'26./27.11.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Jurybasierte Treatment- & Drehbuchförderung Spielfilm/Doku', typ:'Stoffentwicklung', deadline:'2026-09-14', sitzung:'01./02.12.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Deutsch-Französischer Koproduktionsfonds', typ:'Produktion Langfilm', deadline:'2026-09-15', sitzung:'tba', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  { institution:'FFA', bereich:'Produktions- & Projektentwicklungsförderung Spielfilm', typ:'Produktion Langfilm', deadline:'2026-09-29', sitzung:'08./09.12.2026', hinweis:'', url:'https://www.ffa.de/einreich-sitzungstermine.html' },
+  // FFF Bayern
+  { institution:'FFF Bayern', bereich:'Stoffentwicklung (Langfilm & Serie)', typ:'Stoffentwicklung', deadline:'2026-03-02', deadlineDisplay:'16.02.–02.03.2026', sitzung:'28.04.2026', hinweis:'Einreichfenster · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/' },
+  { institution:'FFF Bayern', bereich:'Produktion Kinofilm & Kinodokumentarfilm', typ:'Produktion Langfilm', deadline:'2026-03-02', deadlineDisplay:'16.02.–02.03.2026', sitzung:'28.04.2026', hinweis:'Max. 3 Mio. € / bis 30 % HK · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/' },
+  { institution:'FFF Bayern', bereich:'Stoffentwicklung (Langfilm & Serie)', typ:'Stoffentwicklung', deadline:'2026-06-15', deadlineDisplay:'01.06.–15.06.2026', sitzung:'29.07.2026', hinweis:'Einreichfenster · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/' },
+  { institution:'FFF Bayern', bereich:'Produktion Kinofilm & Kinodokumentarfilm', typ:'Produktion Langfilm', deadline:'2026-06-15', deadlineDisplay:'01.06.–15.06.2026', sitzung:'29.07.2026', hinweis:'Max. 3 Mio. € / bis 30 % HK · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/' },
+  { institution:'FFF Bayern', bereich:'Stoffentwicklung (Langfilm & Serie)', typ:'Stoffentwicklung', deadline:'2026-09-21', deadlineDisplay:'07.09.–21.09.2026', sitzung:'11.11.2026', hinweis:'Einreichfenster · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/' },
+  { institution:'FFF Bayern', bereich:'Produktion Kinofilm & Kinodokumentarfilm', typ:'Produktion Langfilm', deadline:'2026-09-21', deadlineDisplay:'07.09.–21.09.2026', sitzung:'11.11.2026', hinweis:'Max. 3 Mio. € / bis 30 % HK · Telefonkontakt vorab erforderlich', url:'https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/' },
+  { institution:'FFF Bayern', bereich:'Internationale Kinofilme & Serien (Koproduktionen)', typ:'Produktion / Serie', deadline:'2099-01-01', deadlineDisplay:'Jederzeit möglich', sitzung:'Sonderausschuss', hinweis:'Min. 5 Mio. € HK (Kino); 1,2 Mio. € / Ep. (Serie)', url:'https://www.fff-bayern.de/foerderbereiche/internationale-kinofilme-und-serien/' },
+  // Filmstiftung NRW
+  { institution:'Filmstiftung NRW', bereich:'Produktion, Verleih, vorbereitende Förderarten inkl. Serienpilot', typ:'Produktion Langfilm / Serie', deadline:'2026-03-05', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Drehbuch & Projektentwicklung Kinofilm / Fernsehfilm / Serie', typ:'Stoffentwicklung', deadline:'2026-03-05', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Produktion, Verleih, vorbereitende Förderarten inkl. Serienpilot', typ:'Produktion Langfilm / Serie', deadline:'2026-05-13', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Drehbuch & Projektentwicklung Kinofilm / Fernsehfilm / Serie', typ:'Stoffentwicklung', deadline:'2026-05-13', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Produktion, Verleih, vorbereitende Förderarten inkl. Serienpilot', typ:'Produktion Langfilm / Serie', deadline:'2026-09-10', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Drehbuch & Projektentwicklung Kinofilm / Fernsehfilm / Serie', typ:'Stoffentwicklung', deadline:'2026-09-10', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Produktion, Verleih, vorbereitende Förderarten inkl. Serienpilot', typ:'Produktion Langfilm / Serie', deadline:'2026-11-19', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  { institution:'Filmstiftung NRW', bereich:'Drehbuch & Projektentwicklung Kinofilm / Fernsehfilm / Serie', typ:'Stoffentwicklung', deadline:'2026-11-19', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
+  // MOIN Hamburg/SH
+  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-04-21', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-04-27', sitzung:'–', hinweis:'Ersetzt Treatments, Drehbücher, Ideen & Konzepte', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-05-05', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-08-17', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-08-25', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-09-15', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-10-12', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-10-27', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-11-03', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  // MFG BW
+  { institution:'MFG BW', bereich:'Stoffentwicklung / Drehbuchförderung (Spielfilm, fiktionale Stoffe)', typ:'Stoffentwicklung', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'Bisher nur ein Termin 2026 veröffentlicht', url:'https://www.mfg.de/service/einreichfristen/' },
+  { institution:'MFG BW', bereich:'Produktion (Kino- & Fernsehfilm)', typ:'Produktion Langfilm', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'', url:'https://www.mfg.de/service/einreichfristen/' },
+  { institution:'MFG BW', bereich:'Produktionsvorbereitung', typ:'Produktion Langfilm', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'Vorbereitende Maßnahmen', url:'https://www.mfg.de/service/einreichfristen/' },
+  // Medienboard BB
+  { institution:'Medienboard BB', bereich:'Stoff- & Projektentwicklung / Produktion Kinofilm / Highend Serien', typ:'Stoffentwicklung / Produktion / Serie', deadline:'2026-05-05', deadlineDisplay:'tba (Sitzung 05.05.2026)', sitzung:'05.05.2026', hinweis:'⚠ Antragsdeadline noch nicht veröffentlicht · Antragsgespräch vorab zwingend', url:'https://www.medienboard.de/foerderung/film' },
+];
+
+// Institution color map
+const INST_COLORS = {
+  'FFA':            { bg:'rgba(196,163,90,0.12)',  text:'#c4a35a' },
+  'FFF Bayern':     { bg:'rgba(107,158,184,0.12)', text:'#6b9eb8' },
+  'Filmstiftung NRW': { bg:'rgba(106,158,122,0.12)', text:'#6a9e7a' },
+  'MOIN Hamburg/SH': { bg:'rgba(180,120,180,0.12)', text:'#b47ab4' },
+  'MFG BW':         { bg:'rgba(200,100,90,0.12)',  text:'#c8645a' },
+  'Medienboard BB': { bg:'rgba(150,150,100,0.12)', text:'#a0a05a' },
+};
+
+let activeFoerderFilter = 'all';
+
+function setFoerderFilter(val, btn) {
+  activeFoerderFilter = val;
+  btn.closest('.filter-bar').querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFoerderung();
+}
+
+function renderFoerderung() {
+  const container = document.getElementById('feed-foerderung');
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  let items = [...FOERDERUNG];
+
+  if (activeFoerderFilter === 'ffa') items = items.filter(f => f.institution === 'FFA');
+  else if (activeFoerderFilter === 'fff') items = items.filter(f => f.institution === 'FFF Bayern');
+  else if (activeFoerderFilter === 'nrw') items = items.filter(f => f.institution === 'Filmstiftung NRW');
+  else if (activeFoerderFilter === 'moin') items = items.filter(f => f.institution === 'MOIN Hamburg/SH');
+  else if (activeFoerderFilter === 'mfg') items = items.filter(f => f.institution === 'MFG BW');
+  else if (activeFoerderFilter === 'medienboard') items = items.filter(f => f.institution === 'Medienboard BB');
+  else if (activeFoerderFilter === 'stoffe') items = items.filter(f => f.typ.toLowerCase().includes('stoffentwicklung'));
+  else if (activeFoerderFilter === 'produktion') items = items.filter(f => f.typ.toLowerCase().includes('produktion'));
+
+  // Sort by deadline
+  items.sort((a,b) => new Date(a.deadline) - new Date(b.deadline));
+
+  if (!items.length) {
+    container.innerHTML = '<div class="empty-state">Keine Einträge für diesen Filter.</div>';
+    return;
+  }
+
+  // Group by month
+  const byMonth = {};
+  items.forEach(f => {
+    const d = new Date(f.deadline);
+    const isPermanent = f.deadline === '2099-01-01';
+    const key = isPermanent ? 'Laufend / Jederzeit' : d.toLocaleDateString('de-DE',{month:'long',year:'numeric'});
+    if (!byMonth[key]) byMonth[key] = [];
+    byMonth[key].push(f);
+  });
+
+  let html = '';
+  Object.entries(byMonth).forEach(([month, list]) => {
+    html += `<div class="source-group"><div class="source-label">${month}</div>`;
+    list.forEach(f => {
+      const deadline = new Date(f.deadline);
+      const isPermanent = f.deadline === '2099-01-01';
+      const diff = isPermanent ? 999 : Math.round((deadline - today) / 86400000);
+
+      let cls = 'ok', badge = '';
+      if (!isPermanent) {
+        if (diff < 0) { cls = ''; badge = 'Abgelaufen'; }
+        else if (diff === 0) { cls = 'urgent'; badge = 'HEUTE'; }
+        else if (diff <= 7) { cls = 'urgent'; badge = diff + 'd'; }
+        else if (diff <= 21) { cls = 'soon'; badge = diff + 'd'; }
+        else { badge = deadline.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}); cls='ok'; }
+      }
+
+      const col = INST_COLORS[f.institution] || { bg:'rgba(100,100,100,0.12)', text:'#888' };
+      const instBadge = `<span style="background:${col.bg};color:${col.text};padding:1px 7px;border-radius:2px;font-size:9px;letter-spacing:0.06em;text-transform:uppercase">${f.institution}</span>`;
+      const typBadge = `<span style="background:var(--surface2);color:var(--muted);padding:1px 7px;border-radius:2px;font-size:9px;letter-spacing:0.04em">${f.typ}</span>`;
+
+      const deadlineLabel = f.deadlineDisplay || deadline.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});
+
+      html += `<div class="fest-item" style="padding:0.7rem 0">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:5px">
+          <div style="font-size:13px;font-weight:500;color:var(--text);line-height:1.35;flex:1">${f.bereich}</div>
+          <span class="fest-deadline ${cls}" style="font-size:11px;white-space:nowrap;padding-top:2px">${isPermanent ? '∞' : badge}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">${instBadge}${typBadge}</div>
+        <div style="font-size:11px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap">
+          <span>Einreichfrist: <strong style="color:var(--text)">${deadlineLabel}</strong></span>
+          ${f.sitzung && f.sitzung !== '–' ? `<span>Sitzung: ${f.sitzung}</span>` : ''}
+        </div>
+        ${f.hinweis ? `<div style="font-size:11px;color:var(--muted);margin-top:3px;font-style:italic">${f.hinweis}</div>` : ''}
+        <div style="margin-top:5px"><a href="${f.url}" target="_blank" style="font-size:10px;color:var(--accent2);text-decoration:none">↗ Mehr Info</a></div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+
+  // Disclaimer
+  html += `<div style="margin-top:1.5rem;padding:0.75rem;background:var(--surface);border-radius:4px;font-size:11px;color:var(--muted);line-height:1.6">
+    <strong style="color:var(--text)">Hinweis:</strong> Stand April 2026. Termine können sich ändern — vor Einreichung immer die offizielle Website der Förderung prüfen. Empfehlung: Beratungsgespräch 4–8 Wochen vor Einreichfrist anfragen.
+  </div>`;
+
+  container.innerHTML = html;
+}
+
+// Also add funding deadlines to the right panel
+function renderPanelFoerderung() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const limit = new Date(today); limit.setDate(limit.getDate() + 30);
+  const upcoming = FOERDERUNG
+    .filter(f => f.deadline !== '2099-01-01' && new Date(f.deadline) >= today && new Date(f.deadline) <= limit)
+    .sort((a,b) => new Date(a.deadline) - new Date(b.deadline))
+    .slice(0,6);
+
+  // inject into panel after deadlines section if there are any
+  const existing = document.getElementById('panel-foerderung-section');
+  if (!upcoming.length) { if (existing) existing.remove(); return; }
+
+  const col_map = INST_COLORS;
+  let html = '';
+  upcoming.forEach(f => {
+    const deadline = new Date(f.deadline);
+    const diff = Math.round((deadline - today) / 86400000);
+    const cls = diff <= 7 ? 'urgent' : diff <= 14 ? 'soon' : 'ok';
+    const col = col_map[f.institution] || { bg:'rgba(100,100,100,0.12)', text:'#888' };
+    html += `<div class="fest-item">
+      <div style="font-size:11.5px;font-weight:500;color:var(--text);line-height:1.3;margin-bottom:2px">${f.bereich.length > 50 ? f.bereich.slice(0,50)+'…' : f.bereich}</div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="background:${col.bg};color:${col.text};padding:1px 5px;border-radius:2px;font-size:9px">${f.institution}</span>
+        <span class="fest-deadline ${cls}" style="font-size:10px">${diff === 0 ? 'HEUTE' : diff + 'd'}</span>
+      </div>
+    </div>`;
+  });
+
+  if (existing) {
+    existing.innerHTML = `<div class="panel-heading">Förder-Deadlines <span class="panel-badge">30 Tage</span></div>${html}`;
+  } else {
+    const panel = document.querySelector('.panel');
+    const firstSection = panel.querySelector('.panel-section');
+    const newSection = document.createElement('div');
+    newSection.className = 'panel-section';
+    newSection.id = 'panel-foerderung-section';
+    newSection.innerHTML = `<div class="panel-heading">Förder-Deadlines <span class="panel-badge">30 Tage</span></div>${html}`;
+    panel.insertBefore(newSection, firstSection.nextSibling);
+  }
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+renderPanelDeadlines();
+renderPanelFoerderung();
+renderBoxOffice();
+loadAllFeeds();
+
+// Auto-refresh every 30 minutes
+setInterval(loadAllFeeds, 30 * 60 * 1000);
+</script>
+</body>
+</html>
