@@ -161,7 +161,8 @@
     </div>
     <div class="nav-group">
       <div class="nav-label">Sections</div>
-      <div class="nav-item" onclick="showTab('festivals')" id="nav-festivals">Festivals</div>
+      <div class="nav-item" onclick="showTab('festnews')" id="nav-festnews">Festival News <span class="nav-count" id="cnt-festnews">—</span></div>
+      <div class="nav-item" onclick="showTab('festivals')" id="nav-festivals">Festival Deadlines</div>
       <div class="nav-item" onclick="showTab('foerderung')" id="nav-foerderung">Förderung</div>
       <div class="nav-item" onclick="showTab('boxoffice')" id="nav-boxoffice">Box Office</div>
     </div>
@@ -232,6 +233,26 @@
       </div>
       <div class="feed-area" id="feed-industry"><div class="loading-state" id="loading-industry">
         <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+      </div></div>
+    </div>
+
+    <!-- FESTIVAL NEWS TAB -->
+    <div class="tab-content" id="tab-festnews">
+      <div class="section-bar">
+        <div class="section-title">Festival News</div>
+        <div class="section-meta">Daily · Lineups, winners, market news</div>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-pill active" onclick="setFilter('festnews','all',this)">All</button>
+        <button class="filter-pill" onclick="setFilter('festnews','variety_fest',this)">Variety</button>
+        <button class="filter-pill" onclick="setFilter('festnews','screen_fest',this)">Screen Daily</button>
+        <button class="filter-pill" onclick="setFilter('festnews','deadline_fest',this)">Deadline</button>
+        <button class="filter-pill" onclick="setFilter('festnews','indiewire_fest',this)">IndieWire</button>
+        <button class="filter-pill" onclick="setFilter('festnews','cineuropa_fest',this)">Cineuropa</button>
+      </div>
+      <div class="feed-area" id="feed-festnews"><div class="loading-state" id="loading-festnews">
+        <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
+        <div class="skel" style="height:14px;width:90%;margin-top:14px"></div><div class="skel" style="height:10px;width:50%;margin-top:4px"></div>
       </div></div>
     </div>
 
@@ -423,7 +444,7 @@ const FESTIVALS = [
 // ─── STATE ───────────────────────────────────────────────────────────────────
 let allArticles = [];
 let activeTab = 'news';
-let activeFilters = { news: 'all', german: 'all' };
+let activeFilters = { news: 'all', german: 'all', festnews: 'all' };
 let activePrio = 'all';
 let activeFestFilter = 'all';
 
@@ -473,9 +494,10 @@ async function loadAllFeeds() {
   renderFeed('german');
   renderFeed('awards');
   renderFeed('industry');
+  renderFeed('festnews');
   renderPanelKeywords();
 
-  ['news','german','awards','industry'].forEach(tab => {
+  ['news','german','awards','industry','festnews'].forEach(tab => {
     const el = document.getElementById('cnt-' + tab);
     if (el) el.textContent = allArticles.filter(a => a.tab === tab).length || '—';
   });
@@ -725,6 +747,7 @@ function showTab(tab) {
   activeTab = tab;
   if (tab === 'festivals') renderFestivals();
   if (tab === 'foerderung') { renderFoerderung(); loadFundingReport(); }
+  if (['news','german','awards','industry','festnews'].includes(tab)) renderFeed(tab);
 }
 
 function setFilter(tab, val, btn) {
@@ -750,7 +773,7 @@ function setPrio(val) {
   document.getElementById('prio-high').style.color = val === 'high' ? 'var(--accent)' : 'var(--muted)';
   document.getElementById('prio-high').style.borderLeft = val === 'high' ? '2px solid var(--accent)' : '2px solid transparent';
   document.getElementById('prio-high').style.background = val === 'high' ? 'var(--surface)' : '';
-  ['news','german','awards','industry'].forEach(t => renderFeed(t));
+  ['news','german','awards','industry','festnews'].forEach(t => renderFeed(t));
 }
 
 function refreshAll() {
