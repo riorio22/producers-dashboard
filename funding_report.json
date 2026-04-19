@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-04-18T08:09:31.078467+00:00",
-  "total_checked": 8,
+  "checked_at": "2026-04-19T09:08:08.135375+00:00",
+  "total_checked": 7,
   "changed_count": 1,
-  "error_count": 0,
+  "error_count": 1,
   "changed_pages": [
     {
       "institution": "FFF Bayern",
@@ -10,6 +10,11 @@
       "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "id": "fff_international",
+      "error": "The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+    }
+  ],
   "all_ok": false
 }
