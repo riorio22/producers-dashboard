@@ -6,7 +6,7 @@
     "hint": "Jurybasierte Förderung, Produktionsförderung, Kinderfilm, Koproduktionsfonds",
     "hash": "089cae99f2148d03",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:07:50.550586+00:00",
+    "checked_at": "2026-04-20T11:07:51.704234+00:00",
     "prev_hash": "089cae99f2148d03"
   },
   "fff_stoffe": {
@@ -14,10 +14,10 @@
     "label": "Stoffentwicklung",
     "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/",
     "hint": "Einreichfenster Langfilm & Serie",
-    "hash": "02eff02eadf180f1",
+    "hash": "2fd394ba91510052",
     "status": "CHANGED",
-    "checked_at": "2026-04-19T09:07:53.014322+00:00",
-    "prev_hash": "2fd394ba91510052"
+    "checked_at": "2026-04-20T11:07:53.605935+00:00",
+    "prev_hash": "02eff02eadf180f1"
   },
   "fff_produktion": {
     "institution": "FFF Bayern",
@@ -26,8 +26,18 @@
     "hint": "Einreichfenster Produktion",
     "hash": "44ce6098bdea0e58",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:07:54.722941+00:00",
+    "checked_at": "2026-04-20T11:07:55.308941+00:00",
     "prev_hash": "44ce6098bdea0e58"
+  },
+  "fff_international": {
+    "institution": "FFF Bayern",
+    "label": "Internationale Kinofilme & Serien",
+    "url": "https://www.fff-bayern.de/foerderbereiche/internationale-kinofilme-und-serien/",
+    "hint": "Jederzeit möglich",
+    "hash": "c05732c0be2e05b5",
+    "status": "first_check",
+    "checked_at": "2026-04-20T11:07:56.832960+00:00",
+    "prev_hash": ""
   },
   "nrw_termine": {
     "institution": "Filmstiftung NRW",
@@ -36,7 +46,7 @@
     "hint": "Produktion & Stoffentwicklung",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:08:01.177013+00:00",
+    "checked_at": "2026-04-20T11:07:59.160706+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "moin_foerderung": {
@@ -46,7 +56,7 @@
     "hint": "NEST, High End, Director's Cut",
     "hash": "d48e0ff4f0c2ade6",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:08:03.283764+00:00",
+    "checked_at": "2026-04-20T11:08:01.268653+00:00",
     "prev_hash": "d48e0ff4f0c2ade6"
   },
   "mfg_fristen": {
@@ -56,7 +66,7 @@
     "hint": "Stoffentwicklung & Produktion",
     "hash": "9971f034b64b1411",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:08:05.150469+00:00",
+    "checked_at": "2026-04-20T11:08:03.097603+00:00",
     "prev_hash": "9971f034b64b1411"
   },
   "medienboard_film": {
@@ -66,7 +76,7 @@
     "hint": "Stoff- & Projektentwicklung / Produktion",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-04-19T09:08:07.134842+00:00",
+    "checked_at": "2026-04-20T11:08:05.141833+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   }
 }
