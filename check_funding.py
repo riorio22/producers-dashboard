@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
 check_funding.py
-Fetches each funding institution's page, hashes the relevant content,
-and compares to the previous hash stored in funding_status.json.
-If anything changed, it flags it for manual review.
+Checks German film funding pages for deadline changes.
+
+Legal/ethical design principles:
+- Honest User-Agent identifying this as a personal bot
+- Checks robots.txt before fetching any page
+- Runs weekly (Mondays only) not daily — funding deadlines change monthly at most
+- 3-second crawl delay between requests to avoid server load
+- Fetches only the minimal public deadline pages, never paywalled content
+- Personal/non-commercial use only
 """
 
 import json
@@ -13,6 +19,26 @@ import time
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urlparse
+
+# ── Honest, identifiable User-Agent ──────────────────────────────────────────
+# Identifying as a bot is both honest and more legally defensible in Germany.
+# Anyone reading access logs can see what this is and why.
+BOT_NAME    = "ProducersDeskBot"
+BOT_VERSION = "1.0"
+BOT_CONTACT = "personal-dashboard-bot"   # replace with your email if you like
+USER_AGENT  = f"{BOT_NAME}/{BOT_VERSION} (personal media dashboard; non-commercial; {BOT_CONTACT})"
+
+HEADERS = {"User-Agent": USER_AGENT}
+
+# ── Crawl politeness ──────────────────────────────────────────────────────────
+CRAWL_DELAY_SECONDS = 3   # wait between each page fetch
+
+# ── Run schedule ─────────────────────────────────────────────────────────────
+# This script is called daily by GitHub Actions, but actually fetches pages
+# only on Mondays — reducing traffic by 6/7 while still catching monthly changes.
+RUN_ONLY_ON_WEEKDAY = 0   # 0 = Monday; set to None to run every day
 
 FUNDING_PAGES = [
     {
@@ -73,42 +99,51 @@ FUNDING_PAGES = [
     },
 ]
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; ProducersDeskBot/1.0; deadline-checker)"
-}
+DATE_RE = re.compile(
+    r'\b\d{1,2}\.\d{1,2}\.\d{4}\b'                     # 15.01.2026
+    r'|\b\d{4}-\d{2}-\d{2}\b'                           # 2026-01-15
+    r'|\b(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4}\b'
+    r'|\b(Einreichfrist|Deadline|Sitzung|Antragsfrist|Einreichfenster)\b',
+    re.IGNORECASE
+)
 
-# Patterns that suggest date content — we extract these to make
-# the hash sensitive to date changes but not to nav/cookie banners etc.
-DATE_PATTERNS = [
-    r'\b\d{1,2}\.\d{1,2}\.\d{4}\b',          # 15.01.2026
-    r'\b\d{4}-\d{2}-\d{2}\b',                 # 2026-01-15
-    r'\b(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4}\b',
-    r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',
-    r'\bEinreichfrist\b',
-    r'\bDeadline\b',
-    r'\bSitzung\b',
-    r'\bAntragsfrist\b',
-]
-DATE_RE = re.compile('|'.join(DATE_PATTERNS), re.IGNORECASE)
+# Cache robots.txt per domain so we only fetch it once per run
+_robots_cache: dict = {}
 
 
-def extract_date_content(html_bytes):
-    """Strip HTML tags, then extract only lines/sentences containing date-like content."""
+def is_allowed(url: str) -> bool:
+    """Return True if robots.txt permits our bot to fetch this URL."""
+    parsed = urlparse(url)
+    origin = f"{parsed.scheme}://{parsed.netloc}"
+    if origin not in _robots_cache:
+        rp = RobotFileParser()
+        robots_url = f"{origin}/robots.txt"
+        try:
+            rp.set_url(robots_url)
+            rp.read()
+            _robots_cache[origin] = rp
+            print(f"  ℹ  robots.txt read for {parsed.netloc}")
+        except Exception as e:
+            # If robots.txt can't be fetched, assume allowed (standard practice)
+            print(f"  ℹ  robots.txt not found for {parsed.netloc} — assuming allowed ({e})")
+            _robots_cache[origin] = None
+    rp = _robots_cache[origin]
+    if rp is None:
+        return True
+    allowed = rp.can_fetch(BOT_NAME, url)
+    if not allowed:
+        print(f"  ⛔  robots.txt DISALLOWS {url} for {BOT_NAME}")
+    return allowed
+
+
+def extract_date_content(html_bytes: bytes) -> str:
+    """Strip HTML, keep only lines containing date/deadline keywords."""
     text = html_bytes.decode("utf-8", errors="replace")
-    # Remove script/style blocks
     text = re.sub(r'<script[^>]*>.*?</script>', ' ', text, flags=re.DOTALL | re.IGNORECASE)
     text = re.sub(r'<style[^>]*>.*?</style>',  ' ', text, flags=re.DOTALL | re.IGNORECASE)
-    # Strip HTML tags
     text = re.sub(r'<[^>]+>', ' ', text)
-    # Normalise whitespace
     text = re.sub(r'\s+', ' ', text)
-
-    # Keep only sentences/fragments that contain date-related content
-    fragments = []
-    for sentence in re.split(r'[.!?\n]', text):
-        if DATE_RE.search(sentence):
-            fragments.append(sentence.strip())
-
+    fragments = [s.strip() for s in re.split(r'[.!?\n]', text) if DATE_RE.search(s)]
     return ' | '.join(fragments)
 
 
@@ -116,7 +151,7 @@ def hash_content(content: str) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()[:16]
 
 
-def load_previous(path="funding_status.json"):
+def load_previous(path="funding_status.json") -> dict:
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
@@ -124,18 +159,57 @@ def load_previous(path="funding_status.json"):
         return {}
 
 
+def should_run_today() -> bool:
+    if RUN_ONLY_ON_WEEKDAY is None:
+        return True
+    today = datetime.now(timezone.utc).weekday()
+    if today != RUN_ONLY_ON_WEEKDAY:
+        day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        print(f"  ℹ  Skipping fetch today ({day_names[today]}) — runs on {day_names[RUN_ONLY_ON_WEEKDAY]}s only.")
+        print(f"  ℹ  This reduces server traffic by ~85% vs daily crawling.")
+        return False
+    return True
+
+
 def main():
-    print(f"\n{'='*50}")
+    print(f"\n{'='*55}")
     print(f"check_funding.py — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
-    print(f"{'='*50}\n")
+    print(f"User-Agent: {USER_AGENT}")
+    print(f"{'='*55}\n")
 
     previous = load_previous()
-    results  = {}
-    changed  = []
-    errors   = []
+
+    # On non-run days, write a minimal status file so the dashboard
+    # knows when the last real check was, without fetching anything.
+    if not should_run_today():
+        last_check = previous.get("_meta", {}).get("last_full_check", "never")
+        report = {
+            "checked_at":    datetime.now(timezone.utc).isoformat(),
+            "skipped":       True,
+            "last_full_check": last_check,
+            "changed_count": 0,
+            "changed_pages": [],
+            "all_ok":        True,
+        }
+        with open("funding_report.json", "w", encoding="utf-8") as f:
+            json.dump(report, f, ensure_ascii=False, indent=2)
+        return
+
+    results = {}
+    changed = []
+    errors  = []
 
     for page in FUNDING_PAGES:
         pid = page["id"]
+
+        # 1. Check robots.txt first
+        if not is_allowed(page["url"]):
+            print(f"  ⛔  {page['institution']:20s}  {page['label']:40s}  SKIPPED (robots.txt)")
+            errors.append({"id": pid, "error": "disallowed by robots.txt"})
+            time.sleep(1)
+            continue
+
+        # 2. Fetch the page
         try:
             req = Request(page["url"], headers=HEADERS)
             with urlopen(req, timeout=20) as resp:
@@ -166,7 +240,6 @@ def main():
 
             icon = "🔴" if status == "CHANGED" else ("🟡" if status == "first_check" else "🟢")
             print(f"  {icon}  {page['institution']:20s}  {page['label']:40s}  {status}")
-            time.sleep(1)
 
         except URLError as e:
             print(f"  ✗  {page['institution']:20s}  {page['label']:40s}  URLError: {e.reason}")
@@ -175,35 +248,37 @@ def main():
             print(f"  ✗  {page['institution']:20s}  {page['label']:40s}  Error: {e}")
             errors.append({"id": pid, "error": str(e)})
 
-    # Write updated status
+        # 3. Polite crawl delay between each page
+        time.sleep(CRAWL_DELAY_SECONDS)
+
+    # Persist results
+    results["_meta"] = {"last_full_check": datetime.now(timezone.utc).isoformat()}
     with open("funding_status.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
-    # Write human-readable report
     report = {
-        "checked_at":     datetime.now(timezone.utc).isoformat(),
-        "total_checked":  len(results),
-        "changed_count":  len(changed),
-        "error_count":    len(errors),
-        "changed_pages":  [{"institution": p["institution"], "label": p["label"], "url": p["url"]} for p in changed],
-        "errors":         errors,
-        "all_ok":         len(changed) == 0 and len(errors) == 0,
+        "checked_at":      datetime.now(timezone.utc).isoformat(),
+        "skipped":         False,
+        "last_full_check": datetime.now(timezone.utc).isoformat(),
+        "total_checked":   len(results) - 1,   # exclude _meta
+        "changed_count":   len(changed),
+        "error_count":     len(errors),
+        "changed_pages":   [{"institution": p["institution"], "label": p["label"], "url": p["url"]} for p in changed],
+        "errors":          errors,
+        "all_ok":          len(changed) == 0 and len(errors) == 0,
     }
-
     with open("funding_report.json", "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    print(f"\n{'─'*50}")
+    print(f"\n{'─'*55}")
     if changed:
         print(f"⚠️  {len(changed)} page(s) CHANGED — review manually:")
         for p in changed:
             print(f"   → {p['institution']}: {p['url']}")
     else:
         print("✓  No changes detected.")
-
     if errors:
-        print(f"⚠️  {len(errors)} page(s) could not be fetched.")
-
+        print(f"⚠️  {len(errors)} page(s) had errors or were blocked by robots.txt.")
     print(f"✓  Results saved to funding_status.json + funding_report.json")
 
 

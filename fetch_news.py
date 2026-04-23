@@ -48,7 +48,7 @@ RSS_FEEDS = [
 ]
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; ProducersDeskBot/1.0; RSS reader)"
+    "User-Agent": "ProducersDeskBot/1.0 (personal media dashboard; RSS reader; non-commercial)"
 }
 
 NS = {
