@@ -1,8 +1,22 @@
 {
-  "checked_at": "2026-05-03T09:57:04.535611+00:00",
-  "skipped": true,
-  "last_full_check": "2026-04-27T12:08:55.416738+00:00",
-  "changed_count": 0,
-  "changed_pages": [],
-  "all_ok": true
+  "checked_at": "2026-05-04T12:12:26.735743+00:00",
+  "skipped": false,
+  "last_full_check": "2026-05-04T12:12:26.735750+00:00",
+  "total_checked": 8,
+  "changed_count": 2,
+  "error_count": 0,
+  "changed_pages": [
+    {
+      "institution": "FFF Bayern",
+      "label": "Stoffentwicklung",
+      "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
+    },
+    {
+      "institution": "FFF Bayern",
+      "label": "Produktion Kinofilm",
+      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
+    }
+  ],
+  "errors": [],
+  "all_ok": false
 }
