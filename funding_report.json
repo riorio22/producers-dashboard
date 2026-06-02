@@ -1,22 +1,8 @@
 {
-  "checked_at": "2026-06-01T11:32:56.544915+00:00",
-  "skipped": false,
-  "last_full_check": "2026-06-01T11:32:56.544921+00:00",
-  "total_checked": 8,
-  "changed_count": 2,
-  "error_count": 0,
-  "changed_pages": [
-    {
-      "institution": "FFF Bayern",
-      "label": "Produktion Kinofilm",
-      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
-    },
-    {
-      "institution": "FFF Bayern",
-      "label": "Internationale Kinofilme & Serien",
-      "url": "https://www.fff-bayern.de/foerderbereiche/internationale-kinofilme-und-serien/"
-    }
-  ],
-  "errors": [],
-  "all_ok": false
+  "checked_at": "2026-06-02T10:22:39.423054+00:00",
+  "skipped": true,
+  "last_full_check": "2026-06-01T11:32:56.544528+00:00",
+  "changed_count": 0,
+  "changed_pages": [],
+  "all_ok": true
 }
