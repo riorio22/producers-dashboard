@@ -6,7 +6,7 @@
     "hint": "Jurybasierte Förderung, Produktionsförderung, Kinderfilm, Koproduktionsfonds",
     "hash": "1e396f6771cd216b",
     "status": "unchanged",
-    "checked_at": "2026-06-08T10:53:00.920287+00:00",
+    "checked_at": "2026-06-15T12:11:57.885875+00:00",
     "prev_hash": "1e396f6771cd216b"
   },
   "fff_stoffe": {
@@ -14,9 +14,9 @@
     "label": "Stoffentwicklung",
     "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/",
     "hint": "Einreichfenster Langfilm & Serie",
-    "hash": "1c63211f204302bb",
-    "status": "unchanged",
-    "checked_at": "2026-06-08T10:53:05.712539+00:00",
+    "hash": "630cfe9137ef01cf",
+    "status": "CHANGED",
+    "checked_at": "2026-06-15T12:12:03.108566+00:00",
     "prev_hash": "1c63211f204302bb"
   },
   "fff_produktion": {
@@ -24,10 +24,20 @@
     "label": "Produktion Kinofilm",
     "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/",
     "hint": "Einreichfenster Produktion",
-    "hash": "3c423f7cc9e143eb",
+    "hash": "1167410f019f9071",
     "status": "CHANGED",
-    "checked_at": "2026-06-08T10:53:09.309481+00:00",
-    "prev_hash": "1167410f019f9071"
+    "checked_at": "2026-06-15T12:12:07.478640+00:00",
+    "prev_hash": "3c423f7cc9e143eb"
+  },
+  "fff_international": {
+    "institution": "FFF Bayern",
+    "label": "Internationale Kinofilme & Serien",
+    "url": "https://www.fff-bayern.de/foerderbereiche/internationale-kinofilme-und-serien/",
+    "hint": "Jederzeit möglich",
+    "hash": "65d7bbc0f1a5178e",
+    "status": "first_check",
+    "checked_at": "2026-06-15T12:12:11.407795+00:00",
+    "prev_hash": ""
   },
   "nrw_termine": {
     "institution": "Filmstiftung NRW",
@@ -36,7 +46,7 @@
     "hint": "Produktion & Stoffentwicklung",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-06-08T10:53:21.284358+00:00",
+    "checked_at": "2026-06-15T12:12:16.960196+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "moin_foerderung": {
@@ -46,7 +56,7 @@
     "hint": "NEST, High End, Director's Cut",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-06-08T10:53:26.082151+00:00",
+    "checked_at": "2026-06-15T12:12:21.995575+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "mfg_fristen": {
@@ -55,9 +65,9 @@
     "url": "https://www.mfg.de/service/einreichfristen/",
     "hint": "Stoffentwicklung & Produktion",
     "hash": "b7e34fcb08272b9f",
-    "status": "CHANGED",
-    "checked_at": "2026-06-08T10:53:30.470534+00:00",
-    "prev_hash": "f73aecf1b92e0464"
+    "status": "unchanged",
+    "checked_at": "2026-06-15T12:12:26.466673+00:00",
+    "prev_hash": "b7e34fcb08272b9f"
   },
   "medienboard_film": {
     "institution": "Medienboard BB",
@@ -66,10 +76,10 @@
     "hint": "Stoff- & Projektentwicklung / Produktion",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-06-08T10:53:35.669278+00:00",
+    "checked_at": "2026-06-15T12:12:31.124876+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "_meta": {
-    "last_full_check": "2026-06-08T10:53:38.669428+00:00"
+    "last_full_check": "2026-06-15T12:12:34.125026+00:00"
   }
 }
