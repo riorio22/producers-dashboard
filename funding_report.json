@@ -1,36 +1,8 @@
 {
-  "checked_at": "2026-06-22T11:53:02.347486+00:00",
-  "skipped": false,
-  "last_full_check": "2026-06-22T11:53:02.347489+00:00",
-  "total_checked": 6,
-  "changed_count": 3,
-  "error_count": 2,
-  "changed_pages": [
-    {
-      "institution": "FFA",
-      "label": "Einreich- & Sitzungstermine 2026",
-      "url": "https://www.ffa.de/einreich-sitzungstermine.html"
-    },
-    {
-      "institution": "FFF Bayern",
-      "label": "Stoffentwicklung",
-      "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
-    },
-    {
-      "institution": "MFG BW",
-      "label": "Einreichfristen",
-      "url": "https://www.mfg.de/service/einreichfristen/"
-    }
-  ],
-  "errors": [
-    {
-      "id": "fff_produktion",
-      "error": "The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
-    },
-    {
-      "id": "fff_international",
-      "error": "The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
-    }
-  ],
-  "all_ok": false
+  "checked_at": "2026-06-23T09:37:11.846238+00:00",
+  "skipped": true,
+  "last_full_check": "2026-06-22T11:53:02.347157+00:00",
+  "changed_count": 0,
+  "changed_pages": [],
+  "all_ok": true
 }
