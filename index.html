@@ -267,21 +267,27 @@
       </div>
       <div class="feed-area" id="feed-awards"><div class="loading-state" id="loading-awards">
         <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
-      </div></div>
-    </div>
+      </div>
 
     <!-- INDUSTRY TAB -->
     <div class="tab-content" id="tab-industry">
       <div class="section-bar">
         <div class="section-title">Industry & Funding</div>
-        <div class="section-meta">Daily · Production, Distribution, Streaming</div>
+        <div class="section-meta">Daily · Screen Daily</div>
+      </div>
+      <div class="filter-bar" id="filter-industry">
+        <button class="filter-pill active" onclick="setFilter('industry','all',this)">All</button>
+        <button class="filter-pill" onclick="setFilter('industry','screen_main',this)">News</button>
+        <button class="filter-pill" onclick="setFilter('industry','screen_prod',this)">Production</button>
+        <button class="filter-pill" onclick="setFilter('industry','screen_distrib',this)">Distribution</button>
+        <button class="filter-pill" onclick="setFilter('industry','screen_fund',this)">Funding</button>
+        <button class="filter-pill" onclick="setFilter('industry','screen_stream',this)">Streaming</button>
       </div>
       <div class="feed-area" id="feed-industry"><div class="loading-state" id="loading-industry">
         <div class="skel" style="height:14px;width:80%"></div><div class="skel" style="height:10px;width:40%;margin-top:4px"></div>
       </div></div>
-    </div>
-
-    <!-- FESTIVALS TAB -->
+    </div></div>
+    </div><!-- FESTIVALS TAB -->
     <div class="tab-content" id="tab-festivals">
       <div class="section-bar">
         <div class="section-title">Festival Deadlines</div>
@@ -383,76 +389,103 @@ const KEYWORDS_MED = [
 ];
 
 const RSS_FEEDS = [
-  { id:'variety_film', name:'Variety', url:'https://variety.com/v/film/feed/', category:'news', tab:'news' },
-  { id:'variety_tv', name:'Variety TV', url:'https://variety.com/v/tv/feed/', category:'news', tab:'news' },
-  { id:'variety_cont', name:'Variety Contenders', url:'https://variety.com/e/contenders/feed/', category:'awards', tab:'awards' },
-  { id:'deadline_film', name:'Deadline', url:'https://deadline.com/v/film/feed/', category:'news', tab:'news' },
-  { id:'deadline_tv', name:'Deadline TV', url:'https://deadline.com/v/tv/feed/', category:'news', tab:'news' },
-  { id:'thr_film', name:'THR', url:'https://www.hollywoodreporter.com/c/movies/feed/', category:'news', tab:'news' },
-  { id:'thr_tv', name:'THR TV', url:'https://www.hollywoodreporter.com/c/tv/feed/', category:'news', tab:'news' },
-  { id:'thr_awards', name:'THR Awards', url:'https://www.hollywoodreporter.com/t/awards/feed/', category:'awards', tab:'awards' },
-  { id:'indiewire_film', name:'IndieWire', url:'https://www.indiewire.com/t/film/feed/', category:'news', tab:'news' },
-  { id:'indiewire_tv', name:'IndieWire TV', url:'https://www.indiewire.com/t/tv/feed/', category:'news', tab:'news' },
-  { id:'indiewire_awards', name:'IndieWire Awards', url:'https://www.indiewire.com/c/awards/feed/', category:'awards', tab:'awards' },
-  { id:'screen_prod', name:'Screen Daily', url:'https://www.screendaily.com/rss/news.asp', category:'industry', tab:'industry' },
-  { id:'cineuropa', name:'Cineuropa', url:'https://cineuropa.org/rss/en/', category:'german', tab:'german' },
+  { id:'variety_film',    name:'Variety',            url:'https://variety.com/v/film/feed/',                       category:'news',    tab:'news' },
+  { id:'variety_tv',      name:'Variety TV',          url:'https://variety.com/v/tv/feed/',                         category:'news',    tab:'news' },
+  { id:'variety_cont',    name:'Variety Contenders',  url:'https://variety.com/e/contenders/feed/',                 category:'awards',  tab:'awards' },
+  { id:'deadline_film',   name:'Deadline',            url:'https://deadline.com/v/film/feed/',                      category:'news',    tab:'news' },
+  { id:'deadline_tv',     name:'Deadline TV',         url:'https://deadline.com/v/tv/feed/',                        category:'news',    tab:'news' },
+  { id:'thr_film',        name:'THR',                 url:'https://www.hollywoodreporter.com/c/movies/feed/',        category:'news',    tab:'news' },
+  { id:'thr_tv',          name:'THR TV',              url:'https://www.hollywoodreporter.com/c/tv/feed/',            category:'news',    tab:'news' },
+  { id:'thr_awards',      name:'THR Awards',          url:'https://www.hollywoodreporter.com/t/awards/feed/',        category:'awards',  tab:'awards' },
+  { id:'indiewire_film',  name:'IndieWire',           url:'https://www.indiewire.com/t/film/feed/',                  category:'news',    tab:'news' },
+  { id:'indiewire_tv',    name:'IndieWire TV',        url:'https://www.indiewire.com/t/tv/feed/',                   category:'news',    tab:'news' },
+  { id:'indiewire_awards',name:'IndieWire Awards',    url:'https://www.indiewire.com/c/awards/feed/',               category:'awards',  tab:'awards' },
+  { id:'screen_main',     name:'Screen Daily',        url:'https://www.screendaily.com/45202.rss',                  category:'industry',tab:'industry' },
+  { id:'screen_prod',     name:'Screen Production',   url:'https://www.screendaily.com/rss/production.rss',         category:'industry',tab:'industry' },
+  { id:'screen_distrib',  name:'Screen Distribution', url:'https://www.screendaily.com/rss/distribution.rss',       category:'industry',tab:'industry' },
+  { id:'screen_fund',     name:'Screen Funding',      url:'https://www.screendaily.com/rss/funding.rss',            category:'industry',tab:'industry' },
+  { id:'screen_stream',   name:'Screen Streaming',    url:'https://www.screendaily.com/rss/streaming.rss',          category:'industry',tab:'industry' },
+  { id:'cineuropa',       name:'Cineuropa',           url:'https://cineuropa.org/rss/en/',                          category:'german',  tab:'german' },
+  { id:'dwdl_all',        name:'DWDL',                url:'https://www.dwdl.de/rss/allethemen.xml',                 category:'german',  tab:'german' },
+  { id:'dwdl_nachrichten',name:'DWDL Nachrichten',    url:'https://www.dwdl.de/rss/nachrichten.xml',                category:'german',  tab:'german' },
+  { id:'dwdl_magazin',    name:'DWDL Magazin',        url:'https://www.dwdl.de/rss/magazin.xml',                    category:'german',  tab:'german' },
+  { id:'dwdl_interviews', name:'DWDL Interviews',     url:'https://www.dwdl.de/rss/interviews.xml',                 category:'german',  tab:'german' },
 ];
 
 const FESTIVALS = [
-  { name:'Berlinale', deadline:'2025-11-05', festDate:'12.–22.02.2026', oscar:true, efa:true, ffa:true },
-  { name:'Locarno Film Festival', deadline:'2026-04-23', festDate:'05.–15.08.2026', oscar:true, efa:true, ffa:true },
-  { name:'TIFF – Toronto', deadline:'2026-05-08', festDate:'10.–20.09.2026', oscar:true, ffa:true },
-  { name:'Sundance Film Festival', deadline:'2025-09-23', festDate:'22.01.–01.02.2026', oscar:true, ffa:true },
-  { name:'Tribeca Film Festival', deadline:'2026-02-04', festDate:'03.–14.06.2026', oscar:true },
-  { name:'SXSW Austin', deadline:'2025-10-01', festDate:'12.–18.03.2026', oscar:true, ffa:true },
-  { name:'Cannes – Quinzaine', deadline:'2026-03-13', festDate:'13.–23.05.2026', oscar:true, ffa:true },
-  { name:'Cannes – La Cinef', deadline:'2026-02-15', festDate:'12.–23.05.2026', oscar:true, ffa:true },
-  { name:'Venice – Orizzonti Shorts', deadline:'2025-05-31', festDate:'27.08.–06.09.2025', oscar:true, efa:true, ffa:true },
-  { name:'Hot Docs Toronto', deadline:'2026-01-08', festDate:'23.04.–03.05.2026', oscar:true },
-  { name:'IDFA Amsterdam', deadline:'2026-07-10', festDate:'12.–22.11.2026', oscar:true, ffa:true },
+  // ─── Past/Winter 2025 ───────────────────────────────────────────────────────
+  { name:'Interfilm / KUKI Berlin', deadline:'2025-05-28', festDate:'02.–09.11.2025', oscar:true, ffa:true },
   { name:'DOK Leipzig', deadline:'2025-07-01', festDate:'27.10.–02.11.2025', oscar:true, ffa:true },
-  { name:'Sheffield Doc/Fest', deadline:'2026-02-20', festDate:'10.–15.06.2026', oscar:true },
-  { name:'Clermont-Ferrand', deadline:'2025-07-25', festDate:'30.01.–07.02.2026', oscar:true, efa:true, ffa:true },
-  { name:'Krakow Film Festival', deadline:'2026-01-31', festDate:'31.05.–07.06.2026', oscar:true, efa:true, ffa:true },
-  { name:'Palm Springs ShortFest', deadline:'2026-02-07', festDate:'23.–29.06.2026', oscar:true, ffa:true },
-  { name:'Rotterdam IFFR', deadline:'2025-09-20', festDate:'29.01.–08.02.2026', efa:true, ffa:true },
-  { name:'Visions du Réel Nyon', deadline:'2025-12-15', festDate:'17.–26.04.2026', oscar:true, ffa:true },
-  { name:'Tampere Film Festival', deadline:'2025-11-03', festDate:'04.–08.03.2026', oscar:true, efa:true, ffa:true },
-  { name:'Go Short Nijmegen', deadline:'2025-12-15', festDate:'07.–12.04.2026', oscar:true, efa:true },
-  { name:'Brussels Short Film Fest', deadline:'2026-01-31', festDate:'23.04.–02.05.2026', oscar:true },
-  { name:'CPH:DOX Copenhagen', deadline:'2025-11-01', festDate:'11.–22.03.2026', ffa:true },
-  { name:'Filmfestival Max Ophüls Preis', deadline:'2025-10-31', festDate:'19.–25.01.2026', ffa:true },
-  { name:'Dok.fest München', deadline:'2025-12-15', festDate:'06.–17.05.2026', ffa:true },
-  { name:'Fünf Seen Film Festival', deadline:'2026-03-31', festDate:'03.–13.09.2026', efa:true, ffa:true },
-  { name:'AFI Fest Los Angeles', deadline:'2026-03-01', festDate:'21.–25.10.2026', oscar:true },
-  { name:'Filmfest Dresden', deadline:'2025-12-01', festDate:'14.–19.04.2026', ffa:true },
-  { name:'Annecy Animation Festival', deadline:'2026-03-15', festDate:'21.–27.06.2026', oscar:true, ffa:true },
-  { name:'Trickfilmfestival Stuttgart', deadline:'2025-11-15', festDate:'05.–10.05.2026', oscar:true, ffa:true },
-  { name:'Slamdance Film Festival', deadline:'2025-10-13', festDate:'19.–25.02.2026', oscar:true },
-  { name:'Flickerfest Australien', deadline:'2025-10-15', festDate:'16.–25.01.2026', oscar:true, ffa:true },
-  { name:'Ann Arbor Film Festival', deadline:'2025-09-30', festDate:'24.–29.03.2026', oscar:true, ffa:true },
-  { name:'Odense Film Festival', deadline:'2026-03-18', festDate:'24.–30.08.2026', oscar:true, efa:true },
-  { name:'VIS Vienna Independent Shorts', deadline:'2026-01-31', festDate:'26.–31.05.2026', oscar:true, efa:true },
-  { name:'San Francisco IFF', deadline:'2025-12-10', festDate:'23.04.–03.05.2026', oscar:true },
-  { name:'Atlanta Film Festival', deadline:'2025-11-07', festDate:'23.04.–03.05.2026', oscar:true },
-  { name:'Montreal FNC', deadline:'2026-05-14', festDate:'07.–18.10.2026', oscar:true, ffa:true },
-  { name:'Encounters Bristol', deadline:'2026-05-18', festDate:'23.–27.09.2026', efa:true, ffa:true },
-  { name:'Doclisboa', deadline:'2026-05-31', festDate:'15.–25.10.2026', oscar:true },
-  { name:'IDFF Jihlava', deadline:'2026-06-30', festDate:'23.10.–01.11.2026', oscar:true },
-  { name:'Docfest NY (DOC NYC)', deadline:'2026-06-18', festDate:'11.–29.11.2026', oscar:true },
-  { name:'Chicago International FF', deadline:'2026-06-30', festDate:'14.–25.10.2026', oscar:true },
-  { name:'Durban International FF', deadline:'2026-02-27', festDate:'23.07.–02.08.2026', oscar:true },
-  { name:'Göteborgs Film Festival', deadline:'2025-10-24', festDate:'24.01.–02.02.2026', oscar:true },
-  { name:'Interfilm / KUKI Berlin', deadline:'2025-05-28', festDate:'02.–09.11.2025', ffa:true, oscar:true },
   { name:'Leeds International FF', deadline:'2025-07-31', festDate:'30.10.–16.11.2025', oscar:true },
   { name:'Black Nights Tallinn (PÖFF)', deadline:'2025-08-08', festDate:'01.–19.11.2025', oscar:true, efa:true },
+  { name:'Clermont-Ferrand', deadline:'2025-07-25', festDate:'30.01.–07.02.2026', oscar:true, efa:true, ffa:true },
+  { name:'Ann Arbor Film Festival', deadline:'2025-09-30', festDate:'24.–29.03.2026', oscar:true, ffa:true },
+  { name:'Rotterdam IFFR', deadline:'2025-09-20', festDate:'29.01.–08.02.2026', efa:true, ffa:true },
+  { name:'SXSW Austin', deadline:'2025-10-01', festDate:'12.–18.03.2026', oscar:true, ffa:true },
+  { name:'Slamdance Film Festival', deadline:'2025-10-13', festDate:'19.–25.02.2026', oscar:true },
+  { name:'Flickerfest Australien', deadline:'2025-10-15', festDate:'16.–25.01.2026', oscar:true, ffa:true },
+  { name:'Göteborg Film Festival', deadline:'2025-10-24', festDate:'24.01.–02.02.2026', oscar:true },
+  { name:'Filmfestival Max Ophüls Preis', deadline:'2025-10-31', festDate:'19.–25.01.2026', ffa:true },
+  { name:'CPH:DOX Copenhagen', deadline:'2025-11-01', festDate:'11.–22.03.2026', ffa:true },
+  { name:'Tampere Film Festival', deadline:'2025-11-03', festDate:'04.–08.03.2026', oscar:true, efa:true, ffa:true },
+  { name:'Berlinale', deadline:'2025-11-05', festDate:'12.–22.02.2026', oscar:true, efa:true, ffa:true },
+  { name:'Trickfilmfestival Stuttgart', deadline:'2025-11-15', festDate:'05.–10.05.2026', oscar:true, ffa:true },
+  { name:'It's All True Documentary Festival', deadline:'2025-11-30', festDate:'09.–19.05.2026', oscar:true },
+  { name:'Filmfest Dresden', deadline:'2025-12-01', festDate:'14.–19.04.2026', ffa:true },
+  { name:'Riga Short Film Festival 2Annas', deadline:'2025-12-01', festDate:'10.–16.04.2026', efa:true },
+  { name:'AmDocs Palm Springs', deadline:'2025-12-14', festDate:'25.–29.03.2026', oscar:true },
+  { name:'Goldener Spatz Kinderfilmfest', deadline:'2025-12-15', festDate:'07.–13.06.2026', ffa:true },
+  { name:'Visions du Réel Nyon', deadline:'2025-12-15', festDate:'17.–26.04.2026', oscar:true, ffa:true },
+  { name:'Go Short Nijmegen', deadline:'2025-12-15', festDate:'07.–12.04.2026', oscar:true, efa:true },
+  { name:'Dok.fest München', deadline:'2025-12-15', festDate:'06.–17.05.2026', ffa:true },
+  { name:'DocAviv Tel Aviv', deadline:'2025-12-20', festDate:'22.–31.05.2026', oscar:true },
+  { name:'Hong Kong International FF', deadline:'2025-12-31', festDate:'01.–12.04.2026', oscar:true, ffa:true },
+  // ─── January 2026 ────────────────────────────────────────────────────────────
+  { name:'Busan International Short FF', deadline:'2026-01-05', festDate:'24.–29.04.2026', oscar:true },
+  { name:'Hot Docs Toronto', deadline:'2026-01-08', festDate:'23.04.–03.05.2026', oscar:true },
+  { name:'Short Shorts Film Festival Tokyo', deadline:'2026-01-12', festDate:'25.05.–10.06.2026', oscar:true },
+  { name:'Internationale Kurzfilmtage Oberhausen', deadline:'2026-01-19', festDate:'28.04.–03.05.2026', oscar:true, ffa:true },
+  { name:'Sundance Film Festival', deadline:'2025-09-23', festDate:'22.01.–01.02.2026', oscar:true, ffa:true },
+  { name:'Brussels Short Film Festival', deadline:'2026-01-31', festDate:'23.04.–02.05.2026', oscar:true },
+  { name:'VIS Vienna Independent Shorts', deadline:'2026-01-31', festDate:'26.–31.05.2026', oscar:true, efa:true },
+  { name:'Krakow Film Festival', deadline:'2026-01-31', festDate:'31.05.–07.06.2026', oscar:true, efa:true, ffa:true },
+  // ─── February 2026 ───────────────────────────────────────────────────────────
+  { name:'Cannes – La Cinef', deadline:'2026-02-15', festDate:'12.–23.05.2026', oscar:true, ffa:true },
+  { name:'Norwegian Short Film Festival', deadline:'2026-02-15', festDate:'10.–14.06.2026', oscar:true },
+  { name:'Melbourne International FF', deadline:'2026-02-12', festDate:'06.–23.08.2026', oscar:true },
+  { name:'Tribeca Film Festival', deadline:'2026-02-04', festDate:'03.–14.06.2026', oscar:true },
+  { name:'Palm Springs ShortFest', deadline:'2026-02-07', festDate:'23.–29.06.2026', oscar:true, ffa:true },
+  { name:'Sheffield Doc/Fest', deadline:'2026-02-20', festDate:'10.–15.06.2026', oscar:true },
+  { name:'Durban International FF', deadline:'2026-02-27', festDate:'23.07.–02.08.2026', oscar:true },
+  // ─── March 2026 ──────────────────────────────────────────────────────────────
+  { name:'AFI Fest Los Angeles', deadline:'2026-03-01', festDate:'21.–25.10.2026', oscar:true },
+  { name:'Cannes – Quinzaine', deadline:'2026-03-13', festDate:'13.–23.05.2026', oscar:true, ffa:true },
+  { name:'Cannes – Semaine de la Critique', deadline:'2026-03-13', festDate:'12.–23.05.2026', ffa:true },
+  { name:'Annecy Animation Festival', deadline:'2026-03-15', festDate:'21.–27.06.2026', oscar:true, ffa:true },
+  { name:'Odense Film Festival', deadline:'2026-03-18', festDate:'24.–30.08.2026', oscar:true, efa:true },
+  { name:'Fünf Seen Film Festival', deadline:'2026-03-31', festDate:'03.–13.09.2026', efa:true, ffa:true },
+  // ─── April 2026 ──────────────────────────────────────────────────────────────
+  { name:'Guanajuato International FF', deadline:'2026-04-01', festDate:'24.07.–02.08.2026', oscar:true, ffa:true },
+  { name:'Locarno Film Festival', deadline:'2026-04-23', festDate:'05.–15.08.2026', oscar:true, efa:true, ffa:true },
   { name:'Curtas Vila do Conde', deadline:'2026-04-30', festDate:'17.–26.07.2026', oscar:true, ffa:true },
-];
+  // ─── May 2026 ────────────────────────────────────────────────────────────────
+  { name:'Camden International FF', deadline:'2026-05-11', festDate:'17.–20.09.2026', oscar:true },
+  { name:'TIFF – Toronto', deadline:'2026-05-08', festDate:'10.–20.09.2026', oscar:true, ffa:true },
+  { name:'Encounters Bristol', deadline:'2026-05-18', festDate:'23.–27.09.2026', efa:true, ffa:true },
+  { name:'Doclisboa', deadline:'2026-05-31', festDate:'15.–25.10.2026', oscar:true },
+  { name:'Atlanta Film Festival', deadline:'2026-09-12', festDate:'23.04.–03.05.2026', oscar:true },
+  // ─── June 2026 ───────────────────────────────────────────────────────────────
+  { name:'Filmfest Hamburg', deadline:'2026-06-08', festDate:'25.09.–04.10.2026', efa:true, ffa:true },
+  { name:'DOC NYC (Docfest NY)', deadline:'2026-06-18', festDate:'11.–29.11.2026', oscar:true },
+  { name:'IDFF Jihlava', deadline:'2026-06-30', festDate:'23.10.–01.11.2026', oscar:true },
+  { name:'Chicago International FF', deadline:'2026-06-30', festDate:'14.–25.10.2026', oscar:true },
+  // ─── July 2026 ───────────────────────────────────────────────────────────────
+  { name:'IDFA Amsterdam', deadline:'2026-07-10', festDate:'12.–22.11.2026', oscar:true, ffa:true }];
 
 // ─── STATE ───────────────────────────────────────────────────────────────────
 let allArticles = [];
 let activeTab = 'news';
-let activeFilters = { news: 'all', german: 'all' };
+let activeFilters = { news: 'all', german: 'all', awards: 'all', industry: 'all' };
 let activePrio = 'all';
 let activeFestFilter = 'all';
 
@@ -536,6 +569,7 @@ async function loadAllFeeds() {
   renderFeed('news');
   renderFeed('german');
   renderFeed('awards');
+  renderFeed('industry');
   renderFeed('industry');
 
   const now = new Date();
@@ -662,8 +696,7 @@ function renderFestivals() {
       const badges = [
         f.oscar ? '<span class="fest-badge oscar">Oscar QFF</span>' : '',
         f.efa ? '<span class="fest-badge efa">EFA</span>' : '',
-        f.ffa ? '<span class="fest-badge" style="background:rgba(106,158,122,0.15);color:var(--green)">FFA</span>' : '',
-      ].filter(Boolean).join(' ');
+        f.ffa ? '<span class="fest-badge" style="background:rgba(106,158,122,0.15);color:var(--green)">FFA</span>' : ''].filter(Boolean).join(' ');
 
       const fid = 'fest-' + f.name.replace(/\W+/g,'-').toLowerCase().slice(0,28);
       html += `<div class="fest-item" id="${fid}">
@@ -764,22 +797,21 @@ const FOERDERUNG = [
   { institution:'Filmstiftung NRW', bereich:'Produktion, Verleih, vorbereitende Förderarten inkl. Serienpilot', typ:'Produktion Langfilm / Serie', deadline:'2026-11-19', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
   { institution:'Filmstiftung NRW', bereich:'Drehbuch & Projektentwicklung Kinofilm / Fernsehfilm / Serie', typ:'Stoffentwicklung', deadline:'2026-11-19', sitzung:'tba', hinweis:'⚠ Beratungsgespräch min. 1 Woche vorher erforderlich', url:'https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/' },
   // MOIN Hamburg/SH
-  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-04-21', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-04-27', sitzung:'–', hinweis:'Ersetzt Treatments, Drehbücher, Ideen & Konzepte', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-05-05', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-08-17', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-08-25', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-09-15', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:'NEST – Development (Spielfilm, Serie, Doku, Innovatives)', typ:'Stoffentwicklung', deadline:'2026-10-12', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:'High End – Spielfilm & Serie > 2,5 Mio. € / Doku > 1,5 Mio. €', typ:'Produktion Langfilm / Serie', deadline:'2026-10-27', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
-  { institution:'MOIN Hamburg/SH', bereich:"Director's Cut – Spielfilm & Serie < 2,5 Mio. € / Doku < 1,5 Mio. €", typ:'Produktion Langfilm / Serie', deadline:'2026-11-03', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – High End', typ:'Produktion Langfilm / Serie', deadline:'2026-04-21', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – NEST Development', typ:'Stoffentwicklung', deadline:'2026-04-27', sitzung:'–', hinweis:'Ersetzt Treatments, Drehbücher, Ideen & Konzepte', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – Director\'s Cut', typ:'Produktion Langfilm / Serie', deadline:'2026-05-05', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – NEST Development', typ:'Stoffentwicklung', deadline:'2026-08-17', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – High End', typ:'Produktion Langfilm / Serie', deadline:'2026-08-25', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – Director\'s Cut', typ:'Produktion Langfilm / Serie', deadline:'2026-09-15', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – NEST Development', typ:'Stoffentwicklung', deadline:'2026-10-12', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – High End', typ:'Produktion Langfilm / Serie', deadline:'2026-10-27', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
+  { institution:'MOIN Hamburg/SH', bereich:'MOIN – Director\'s Cut', typ:'Produktion Langfilm / Serie', deadline:'2026-11-03', sitzung:'–', hinweis:'', url:'https://moin-filmfoerderung.de/foerderung' },
   // MFG BW
   { institution:'MFG BW', bereich:'Stoffentwicklung / Drehbuchförderung (Spielfilm, fiktionale Stoffe)', typ:'Stoffentwicklung', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'Bisher nur ein Termin 2026 veröffentlicht', url:'https://www.mfg.de/service/einreichfristen/' },
   { institution:'MFG BW', bereich:'Produktion (Kino- & Fernsehfilm)', typ:'Produktion Langfilm', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'', url:'https://www.mfg.de/service/einreichfristen/' },
   { institution:'MFG BW', bereich:'Produktionsvorbereitung', typ:'Produktion Langfilm', deadline:'2026-06-30', sitzung:'24.09.2026', hinweis:'Vorbereitende Maßnahmen', url:'https://www.mfg.de/service/einreichfristen/' },
   // Medienboard BB
-  { institution:'Medienboard BB', bereich:'Stoff- & Projektentwicklung / Produktion Kinofilm / Highend Serien', typ:'Stoffentwicklung / Produktion / Serie', deadline:'2026-05-05', deadlineDisplay:'tba (Sitzung 05.05.2026)', sitzung:'05.05.2026', hinweis:'⚠ Antragsdeadline noch nicht veröffentlicht · Antragsgespräch vorab zwingend', url:'https://www.medienboard.de/foerderung/film' },
-];
+  { institution:'Medienboard BB', bereich:'Stoff- & Projektentwicklung / Produktion Kinofilm / Highend Serien', typ:'Stoffentwicklung / Produktion / Serie', deadline:'2026-05-05', deadlineDisplay:'tba (Sitzung 05.05.2026)', sitzung:'05.05.2026', hinweis:'⚠ Antragsdeadline noch nicht veröffentlicht · Antragsgespräch vorab zwingend', url:'https://www.medienboard.de/foerderung/film' }];
 
 // Institution color map
 const INST_COLORS = {
