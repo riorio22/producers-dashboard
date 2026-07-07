@@ -1,27 +1,8 @@
 {
-  "checked_at": "2026-07-06T10:19:56.161926+00:00",
-  "skipped": false,
-  "last_full_check": "2026-07-06T10:19:56.161934+00:00",
-  "total_checked": 8,
-  "changed_count": 3,
-  "error_count": 0,
-  "changed_pages": [
-    {
-      "institution": "FFA",
-      "label": "Einreich- & Sitzungstermine 2026",
-      "url": "https://www.ffa.de/einreich-sitzungstermine.html"
-    },
-    {
-      "institution": "FFF Bayern",
-      "label": "Stoffentwicklung",
-      "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
-    },
-    {
-      "institution": "MFG BW",
-      "label": "Einreichfristen",
-      "url": "https://www.mfg.de/service/einreichfristen/"
-    }
-  ],
-  "errors": [],
-  "all_ok": false
+  "checked_at": "2026-07-07T09:39:11.338232+00:00",
+  "skipped": true,
+  "last_full_check": "2026-07-06T10:19:56.161526+00:00",
+  "changed_count": 0,
+  "changed_pages": [],
+  "all_ok": true
 }
