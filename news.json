@@ -1,7 +1,835 @@
 {
-  "fetched_at": "2026-08-12T07:22:30.037871+00:00",
-  "count": 199,
+  "fetched_at": "2026-08-13T07:24:54.552858+00:00",
+  "count": 195,
   "articles": [
+    {
+      "id": "571792d22a",
+      "title": "Busan’s Asian Contents & Film Market Names Japan 2026 Focus Country for Producer Hub",
+      "link": "https://variety.com/2026/film/markets-festivals/busan-acfm-japan-2026-focus-country-producer-hub-1236833558/",
+      "pubDate": "Thu, 13 Aug 2026 07:21:08 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "34906a5a02",
+      "title": "RTL, ZDF und 3sat mit Sonnenfinsternis-Übertragung besonders stark",
+      "link": "https://www.dwdl.de/zahlenzentrale/107472/rtl_zdf_und_3sat_mit_sonnenfinsternisuebertragung_besonders_stark/",
+      "pubDate": "Thu, 13 Aug 2026 09:07:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "0aaeb62284",
+      "title": "\"Spiegel\": Haftbefehl gegen AfD-Politiker wegen Böhmermann",
+      "link": "https://www.dwdl.de/nachrichten/107471/spiegel_haftbefehl_gegen_afdpolitiker_wegen_boehmermann/",
+      "pubDate": "Thu, 13 Aug 2026 08:14:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "22184791f8",
+      "title": "Warum YouTube für Warner Bros. Discovery kein \"Frenemy\" mehr ist",
+      "link": "https://www.dwdl.de/magazin/107421/warum_youtube_fuer_warner_bros_discovery_kein_frenemy_mehr_ist_/",
+      "pubDate": "Thu, 13 Aug 2026 07:52:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "a98e39dc2d",
+      "title": "‘Heated Rivalry’s Dylan Walsh Pauses Cameo Account After Getting In “Trouble” For Spilling Season 2 Secrets",
+      "link": "https://deadline.com/2026/08/heated-rivalry-dylan-walsh-trouble-spilling-season-2-secret-1237032630/",
+      "pubDate": "Thu, 13 Aug 2026 04:00:46 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "745e4ac9c1",
+      "title": "Andreas Dresen, Doris Dörrie Films to World Premiere  at Zurich Film Festival",
+      "link": "https://variety.com/2026/film/global/andreas-dresen-doris-dorrie-zurich-film-festival-1236833312/",
+      "pubDate": "Thu, 13 Aug 2026 04:00:00 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "d620296d33",
+      "title": "Zurich Film Festival: Peter Farrelly’s ‘I Play Rocky’ & Channing Tatum Starrer ‘Josephine’ Among Gala Titles",
+      "link": "https://deadline.com/2026/08/zurich-i-play-rocky-sylvester-stallone-channing-tatum-1237032255/",
+      "pubDate": "Thu, 13 Aug 2026 04:00:00 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "fe330302c2",
+      "title": "Zurich Film Fest Galas Set for Award Contenders ‘I Play Rocky,’ ‘Possible Love,’ ‘Josephine’",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/zurich-film-festival-2026-galas-lineup-1236672047/",
+      "pubDate": "Thu, 13 Aug 2026 04:00:00 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "52c1044361",
+      "title": "All The Songs In ‘Ted Lasso’ Season 4 So Far",
+      "link": "https://deadline.com/feature/ted-lasso-season-4-songs-soundtrack-1237018779/",
+      "pubDate": "Thu, 13 Aug 2026 03:44:30 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "2afd4ef3b5",
+      "title": "Indian Freedom Fighter Bhagat Singh Series in Development at Collective Studios’ Historyverse (EXCLUSIVE)",
+      "link": "https://variety.com/2026/film/news/bhagat-singh-series-collective-studios-historyverse-1236833000/",
+      "pubDate": "Thu, 13 Aug 2026 03:30:00 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "0427368152",
+      "title": "‘The Matrix’ Director Lilly Wachowski Says Hollywood Won’t Finance New Film With Trans Cast",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/matrix-lilly-wachowski-hollywood-wont-finance-film-trans-cast-1236672782/",
+      "pubDate": "Thu, 13 Aug 2026 03:25:37 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "f487e29920",
+      "title": "Hollywood’s Top-Grossing Films of 2025 Show Limited Progress Toward Inclusion, Study Says: ‘The Pace of Change Has Been Slow’",
+      "link": "https://variety.com/2026/film/news/hollywood-diversity-study-annenberg-inclusion-initiative-1236833079/",
+      "pubDate": "Thu, 13 Aug 2026 02:59:12 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "2b70a03963",
+      "title": "Jeremy Strong Emailed Mark Zuckerberg To Assure Him He Takes ‘The Social Reckoning’ Role “Very Seriously”",
+      "link": "https://deadline.com/2026/08/jeremy-strong-emailed-mark-zuckerberg-social-reckoning-role-1237032580/",
+      "pubDate": "Thu, 13 Aug 2026 01:18:34 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "fb358fff8e",
+      "title": "Where to Watch 2026 FedEx St. Jude Championship Online",
+      "link": "https://www.hollywoodreporter.com/tv/tv-news/watch-fedex-st-jude-championship-2026-golf-live-stream-free-1236672494/",
+      "pubDate": "Thu, 13 Aug 2026 00:52:11 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "808279c2c3",
+      "title": "‘The Traitors: New Blood’ Season 1 Cast: Meet the 22 Civilian Contestants",
+      "link": "https://www.hollywoodreporter.com/lists/the-traitors-new-blood-season-1-full-cast/",
+      "pubDate": "Thu, 13 Aug 2026 00:45:50 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "a2c3cced3f",
+      "title": "‘End of Oak Street’ Box Office Aims to Take Bite Out of ‘Spider-Man: Brand New Day’",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/end-of-oak-street-box-office-spider-man-brand-new-day-paw-1236672604/",
+      "pubDate": "Thu, 13 Aug 2026 00:41:16 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "8986a0a0ba",
+      "title": "DGA and IATSE Push Rob Bonta to Allow Paramount-Warner Bros. Merger With Conditions",
+      "link": "https://variety.com/2026/film/news/dga-iatse-rob-bonta-paramount-settle-warner-bros-merger-1236833456/",
+      "pubDate": "Thu, 13 Aug 2026 00:14:14 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "5675d77b34",
+      "title": "‘Wizards of Waverly Place’ Actress Jennifer Stone, Who Now Works as a Nurse, Says She Auditioned for ‘The Pitt’",
+      "link": "https://www.hollywoodreporter.com/tv/tv-news/wizards-of-waverly-place-jennifer-stone-nurse-the-pitt-audition-1236672594/",
+      "pubDate": "Wed, 12 Aug 2026 23:25:51 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "9435634474",
+      "title": "‘Marshals’ Adds Marque Richardson To Season 2 Cast; Morgan Lindholm To Expand Role",
+      "link": "https://deadline.com/2026/08/marshals-cast-marque-richardson-morgan-lindholm-season-2-1237032465/",
+      "pubDate": "Wed, 12 Aug 2026 23:09:05 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "b46925eedc",
+      "title": "Former Disney CEO Bob Chapek Memoir ‘Behind The Castle Walls’ Gets Fall Release Date",
+      "link": "https://deadline.com/2026/08/former-disney-ceo-bob-chapek-memoir-fall-release-date-1237032448/",
+      "pubDate": "Wed, 12 Aug 2026 23:04:43 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "97e0b2303b",
+      "title": "‘Reacher’ Season 4 Cast Guide: Who’s Who in the Prime Video Action Series",
+      "link": "https://variety.com/lists/reacher-season-4-cast-characters/",
+      "pubDate": "Wed, 12 Aug 2026 23:00:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "6d8afc7351",
+      "title": "As ‘The Comeback’ and ‘Hacks’ End, Valerie Cherish and Deborah Vance Are Emmy Competitors for the First and Last Time",
+      "link": "https://variety.com/2026/tv/awards/deborah-vance-valerie-cherish-emmy-battle-hacks-comeback-1236833429/",
+      "pubDate": "Wed, 12 Aug 2026 23:00:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "e5a52ac1fa",
+      "title": "The TV Academy Hall of Fame Is Not Worried About Whether or Not You Have Too Many Emmys",
+      "link": "https://www.indiewire.com/awards/consider-this/tv-academy-hall-of-fame-2026-legacy-award-1235210282/",
+      "pubDate": "Wed, 12 Aug 2026 23:00:00 +0000",
+      "source": "IndieWire TV",
+      "sourceId": "indiewire_tv",
+      "tab": "news"
+    },
+    {
+      "id": "d4fd531f9b",
+      "title": "A Movie Theater Didn’t Get Sent ‘Spider-Man’ Posters, So an Employee Drew His Own",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/viral-hand-drawn-spider-man-brand-new-day-poster-artist-speaks-1236672446/",
+      "pubDate": "Wed, 12 Aug 2026 22:54:29 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "75bc31ea7b",
+      "title": "From ‘Summer House’ to ‘Love Island’: Bravo, Peacock’s Frances Berwick Says Unscripted Is Finally Getting Some Respect",
+      "link": "https://www.hollywoodreporter.com/tv/tv-features/from-summer-house-to-love-island-bravo-1236672432/",
+      "pubDate": "Wed, 12 Aug 2026 22:49:43 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "742fda8f42",
+      "title": "‘Paradise’ Director Hanelle Culpepper & VFX Supervisor John Weckworth Unpack Season 2 Finale – The Process",
+      "link": "https://deadline.com/video/paradise-season-2-finale-interview/",
+      "pubDate": "Wed, 12 Aug 2026 22:45:00 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "4801c14612",
+      "title": "Andy Cohen Calls Out Paul W. Downs Over ‘Hacks’ Joke At His Expense",
+      "link": "https://deadline.com/2026/08/andy-cohen-calls-out-paul-w-downs-hacks-joke-1237032422/",
+      "pubDate": "Wed, 12 Aug 2026 22:20:32 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "23b504df96",
+      "title": "Phylicia Rashad on Her Historic Career and the Current State of TV: ‘If There’s Something on That I Don’t Like, I Simply Don’t Watch It’",
+      "link": "https://variety.com/2026/scene/news/phylicia-rashad-on-legacy-and-humanity-1236831743/",
+      "pubDate": "Wed, 12 Aug 2026 22:13:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "1918f35d38",
+      "title": "Jeremy Strong Says He Reached Out to Mark Zuckerberg After Being Cast as Him in ‘The Social Reckoning’ — and He Responded",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/jeremy-strong-social-reckoning-mark-zuckerberg-responded-1236672313/",
+      "pubDate": "Wed, 12 Aug 2026 21:48:10 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "0fa7f155ce",
+      "title": "Ewan McGregor Says ‘Come On, Disney!’ While Pressuring Studio to Let Him Play Obi-Wan Kenobi Again: ‘They Just Seem Not to Be Ready’",
+      "link": "https://variety.com/2026/tv/news/ewan-mcgregor-obi-wan-kenobi-return-pressures-disney-1236832862/",
+      "pubDate": "Wed, 12 Aug 2026 21:45:48 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "f4e27faf9b",
+      "title": "Martin Short On Emmy-Nominated Documentary ‘Marty, Life Is Short’ & Big British Stars Joining Next Season Of ‘Only Murders’",
+      "link": "https://deadline.com/2026/08/martin-short-interview-marty-life-is-short-only-murders-in-the-building-1237032364/",
+      "pubDate": "Wed, 12 Aug 2026 21:38:21 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "8be6269077",
+      "title": "Bob Chapek, Who Was Ousted as Disney’s CEO, Pens Memoir in Which He Wonders if He Became ‘the Scapegoat’",
+      "link": "https://variety.com/2026/film/news/bob-chapek-ousted-disney-ceo-memoir-behind-the-castle-walls-1236833366/",
+      "pubDate": "Wed, 12 Aug 2026 21:29:21 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "1bac38d187",
+      "title": "Alia Shawkat Is “Trying Actively” To Bring ‘State of Grace’ To Streaming, Plan Reunion With Mae Whitman",
+      "link": "https://deadline.com/2026/08/alia-shawkat-actively-trying-state-of-grace-reunion-mae-whitman-1237032390/",
+      "pubDate": "Wed, 12 Aug 2026 21:23:51 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "52e736098f",
+      "title": "‘The Lincoln Lawyer’ Spinoff Starring Cobie Smulders in the Works at Netflix",
+      "link": "https://variety.com/2026/tv/news/lincoln-lawyer-spinoff-starring-cobie-smulders-netflix-1236833363/",
+      "pubDate": "Wed, 12 Aug 2026 21:14:19 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "e293e213be",
+      "title": "Walt Disney Studios Promotes Melissa Stone to Publicity Chief",
+      "link": "https://variety.com/2026/film/news/disney-studio-publicity-melissa-stone-1236833281/",
+      "pubDate": "Wed, 12 Aug 2026 21:00:00 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "fbfbf5f495",
+      "title": "Walt Disney Studios Promotes Melissa Stone To SVP Publicity",
+      "link": "https://deadline.com/2026/08/walt-disney-studios-melissa-stone-1237032276/",
+      "pubDate": "Wed, 12 Aug 2026 21:00:00 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "bc7d2ee229",
+      "title": "Melissa Stone Named Senior VP of Publicity for Walt Disney Studios",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/melissa-stone-named-senior-vp-of-publicity-for-walt-disney-1236672424/",
+      "pubDate": "Wed, 12 Aug 2026 21:00:00 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "8485011f61",
+      "title": "Lilly Wachowski Says Hollywood Doesn’t “Want To Make” Her Next Film ‘The Hunted’ Because Of Its “Wall-To-Wall Trans Cast”",
+      "link": "https://deadline.com/2026/08/lilly-wachowski-hollywood-wont-make-next-film-trans-cast-1237032338/",
+      "pubDate": "Wed, 12 Aug 2026 20:54:29 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "44ae3e3d1c",
+      "title": "Inside ‘House of the Dragon’ Season 3’s Best Storyline: “It’s a Bit Like a Boxing Ring”",
+      "link": "https://www.hollywoodreporter.com/tv/tv-features/house-of-the-dragon-season-3-tumbleton-changes-finale-1236672400/",
+      "pubDate": "Wed, 12 Aug 2026 20:45:30 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "8ece728312",
+      "title": "Charlie Hunnam on His Physical and Vocal Transformation to Play Ed Gein in ‘Monster’",
+      "link": "https://variety.com/2026/tv/features/charlie-hunnam-transformation-ed-gein-monster-1236833243/",
+      "pubDate": "Wed, 12 Aug 2026 20:45:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "a820c44c85",
+      "title": "‘Chicago PD’s’ Jesse Lee Soffer, Matt Olmstead to Develop ‘Strike Force’ Drama at CBS, Jerry Bruckheimer to Produce",
+      "link": "https://variety.com/2026/tv/news/chicago-pd-jesse-lee-soffer-matt-olmstea-strike-force-cbs-1236833290/",
+      "pubDate": "Wed, 12 Aug 2026 20:30:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "c125277b35",
+      "title": "Jesse Lee Soffer To Star In ‘Strike Force’; CBS Drama From Matt Olmstead Gets Development Room Order",
+      "link": "https://deadline.com/2026/08/jesse-lee-soffer-strike-force-cbs-drama-matt-olmstead-1237032272/",
+      "pubDate": "Wed, 12 Aug 2026 20:30:00 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "73d2d841c9",
+      "title": "Jon Favreau on His First Documentary, National Geographic’s ‘Lion’: Not Knowing Whether the Lead Character Would Survive Was ‘Harrowing’",
+      "link": "https://variety.com/2026/tv/features/jon-favreau-documentary-national-geographic-lion-1236833163/",
+      "pubDate": "Wed, 12 Aug 2026 20:23:48 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "7839a4216c",
+      "title": "Lionsgate Stock Falls To 4-Month Low After Activist Investor Pushes AI Agenda",
+      "link": "https://deadline.com/2026/08/lionsgate-stock-drops-activist-investor-ai-demands-1237032228/",
+      "pubDate": "Wed, 12 Aug 2026 20:15:30 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "7977e96f35",
+      "title": "Salli Richardson-Whitfield on Making Emmy History With ‘Task’ and ‘The Gilded Age’",
+      "link": "https://variety.com/2026/tv/focus/salli-richardson-whitfield-task-gilded-age-1236831760/",
+      "pubDate": "Wed, 12 Aug 2026 20:15:00 +0000",
+      "source": "Variety TV",
+      "sourceId": "variety_tv",
+      "tab": "news"
+    },
+    {
+      "id": "9e182082ea",
+      "title": "Apple’s Eddy Cue On ‘Ted Lasso’ Season 5 Renewal Possibility: “There’s Plenty Of Stories To Go On”",
+      "link": "https://deadline.com/2026/08/eddy-cue-ted-lasso-season-5-renewal-apple-tv-1237032266/",
+      "pubDate": "Wed, 12 Aug 2026 20:10:00 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "68f7fa7f7b",
+      "title": "‘The Wrong Girls’ Review: Kristen Stewart & Alia Shawkat Are Co-Dependent Buds Who Can Read Minds (And Coughs) In Heartfelt Stoner Comedy",
+      "link": "https://deadline.com/2026/08/the-wrong-girls-review-kristen-stewart-alia-shawkat-stoner-1237032208/",
+      "pubDate": "Wed, 12 Aug 2026 20:05:11 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "37ecebd198",
+      "title": "‘The Lincoln Lawyer’ Spinoff Starring Cobie Smulders In Fast-Track Development At Netflix – The Dish",
+      "link": "https://deadline.com/2026/08/the-lincoln-lawyer-spinoff-cobie-smulders-emi-netflix-1237031468/",
+      "pubDate": "Wed, 12 Aug 2026 20:01:15 +0000",
+      "source": "Deadline TV",
+      "sourceId": "deadline_tv",
+      "tab": "news"
+    },
+    {
+      "id": "f4fb9d27b5",
+      "title": "Cinematographer Michael Bauman Looked to His Own Roots for ‘Monster: The Ed Gein Story’",
+      "link": "https://www.indiewire.com/features/craft/michael-bauman-cinematography-ed-gein-story-ryan-murphy-1235208535/",
+      "pubDate": "Wed, 12 Aug 2026 20:00:00 +0000",
+      "source": "IndieWire TV",
+      "sourceId": "indiewire_tv",
+      "tab": "news"
+    },
+    {
+      "id": "c82ca3ec76",
+      "title": "The America ‘Gilded Age’ Creator Julian Fellowes Fell For Is the America He Puts on TV",
+      "link": "https://www.hollywoodreporter.com/tv/tv-features/julian-fellowes-the-gilded-age-ammerica-allure-1236670571/",
+      "pubDate": "Wed, 12 Aug 2026 19:30:00 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "0c5615d1d8",
+      "title": "Nick Reiner Faces New Charges In Killing Of Rob Reiner & Michelle Reiner; No Death Penalty Decision Yet, D.A. Says",
+      "link": "https://deadline.com/2026/08/nick-reiner-new-charges-1237032209/",
+      "pubDate": "Wed, 12 Aug 2026 19:18:29 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "73dc885d47",
+      "title": "‘Spider-Man: Brand New Day’ Writers Believe There’s One Line Jean Grey Didn’t Cross",
+      "link": "https://www.hollywoodreporter.com/movies/movie-features/spider-man-brand-new-day-jean-grey-1236671583/",
+      "pubDate": "Wed, 12 Aug 2026 19:05:39 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "3e9f2ba4f4",
+      "title": "‘Miami Vice ’85’: Alden Ehrenreich Joins Michael B. Jordan And Austin Butler In Universal’s Latest Take On Classic Series",
+      "link": "https://deadline.com/2026/08/miami-vice-85-alden-ehrenreich-michael-b-jordan-austin-butler-1237031997/",
+      "pubDate": "Wed, 12 Aug 2026 19:00:00 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "c719fc9149",
+      "title": "The Emmys Rules Are Excluding Tons of Great International TV",
+      "link": "https://www.hollywoodreporter.com/tv/tv-features/emmy-rules-exclude-international-tv-1236671526/",
+      "pubDate": "Wed, 12 Aug 2026 19:00:00 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "66014d27d1",
+      "title": "When Billie Joe Armstrong Asks You to Make a Green Day Movie, You Don’t Say No",
+      "link": "https://www.indiewire.com/features/interviews/nimrods-green-day-movie-billie-joe-armstrong-interview-1235209998/",
+      "pubDate": "Wed, 12 Aug 2026 19:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "665ef661f4",
+      "title": "‘The Matrix’ Director Lilly Wachowski Says Hollywood Won’t Finance Her $10 Million Thriller Because It’s Got a ‘Wall-to-Wall Trans Cast’",
+      "link": "https://variety.com/2026/film/news/lilly-wachowski-trans-movie-no-financing-1236833156/",
+      "pubDate": "Wed, 12 Aug 2026 18:59:39 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "d10311e575",
+      "title": "‘Masked Singer,’ ‘The Traitors,’ ‘Genndy Tartakovsky’s Primal’ Among Juried Emmy Award Winners",
+      "link": "https://www.hollywoodreporter.com/tv/tv-news/emmys-2026-juried-winners-1236672275/",
+      "pubDate": "Wed, 12 Aug 2026 18:53:45 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "ec03c58056",
+      "title": "Nick Reiner Indicted for Murders of Parents Rob and Michele Reiner",
+      "link": "https://variety.com/2026/film/news/nick-reiner-indicted-murders-rob-michele-reiner-1236833176/",
+      "pubDate": "Wed, 12 Aug 2026 18:49:08 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "ca8ebad94d",
+      "title": "Netflix, Sony partner on 2027 international release of ‘Charlie vs. The Chocolate Factory’",
+      "link": "https://www.screendaily.com/news/netflix-sony-partner-on-2027-international-release-of-charlie-vs-the-chocolate-factory/5219336.article",
+      "pubDate": "Wed, 12 Aug 2026 18:45:00 GMT",
+      "source": "Screen Daily",
+      "sourceId": "screen_main",
+      "tab": "industry"
+    },
+    {
+      "id": "f16ff4f692",
+      "title": "Netflix’s ‘Charlie vs. the Chocolate Factory’ Lands Wide Theatrical Release",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/charlie-vs-the-chocolate-factory-movie-netflix-release-date-1236672112/",
+      "pubDate": "Wed, 12 Aug 2026 18:32:59 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "41a3dfd760",
+      "title": "A Late ‘Pinky & The Brain’ Writer’s Movie Is Now Getting Made — by His Son and With Puppets",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/a-late-pinky-the-brain-writers-script-is-finally-getting-made-1236670539/",
+      "pubDate": "Wed, 12 Aug 2026 18:30:00 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "75e140931e",
+      "title": "How an Abandoned Shopping Mall Was Transformed into the Las Vegas Strip for ‘Fallout’ Season Two",
+      "link": "https://www.hollywoodreporter.com/tv/tv-features/abandoned-mall-transformed-las-vegas-fallout-season-two-1236671538/",
+      "pubDate": "Wed, 12 Aug 2026 18:15:00 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "4c0ed0154e",
+      "title": "Sundance 2026 Movies Sold: Michal Marczak’s Doc ‘Closure’ Lands at 1-2 Special",
+      "link": "https://www.indiewire.com/news/festivals/sundance-2026-movies-sold-so-far-1235174095/",
+      "pubDate": "Wed, 12 Aug 2026 18:04:46 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "1b83568b97",
+      "title": "‘The Lowdown’ Reveals Season 2 Storyline and Premiere Date",
+      "link": "https://www.hollywoodreporter.com/tv/tv-news/the-lowdown-season-2-premiere-date-details-1236672221/",
+      "pubDate": "Wed, 12 Aug 2026 18:00:31 +0000",
+      "source": "THR TV",
+      "sourceId": "thr_tv",
+      "tab": "news"
+    },
+    {
+      "id": "20e5af9ab3",
+      "title": "Anders Danielsen Lie Revisits the Making of ‘Oslo, August 31st’",
+      "link": "https://www.indiewire.com/features/interviews/anders-danielsen-lie-interview-making-oslo-august-31st-1235209755/",
+      "pubDate": "Wed, 12 Aug 2026 18:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "046aeb0bd8",
+      "title": "American Film Market Expands to Include AI and Tech Companies",
+      "link": "https://www.indiewire.com/news/business/american-film-market-afm-expands-ai-tech-companies-1235210223/",
+      "pubDate": "Wed, 12 Aug 2026 17:45:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "70fd4cf8e0",
+      "title": "Keegan Allen, Conor Husting, Rio Mangini, Sophia Del Rio & Austin North Star In ’70s L.A. Music Drama ‘Small Talk’",
+      "link": "https://deadline.com/2026/08/keegan-allen-conor-husting-rio-mangini-star-small-talk-1237032109/",
+      "pubDate": "Wed, 12 Aug 2026 17:39:20 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "483c30e6ae",
+      "title": "Neon Sets 36-Hour Screening Of ‘It Ends’ At NYC’s Metro Private Cinema With Payouts For Sticking Around",
+      "link": "https://deadline.com/2026/08/neon-it-ends-film-36-hour-screening-metro-private-cinema-1237031907/",
+      "pubDate": "Wed, 12 Aug 2026 17:38:49 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "67210425d3",
+      "title": "Aaron Sorkin Says Facebook Is “Completely Out of Control,” Knowingly Pumped “Rage Bait”",
+      "link": "https://www.hollywoodreporter.com/movies/movie-news/aaron-sorkin-facebook-social-reckoning-zuckerberg-1236672156/",
+      "pubDate": "Wed, 12 Aug 2026 17:33:35 +0000",
+      "source": "THR",
+      "sourceId": "thr_film",
+      "tab": "news"
+    },
+    {
+      "id": "576b10aafc",
+      "title": "Disney Live Action Taps Patrick Ness To Adapt Miye Lee Fantasy Novel ‘The Dallergut Dream Department Store’",
+      "link": "https://deadline.com/2026/08/dallergut-dream-department-store-movie-disney-in-works-1237031961/",
+      "pubDate": "Wed, 12 Aug 2026 17:30:00 +0000",
+      "source": "Deadline",
+      "sourceId": "deadline_film",
+      "tab": "news"
+    },
+    {
+      "id": "b76065367d",
+      "title": "With ‘Charlie and the Chocolate Factory,’ Netflix Has Just Scheduled Its Third Theatrical Release in the Span of 12 Months",
+      "link": "https://www.indiewire.com/news/breaking-news/charlie-and-the-chocolate-factory-netflix-theaters-1235210208/",
+      "pubDate": "Wed, 12 Aug 2026 17:15:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "2f368041c9",
+      "title": "‘Barbie 2’ in Crisis: Sequel Could Be Shelved Amid Pay Battle and Crumbling Deal Talks",
+      "link": "https://variety.com/2026/film/news/barbie-2-paused-gerwig-robbie-failed-deals-sequel-1236833075/",
+      "pubDate": "Wed, 12 Aug 2026 17:12:32 +0000",
+      "source": "Variety",
+      "sourceId": "variety_film",
+      "tab": "news"
+    },
+    {
+      "id": "9035c644cf",
+      "title": "How Disney’s Direct-to-Video Sequels Paved the Way for an Entire Culture of Mediocre I.P.",
+      "link": "https://www.indiewire.com/features/commentary/worst-disney-direct-to-video-sequels-1235209538/",
+      "pubDate": "Wed, 12 Aug 2026 16:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "cb80889069",
+      "title": "‘The Wrong Girls’ Review: Kristen Stewart and Alia Shawkat Save the Stoner Movie",
+      "link": "https://www.indiewire.com/criticism/movies/the-wrong-girls-review-1235210080/",
+      "pubDate": "Wed, 12 Aug 2026 16:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "d2e76d2f63",
+      "title": "‘The End of Oak Street’ Review: David Robert Mitchell Delivers the Biggest Surprise of the Summer with the Best Dinosaur Movie Since 1993",
+      "link": "https://www.indiewire.com/criticism/movies/the-end-of-oak-street-dinosaur-movie-review-1235210068/",
+      "pubDate": "Wed, 12 Aug 2026 15:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "31ae27dc5c",
+      "title": "‘Don’t Say Good Luck’ Review: Melanie Lynskey and Sunny Sandler Are Trying to Break Your Heart",
+      "link": "https://www.indiewire.com/criticism/movies/dont-say-good-luck-review-lynskey-sandler-netflix-1235209747/",
+      "pubDate": "Wed, 12 Aug 2026 15:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "917a8ba51f",
+      "title": "‘Coyote vs. Acme’ Review: Thank Goodness This Clever Comedy About the Evils of Corporate Greed Was Rescued from Corporate Hell",
+      "link": "https://www.indiewire.com/criticism/movies/coyote-vs-acme-review-looney-tunes-live-action-comedy-1235209439/",
+      "pubDate": "Wed, 12 Aug 2026 15:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "88319c78bf",
+      "title": "‘The End Of Oak Street’ review: Anne Hathaway and Ewan McGregor face a prehistoric threat in fun, fast-paced creature feature",
+      "link": "https://www.screendaily.com/reviews/the-end-of-oak-street-review-anne-hathaway-and-ewan-mcgregor-face-a-prehistoric-threat-in-fun-fast-paced-creature-feature/5219301.article",
+      "pubDate": "Wed, 12 Aug 2026 15:00:00 GMT",
+      "source": "Screen Daily",
+      "sourceId": "screen_main",
+      "tab": "industry"
+    },
+    {
+      "id": "6b8cef180a",
+      "title": "’Coyote Vs. Acme’ review: Looney Tunes adaptation is, like its wiley protagonist, more miss than hit",
+      "link": "https://www.screendaily.com/reviews/coyote-vs-acme-review-looney-tunes-adaptation-is-like-its-wiley-protagonist-more-miss-than-hit/5219288.article",
+      "pubDate": "Wed, 12 Aug 2026 15:00:00 GMT",
+      "source": "Screen Daily",
+      "sourceId": "screen_main",
+      "tab": "industry"
+    },
+    {
+      "id": "95de52a13a",
+      "title": "‘The Traitors,’ ‘Masked Singer,’ ‘Genndy Tartakovsky’s Primal’ Among This Year’s Emmy Winners in Juried Categories",
+      "link": "https://variety.com/2026/tv/news/traitors-masked-singer-emmy-winners-juried-categories-1236833009/",
+      "pubDate": "Wed, 12 Aug 2026 14:51:49 +0000",
+      "source": "Variety Contenders",
+      "sourceId": "variety_cont",
+      "tab": "awards"
+    },
+    {
+      "id": "9341ef075b",
+      "title": "From ‘Father Knows Best’ to ‘Final Destination’: How Legacy Sequels Took Over the World",
+      "link": "https://www.indiewire.com/features/interviews/history-of-legacy-movie-sequels-1235209720/",
+      "pubDate": "Wed, 12 Aug 2026 14:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "b39ae5030d",
+      "title": "Neue ZDF-Reihe \"Die Maiwald\" erhält keine Fortsetzung",
+      "link": "https://www.dwdl.de/nachrichten/107463/neue_zdfreihe_die_maiwald_erhaelt_keine_fortsetzung/",
+      "pubDate": "Wed, 12 Aug 2026 15:14:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "5837958230",
+      "title": "Indie Specialized Box Office: Chefs, Slashers, Girl Scouts, and Cats Lead Stellar Week for Limited Releases",
+      "link": "https://www.indiewire.com/news/box-office/tony-teenage-sex-death-camp-miasma-indie-box-office-1235210007/",
+      "pubDate": "Wed, 12 Aug 2026 13:00:00 +0000",
+      "source": "IndieWire",
+      "sourceId": "indiewire_film",
+      "tab": "news"
+    },
+    {
+      "id": "e68200c5b3",
+      "title": "Ehemalige WDR-Dokusoap wird bei Vox fortgesetzt",
+      "link": "https://www.dwdl.de/nachrichten/107468/ehemalige_wdrdokusoap_wird_bei_vox_fortgesetzt/",
+      "pubDate": "Wed, 12 Aug 2026 14:28:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "a64bc6b499",
+      "title": "\"Love Hunter\": Joyn setzt Creator-Dating-Reality fort",
+      "link": "https://www.dwdl.de/nachrichten/107466/love_hunter_joyn_setzt_creatordatingreality_fort/",
+      "pubDate": "Wed, 12 Aug 2026 12:42:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "726bd2f089",
+      "title": "‘The Magic Faraway Tree’ is top grossing UK indie film in first six months of 2026",
+      "link": "https://www.screendaily.com/news/the-magic-faraway-tree-is-top-grossing-uk-indie-film-in-first-six-months-of-2026/5219292.article",
+      "pubDate": "Wed, 12 Aug 2026 10:23:00 GMT",
+      "source": "Screen Daily",
+      "sourceId": "screen_main",
+      "tab": "industry"
+    },
+    {
+      "id": "57f99d3a2c",
+      "title": "\"Watzmann ermittelt\": Zwei Neuzugänge, aber Giebel bleibt",
+      "link": "https://www.dwdl.de/nachrichten/107465/watzmann_ermittelt_zwei_neuzugaenge_aber_giebel_bleibt/",
+      "pubDate": "Wed, 12 Aug 2026 11:23:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "394979bc40",
+      "title": "‘In Flames’ Director Zarrar Kahn Returns to Toronto With Gym-Incel Rom-Com ‘The Lion Does Not Concern Himself,’ Trailer Unveiled (EXCLUSIVE)",
+      "link": "https://variety.com/2026/film/festivals/zarrar-kahn-lion-does-not-concern-himself-toronto-trailer-1236832800/",
+      "pubDate": "Wed, 12 Aug 2026 09:18:45 +0000",
+      "source": "Variety Festivals",
+      "sourceId": "variety_fest",
+      "tab": "festivals"
+    },
+    {
+      "id": "46612e96a8",
+      "title": "\"Eine Bankrotterklärung\": Verbände kritisieren Wolfram Weimer",
+      "link": "https://www.dwdl.de/nachrichten/107464/eine_bankrotterklaerung_verbaende_kritisieren_wolfram_weimer/",
+      "pubDate": "Wed, 12 Aug 2026 10:53:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "276df5c218",
+      "title": "Sale of Showcase’s UK cinemas to The Light in doubt",
+      "link": "https://www.screendaily.com/news/sale-of-showcases-uk-cinemas-to-the-light-in-doubt/5219269.article",
+      "pubDate": "Wed, 12 Aug 2026 08:46:00 GMT",
+      "source": "Screen Daily",
+      "sourceId": "screen_main",
+      "tab": "industry"
+    },
+    {
+      "id": "d789269dc6",
+      "title": "Joko & Klaas quizzen sich wieder durch Deutschland",
+      "link": "https://www.dwdl.de/nachrichten/107462/joko__klaas_quizzen_sich_wieder_durch_deutschland/",
+      "pubDate": "Wed, 12 Aug 2026 10:01:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
+    {
+      "id": "48e1963b59",
+      "title": "Aufbruch, Anschuldigungen und ein Abgang im ORF",
+      "link": "https://www.dwdl.de/austriaupdate/107460/aufbruch_anschuldigungen_und_ein_abgang_im_orf/",
+      "pubDate": "Wed, 12 Aug 2026 09:30:00 +0200",
+      "source": "DWDL",
+      "sourceId": "dwdl_all",
+      "tab": "german"
+    },
     {
       "id": "e30c3e7d81",
       "title": "US-Serie \"Hunting Party\" fällt in Sat.1 auf neue Tiefstwerte",
@@ -10,24 +838,6 @@
       "source": "DWDL",
       "sourceId": "dwdl_all",
       "tab": "german"
-    },
-    {
-      "id": "610f4924fd",
-      "title": "Meet The Lady Greyhounds: Key Players & Staff For AFC Richmond’s Women’s Team In ‘Ted Lasso’ Season 4",
-      "link": "https://deadline.com/lists/ted-lasso-season-4-womens-team-players-new-cast-characters/",
-      "pubDate": "Wed, 12 Aug 2026 07:01:00 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "dac8be8c0c",
-      "title": "Oscar Nominee Barkhad Abdi, Jim Deddes Lead Teddy Cherim’s ‘Maalstroom’; First-Look Image Released (EXCLUSIVE)",
-      "link": "https://variety.com/2026/film/global/barkhad-abdi-jim-deddes-teddy-cherims-maalstroom-1236832364/",
-      "pubDate": "Wed, 12 Aug 2026 07:00:00 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
     },
     {
       "id": "cc79ca2788",
@@ -66,345 +876,12 @@
       "tab": "german"
     },
     {
-      "id": "5425463ec3",
-      "title": "Caleb Landry Jones on the Five-Year Battle to Make ‘Down the Arm of God,’ Confronting Prejudices Against Homelessness and How Luc Besson Saved the Film",
-      "link": "https://variety.com/2026/film/global/caleb-landry-jones-down-the-arm-of-god-luc-besson-1236827771/",
-      "pubDate": "Wed, 12 Aug 2026 06:31:59 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "5d60726757",
-      "title": "Hansal Mehta, Siddharth Bodke on ‘Scam 2010’ as First Look Unveiled for SonyLIV Series: ‘A Story About Ambition, Influence and Arrogance’ (EXCLUSIVE)",
-      "link": "https://variety.com/2026/tv/news/hansal-mehta-scam-2010-first-look-sonyliv-1236832223/",
-      "pubDate": "Wed, 12 Aug 2026 06:00:00 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "1c5e9636e6",
-      "title": "Makeup Oscar Record Holder Recalls Turning Jim Carrey Into the Grinch, Transforming Jacko for ‘Thriller’ and Playing King Kong",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/jim-carrey-grinch-michael-jackson-thriller-makeup-qa-1236654780/",
-      "pubDate": "Wed, 12 Aug 2026 06:00:00 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "bfda43c539",
-      "title": "Crunchyroll, Sony Nab Makoto Shinkai’s Untitled Next Anime Film for Global Release",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/crunchyroll-sony-makoto-shinkai-next-film-global-release-1236671844/",
-      "pubDate": "Wed, 12 Aug 2026 04:51:59 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "7c4ca66351",
-      "title": "Jason Sudeikis Makes Cameo at Mumford & Sons Concert to Perform ‘Ted Lasso’ Theme Song",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/jason-sudeikis-performs-ted-lasso-song-mumford-sons-concert-1236671796/",
-      "pubDate": "Wed, 12 Aug 2026 04:02:25 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "362bf9c8dd",
-      "title": "Paul W. Downs Says He “Would Love” To Make A ‘Hacks’ Spinoff Around Kayla & Jimmy: “We Also Want To Leave The Show As It Is”",
-      "link": "https://deadline.com/2026/08/paul-w-downs-hacks-spinoff-kayla-jimmy-1236929211/",
-      "pubDate": "Wed, 12 Aug 2026 04:00:25 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "95770cda84",
-      "title": "Rosario Dawson Says She’s “A Reject Of Spider-Man” After ‘Brand New Day’ Cut ‘Daredevil’s Claire Temple Cameo",
-      "link": "https://deadline.com/2026/08/rosario-dawson-reject-spider-man-cut-daredevil-cameo-1236967045/",
-      "pubDate": "Wed, 12 Aug 2026 03:15:00 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "23e641b6a7",
-      "title": "WGA Slams David Ellison’s Plan to Pull Paramount From California: ‘This Type of Behavior Is Precisely Why the Merger Should Be Blocked’",
-      "link": "https://variety.com/2026/film/news/wga-david-ellison-paramount-move-california-warner-bros-1236832685/",
-      "pubDate": "Wed, 12 Aug 2026 02:50:57 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "c6be788868",
-      "title": "Jenna Ortega ‘Would Go All Day’ Without Food or Water as a Child Star to Make Sure She Wasn’t ‘In the Way of Anybody’",
-      "link": "https://variety.com/2026/tv/news/jenna-ortega-all-day-without-food-water-child-star-1236832697/",
-      "pubDate": "Wed, 12 Aug 2026 02:24:38 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "ea6c87e521",
-      "title": "Mel Gibson Shares ‘Lethal Weapon 5’ Update: “I Think That The Fifth Script Is Better Than All Of The Others”",
-      "link": "https://deadline.com/2026/08/mel-gibson-shares-lethal-weapon-5-update-movie-1236997946/",
-      "pubDate": "Wed, 12 Aug 2026 01:40:14 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "8b30b63d8e",
-      "title": "‘The Brink of War’ Review: Reagan and Gorbachev Engage in Unengaging Verbal Battle",
-      "link": "https://variety.com/2026/film/news/the-brink-of-war-review-1236831938/",
-      "pubDate": "Wed, 12 Aug 2026 01:00:00 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "a42d5d38d1",
-      "title": "‘The Brink of War’ Review: Jeff Daniels Makes an Unpersuasive Ronald Reagan in Talky Historical Drama About Nuclear Summit With Gorbachev",
-      "link": "https://www.hollywoodreporter.com/movies/movie-reviews/the-brink-of-war-review-jeff-daniels-ronald-reagan-1236670267/",
-      "pubDate": "Wed, 12 Aug 2026 01:00:00 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "dd1259c6ad",
-      "title": "Bill Jersey, Two-Time Oscar-Nominated Documentarian, Dies at 99",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/bill-jersey-dead-documentarian-time-for-burning-jim-crow-1236671735/",
-      "pubDate": "Wed, 12 Aug 2026 00:48:28 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "421ef40449",
-      "title": "John Hinckley Jr. Shares New Message to Jodie Foster, 45 Years After Trying to Assassinate Ronald Reagan to Impress Her: ‘I Wish Her Well’",
-      "link": "https://variety.com/2026/film/news/john-hinckley-jr-message-jodie-foster-ronald-reagan-1236832616/",
-      "pubDate": "Tue, 11 Aug 2026 23:56:19 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "153ffbb2b9",
-      "title": "Doc Talk Podcast: Directors Judd Apatow & Michael Bonfiglio On Their Emmy Contender ‘Mel Brooks: The 99 Year Old Man!’",
-      "link": "https://deadline.com/2026/08/mel-brooks-documentary-directors-interview-1237031414/",
-      "pubDate": "Tue, 11 Aug 2026 23:45:00 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "33132f42df",
-      "title": "National CineMedia To Acquire Captivate For $275M, Expand From Movie Theater Ads To Offices & Apartment Buildings",
-      "link": "https://deadline.com/2026/08/national-cinemedia-acquiring-advertising-platform-captivate-1237031526/",
-      "pubDate": "Tue, 11 Aug 2026 23:26:10 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "f0dfb521be",
-      "title": "Zoe Saldaña Says It’s ‘Frustrating’ When Political Questions Only Get Asked to Actors of Color and Women: ‘That’s Incredibly Limiting’",
-      "link": "https://variety.com/2026/film/news/zoe-saldana-political-questions-women-of-color-white-men-1236832484/",
-      "pubDate": "Tue, 11 Aug 2026 23:04:59 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "8cc4ace0c2",
-      "title": "Crunchyroll Acquires Makoto Shinkai’s Next Feature Film",
-      "link": "https://deadline.com/2026/08/crunchyroll-acquires-makoto-shinkai-next-feature-film-1237014191/",
-      "pubDate": "Tue, 11 Aug 2026 23:00:00 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "1c1464abe7",
-      "title": "‘Harry Potter’ TV Series Due To Hit HBO In 2027: Everything We Know About The Cast, Who’s Creating It, What J.K. Rowling Says & More",
-      "link": "https://deadline.com/2026/08/harry-potter-tv-series-max-release-date-cast-1235323284/",
-      "pubDate": "Tue, 11 Aug 2026 22:31:22 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "d0086c245e",
-      "title": "Nicholas Hoult Boards ‘Harry Potter’ Season 2 as Gilderoy Lockhart",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/nicholas-hoult-harry-potter-season-2-hbo-gilderoy-lockhart-1236671608/",
-      "pubDate": "Tue, 11 Aug 2026 22:31:07 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "2b3d57bd37",
-      "title": "Kristina Kelly on Why She Was Ready to Step Into Main Cast Status for ‘House of Stassi’ After ‘Vanderpump Rules’",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/kristina-kelly-house-of-stassi-vanderpump-rules-katie-payroll-1236671478/",
-      "pubDate": "Tue, 11 Aug 2026 22:26:22 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "ab9b7e43dd",
-      "title": "California AG Rob Bonta Open To Structural Remedies In Paramount-WBD Suit But Calls 30 Movies A Year An “Old, Stale Promise”",
-      "link": "https://deadline.com/2026/08/california-ag-rob-bonta-open-structural-remedies-paramount-wbd-1237031430/",
-      "pubDate": "Tue, 11 Aug 2026 22:15:55 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "ccf825cf74",
-      "title": "‘The Daily Show’ Celebrates 30 Years With Audition Tapes Of The “Best F**king News Team” Featuring Michael Che, John Oliver, Samantha Bee, Roy Wood Jr. & More",
-      "link": "https://deadline.com/2026/08/the-daily-show-celebrates-30-years-audition-tapes-1236975731/",
-      "pubDate": "Tue, 11 Aug 2026 22:15:15 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "563491241c",
-      "title": "Boris Kodjoe Joins Fox’s ‘Memory Of A Killer’ For Season 2",
-      "link": "https://deadline.com/2026/08/boris-kodjoe-cast-fox-memory-of-a-killer-season-2-1237031438/",
-      "pubDate": "Tue, 11 Aug 2026 21:52:43 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "41e0b50d4b",
-      "title": "Julie Andrews Won’t Be Returning For ‘The Princess Diaries 3’: “I Think The Story Has To Continue In Princess Mia”",
-      "link": "https://deadline.com/2026/08/julie-andrews-the-princess-diaries-3-wont-return-1237018985/",
-      "pubDate": "Tue, 11 Aug 2026 21:40:00 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "dafc9bdfcd",
-      "title": "Nicholas Hoult to Play Gilderoy Lockhart in ‘Harry Potter’ HBO Series Season 2",
-      "link": "https://variety.com/2026/tv/news/nicholas-hoult-gilderoy-lockhart-harry-potter-hbo-1236832274/",
-      "pubDate": "Tue, 11 Aug 2026 21:29:21 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "c5384f5fb5",
-      "title": "‘Let’s Marry Harry’ Star Says Producers Added Sex Sounds to Dramatize Kissing Scene: “Certainly Was Not Us”",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/lets-marry-harry-jowsey-netflix-fake-sex-sounds-kissing-scene-1236671465/",
-      "pubDate": "Tue, 11 Aug 2026 21:24:51 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "1ce7ff58b2",
-      "title": "Nicholas Hoult Joins ‘Harry Potter’ Season 2 As Gilderoy Lockhart",
-      "link": "https://deadline.com/2026/08/nicholas-hoult-harry-potter-season-2-gilderoy-lockhart-1237001668/",
-      "pubDate": "Tue, 11 Aug 2026 21:22:34 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "bba168f756",
-      "title": "How Vera Drew, Louise Weard and More Trans and Nonbinary Filmmakers Are Taking Control of Their Stories Outside the Studio System: ‘We’re Creating a New Industry’",
-      "link": "https://variety.com/2026/film/features/vera-drew-louise-weard-jane-schoenbrun-trans-nonbinary-filmmakers-studio-system-new-industry-1236831911/",
-      "pubDate": "Tue, 11 Aug 2026 21:15:03 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "a26d94e748",
-      "title": "‘Bourbon & Lies’ Series Based On Books In Works At MGM TV From Sophia Stallone’s Callisto Media & Balboa Productions",
-      "link": "https://deadline.com/2026/08/bourbon-and-lies-tv-series-sophia-stallone-mgm-tv-1237031400/",
-      "pubDate": "Tue, 11 Aug 2026 21:00:00 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "25aeb95c6e",
-      "title": "Everything We Know About Amazon’s ‘Verity’ Movie So Far",
-      "link": "https://deadline.com/feature/verity-movie-news-updates-1236351880/",
-      "pubDate": "Tue, 11 Aug 2026 20:23:06 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "bb931a58c0",
-      "title": "The Writers Lab Adds Los Angeles-Based Intensive, Announces Writers for Fall 2026 Cohorts",
-      "link": "https://variety.com/2026/film/news/the-writers-lab-los-angeles-intensive-fall-cohorts-1236831539/",
-      "pubDate": "Tue, 11 Aug 2026 20:15:00 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "f1b233ee68",
-      "title": "Cinema Civil War: Why the Paramount-Warner Bros. Sale Is Dividing Movie Theater Owners",
-      "link": "https://variety.com/2026/film/news/movie-theater-owners-divided-paramount-warner-bros-merger-1236832354/",
-      "pubDate": "Tue, 11 Aug 2026 20:08:57 +0000",
-      "source": "Variety",
-      "sourceId": "variety_film",
-      "tab": "news"
-    },
-    {
-      "id": "984e597829",
-      "title": "CBS Sports Says “No Timetable” For Tony Romo’s Potential Return After Drunk Driving Arrest",
-      "link": "https://deadline.com/2026/08/cbs-sports-tony-romo-status-drunk-driving-charge-1237031286/",
-      "pubDate": "Tue, 11 Aug 2026 20:04:34 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "79acc63d8c",
-      "title": "Last Call: Jean Smart & Hannah Einbinder To Play Their ‘Hacks’ Characters One More Time For Live FYC Event As Series Ends With No Spinoffs Planned",
-      "link": "https://deadline.com/2026/08/jean-smart-hannah-einbinder-hacks-live-deborah-ava-spinoffs-1237031337/",
-      "pubDate": "Tue, 11 Aug 2026 20:00:34 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
       "id": "f98aa76cdb",
       "title": "‘House of the Dragon’ Only Wants to Get More Unhinged from Here",
       "link": "https://www.indiewire.com/features/interviews/house-of-the-dragon-season-3-final-ryan-condal-interview-1235209273/",
       "pubDate": "Tue, 11 Aug 2026 20:00:00 +0000",
       "source": "IndieWire TV",
       "sourceId": "indiewire_tv",
-      "tab": "news"
-    },
-    {
-      "id": "bb2199336b",
-      "title": "Everything We Know About Marvel’s Upcoming ‘X-Men’ Movie So Far",
-      "link": "https://deadline.com/feature/x-men-movie-marvel-news-updates-everything-we-know-1237031344/",
-      "pubDate": "Tue, 11 Aug 2026 19:49:50 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "95db25f903",
-      "title": "Fans Remember Jackie the Eagle, Who Became a Social Media Star Worldwide: ‘Regal, Fierce, Deeply Devoted’",
-      "link": "https://variety.com/2026/scene/news/jackie-eagle-dead-social-media-star-1236832299/",
-      "pubDate": "Tue, 11 Aug 2026 19:40:54 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
       "tab": "news"
     },
     {
@@ -417,60 +894,6 @@
       "tab": "news"
     },
     {
-      "id": "27f60a083b",
-      "title": "Jonas Brothers on Today’s New Generation of Disney Stars: “Don’t Envy Anybody That’s Doing This Now”",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/jonas-brothers-new-generation-disney-stars-camp-rock-3-1236671030/",
-      "pubDate": "Tue, 11 Aug 2026 19:10:08 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "a183de08be",
-      "title": "‘The Last House’ Debuts With 27.5 Million Views in Three Days",
-      "link": "https://variety.com/2026/film/news/the-last-house-ratings-netflix-views-1236832324/",
-      "pubDate": "Tue, 11 Aug 2026 19:00:00 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "4455e1384c",
-      "title": "‘The Last House’ Lands At No. 1 On Netflix Top 10 Movie List Following Opening Weekend",
-      "link": "https://deadline.com/2026/08/the-last-house-netflix-top-ten-1237031232/",
-      "pubDate": "Tue, 11 Aug 2026 19:00:00 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "1788406bfd",
-      "title": "Gerardo Celasco, Alex Breaux, Ally Ioannides & Steven Yaffee Join Prime Video’s ‘Bishop’",
-      "link": "https://deadline.com/2026/08/gerardo-celasco-alex-breaux-cast-prime-video-bishop-1237031301/",
-      "pubDate": "Tue, 11 Aug 2026 19:00:00 +0000",
-      "source": "Deadline TV",
-      "sourceId": "deadline_tv",
-      "tab": "news"
-    },
-    {
-      "id": "f0803dc61f",
-      "title": "‘Language Is a Construct, Man’: Why We May Never Get Another Spiritual Sequel Like Richard Linklater’s ‘Everybody Wants Some!!’",
-      "link": "https://www.indiewire.com/features/commentary/everybody-wants-some-best-spiritual-movie-sequel-1235209880/",
-      "pubDate": "Tue, 11 Aug 2026 19:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "db2fef647c",
-      "title": "‘The Daily Show’ Releases Audition Tapes for John Oliver, Michael Che, Current Hosts and More",
-      "link": "https://variety.com/2026/tv/news/the-daily-show-audition-tapes-john-oliver-michael-che-1236832272/",
-      "pubDate": "Tue, 11 Aug 2026 18:46:20 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
       "id": "7fa1a17d2a",
       "title": "Ann Hui Named Camellia Award Recipient at Busan Film Festival – Global Bulletin",
       "link": "https://variety.com/2026/film/festivals/ann-hui-camellia-award-biff-licchavi-cinema-festival-1236832309/",
@@ -480,213 +903,6 @@
       "tab": "festivals"
     },
     {
-      "id": "14b1364eee",
-      "title": "‘Dancing With the Stars: The Next Pro’ Cast: All the Dancers Vying for a Spot on Season 35",
-      "link": "https://www.hollywoodreporter.com/lists/dancing-with-the-stars-next-pro-cast-judges/",
-      "pubDate": "Tue, 11 Aug 2026 18:22:27 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "99f3a3ff8a",
-      "title": "‘Josephine’ Trailer: Gemma Chan & Channing Tatum’s 8-Year-Old Witnesses A Terrible Crime; Sundance Double Winner Gets Release Date",
-      "link": "https://deadline.com/2026/08/josephine-trailer-release-date-gemma-chan-channing-tatum-1237031226/",
-      "pubDate": "Tue, 11 Aug 2026 18:10:24 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "2e8b8c9ce9",
-      "title": "Inside ‘Dreams in Nightmares,’ a Vibrant Reinvention of the American Road Movie",
-      "link": "https://www.hollywoodreporter.com/movies/movie-features/dreams-in-nightmares-exclusive-shatara-michelle-ford-1236670557/",
-      "pubDate": "Tue, 11 Aug 2026 18:08:04 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "57b3821e7c",
-      "title": "Jean Smart and Hannah Einbinder to Perform One-Night-Only Stage Show as ‘Hacks’ Characters",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/jean-smart-hannah-einbinder-in-character-hacks-stage-show-1236671022/",
-      "pubDate": "Tue, 11 Aug 2026 18:04:16 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "1b3c8ef72a",
-      "title": "Emmy Predictions: Lead Actor (Comedy) — Matthew Rhys Takes on Two Legends Still Seeking Their First Wins",
-      "link": "https://variety.com/lists/2026-emmys-lead-actor-comedy-predictions/",
-      "pubDate": "Tue, 11 Aug 2026 18:00:00 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "4312632ac9",
-      "title": "Copyright Is for Suckers: A Brief History of Unofficial Movie Sequels",
-      "link": "https://www.indiewire.com/features/commentary/history-of-unofficial-movie-sequels-1235209659/",
-      "pubDate": "Tue, 11 Aug 2026 18:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "76027bf115",
-      "title": "Why Julie Andrews Won’t Return for ‘Princess Diaries 3’",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/why-julie-andrews-wont-return-princess-diaries-3-1236670387/",
-      "pubDate": "Tue, 11 Aug 2026 17:55:27 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "87375341ba",
-      "title": "Frank Miller Talks Arguing with Jim Shooter, Why His Doctor Strange Series Never Happened and ‘Sin City’ Future",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/frank-miller-brand-new-day-1236670605/",
-      "pubDate": "Tue, 11 Aug 2026 17:31:57 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "38eef80de3",
-      "title": "Emmy Predictions: Lead Actor (Drama) — Which Submission Has the Edge? Noah Wyle, Sterling K. Brown, Mark Ruffalo and More",
-      "link": "https://variety.com/lists/2026-emmys-lead-actor-drama-predictions/",
-      "pubDate": "Tue, 11 Aug 2026 17:30:00 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "be43a4b39c",
-      "title": "‘The Office’ U.K. Star Lucy Davis Reveals ‘Incurable’ Cancer Diagnosis: It’s ‘Too Late for Chemo’ and ‘I’m Not Scared of Whatever Comes Next’",
-      "link": "https://variety.com/2026/tv/global/the-office-lucy-davis-cancer-diagnosis-incurable-1236832201/",
-      "pubDate": "Tue, 11 Aug 2026 17:27:55 +0000",
-      "source": "Variety TV",
-      "sourceId": "variety_tv",
-      "tab": "news"
-    },
-    {
-      "id": "7e0befb3e3",
-      "title": "‘Summer House’ Star Bailey Taylor Signs With Gersh (Exclusive)",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/summer-house-bailey-taylor-signs-gersh-1236671000/",
-      "pubDate": "Tue, 11 Aug 2026 17:23:11 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "a801cdb9e1",
-      "title": "‘The Influencer Project’ Trailer: Chiara King Blurs Fact and Fiction in a Viral Nightmare About Visibility",
-      "link": "https://www.indiewire.com/news/trailers/the-influencer-project-trailer-chiara-king-horror-1235209925/",
-      "pubDate": "Tue, 11 Aug 2026 17:05:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "67b188ac8a",
-      "title": "Paramount Positions ‘Possession’ Remake with Callum Turner and Margaret Qualley as Summer Blockbuster",
-      "link": "https://www.indiewire.com/news/general-news/possession-remake-release-date-1235209951/",
-      "pubDate": "Tue, 11 Aug 2026 17:04:23 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "52ddbd111f",
-      "title": "Paramount Dates ‘Possession’ Remake Starring Callum Turner & Margaret Qualley",
-      "link": "https://deadline.com/2026/08/possession-remake-release-date-paramount-1237031178/",
-      "pubDate": "Tue, 11 Aug 2026 17:00:00 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "c4d14dbfa7",
-      "title": "‘Possession’ Remake With Callum Turner, Margaret Qualley Sets Summer 2027 Release",
-      "link": "https://www.hollywoodreporter.com/movies/movie-news/possession-remake-callum-turner-margaret-release-paramount-1236671043/",
-      "pubDate": "Tue, 11 Aug 2026 17:00:00 +0000",
-      "source": "THR",
-      "sourceId": "thr_film",
-      "tab": "news"
-    },
-    {
-      "id": "32eac41b01",
-      "title": "‘Reacher’ Season 4 Divides Some Critics: “Best Season Yet” vs. “Embarrassed to Watch”",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/reacher-season-4-reviews-critics-1236670970/",
-      "pubDate": "Tue, 11 Aug 2026 16:55:32 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "3b3dac2201",
-      "title": "‘Verity’ Trailer: Anne Hathaway Lures Dakota Johnson Into “Darkness” In Colleen Hoover Adaptation From Amazon MGM Studios",
-      "link": "https://deadline.com/2026/08/verity-trailer-anne-hathaway-dakota-johnson-amazon-mgm-1236873939/",
-      "pubDate": "Tue, 11 Aug 2026 16:30:05 +0000",
-      "source": "Deadline",
-      "sourceId": "deadline_film",
-      "tab": "news"
-    },
-    {
-      "id": "a98e5c9330",
-      "title": "A New Free Seminar Teaches Documentary Filmmakers When and How to Opt Out of AI",
-      "link": "https://www.indiewire.com/news/business/free-seminar-documentary-filmmakers-how-to-opt-out-ai-1235209818/",
-      "pubDate": "Tue, 11 Aug 2026 16:30:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "c448b80b85",
-      "title": "‘Monster: The Lizzie Borden Story’ Teaser Trailer Will Shock You",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/monster-the-lizzie-borden-story-trailer-ella-beatty-axe-1236670664/",
-      "pubDate": "Tue, 11 Aug 2026 16:00:00 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "ba52603863",
-      "title": "Rory Scovel Lost His Dad. His Comedy Has Never Been Better.",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/rory-scovel-show-must-go-on-netflix-special-interview-1236670413/",
-      "pubDate": "Tue, 11 Aug 2026 16:00:00 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "310e6cc04d",
-      "title": "When One of the Greatest Directors Who’s Ever Lived Made One of the Greatest Sequels Ever Made",
-      "link": "https://www.indiewire.com/features/commentary/martin-scorsese-paul-newman-color-of-money-sequel-1235209343/",
-      "pubDate": "Tue, 11 Aug 2026 16:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "1124e99e3c",
-      "title": "Audiences Weren’t Ready For ‘Mars Attacks’ in 1996, but 30 Years Later It Plays Better Than Ever",
-      "link": "https://www.indiewire.com/features/craft/mars-attacks-30th-anniversary-making-of-1235209277/",
-      "pubDate": "Tue, 11 Aug 2026 15:30:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "effaea99a2",
-      "title": "Total UK feature production spend drops 6% in first half of 2026, but local films and co-pros enjoy boosts",
-      "link": "https://www.screendaily.com/news/total-uk-feature-production-spend-drops-6-in-first-half-of-2026-but-local-films-and-co-pros-enjoy-boosts/5219283.article",
-      "pubDate": "Tue, 11 Aug 2026 15:30:00 GMT",
-      "source": "Screen Daily",
-      "sourceId": "screen_main",
-      "tab": "industry"
-    },
-    {
       "id": "84896d2401",
       "title": "Jean Smart and Hannah Einbinder Will Play Their ‘Hacks’ Characters on Stage in One-Night Event ‘Deborah Vance & Friends & Enemies Live!’",
       "link": "https://variety.com/2026/tv/awards/jean-smart-hannah-einbinder-hacks-characters-on-stage-1236832072/",
@@ -694,42 +910,6 @@
       "source": "Variety Contenders",
       "sourceId": "variety_cont",
       "tab": "awards"
-    },
-    {
-      "id": "04dae61ac9",
-      "title": "How Zoe Saldana’s husband Marco Perego became a rare angel investor for arthouse filmmakers",
-      "link": "https://www.screendaily.com/news/how-zoe-saldanas-husband-marco-perego-became-a-rare-angel-investor-for-arthouse-filmmakers/5219291.article",
-      "pubDate": "Tue, 11 Aug 2026 15:04:00 GMT",
-      "source": "Screen Daily",
-      "sourceId": "screen_main",
-      "tab": "industry"
-    },
-    {
-      "id": "b623d747a1",
-      "title": "Zoe Kazan’s ‘East of Eden’ Series, Colin Kaepernick, Padma Lakshmi Join Atlantic Festival Lineup (Exclusive)",
-      "link": "https://www.hollywoodreporter.com/tv/tv-news/atlantic-festival-2026-east-of-eden-colin-kaepernick-1236670719/",
-      "pubDate": "Tue, 11 Aug 2026 15:00:00 +0000",
-      "source": "THR TV",
-      "sourceId": "thr_tv",
-      "tab": "news"
-    },
-    {
-      "id": "b674667718",
-      "title": "‘Josephine’ Trailer: Beth de Araújo’s Unnerving Sundance Winner Arrives in the Thick of Awards Season",
-      "link": "https://www.indiewire.com/news/trailers/josephine-trailer-beth-de-araujo-channing-tatum-1235209753/",
-      "pubDate": "Tue, 11 Aug 2026 15:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "be5179c926",
-      "title": "NYFF Announces Full 2026 Spotlight Lineup: ‘Fjord,’ ‘Club Kid,’ ‘Bucking Fastard,’ and More",
-      "link": "https://www.indiewire.com/news/festivals/nyff-2026-spotlight-lineup-1235209826/",
-      "pubDate": "Tue, 11 Aug 2026 15:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
     },
     {
       "id": "f547eac56b",
@@ -745,53 +925,17 @@
       "title": "Wirbel im Nordosten um geplante Wahlsendung von RTL/ntv",
       "link": "https://www.dwdl.de/nachrichten/107457/wirbel_im_nordosten_um_geplante_wahlsendung_von_rtlntv/",
       "pubDate": "Tue, 11 Aug 2026 16:54:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
-    },
-    {
-      "id": "e782c9e4d5",
-      "title": "‘Objet a’ Review: Ann Oren’s Spellbinding Tale of Kink, Surgery, and Mushrooms Is a Feast for the Senses",
-      "link": "https://www.indiewire.com/criticism/movies/objet-a-movie-review-1235209906/",
-      "pubDate": "Tue, 11 Aug 2026 14:38:42 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "a87675a16a",
-      "title": "Sandra Hüller Is About to Shatter the Fall Festivals in ‘Rose,’ the Movie Michael Haneke Called a ‘Masterpiece’",
-      "link": "https://www.indiewire.com/features/interviews/rose-markus-schleinzer-sandra-huller-interview-1235209440/",
-      "pubDate": "Tue, 11 Aug 2026 14:20:48 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "d8e3ec5c6c",
-      "title": "TIFF 2026 Adds ‘Wild Horse Nine,’ ‘The Liberation,’ ‘Bucking Fastard,’ Plus Full ‘In Conversation With’ Lineup",
-      "link": "https://www.indiewire.com/news/festivals/tiff-2026-adds-1235209842/",
-      "pubDate": "Tue, 11 Aug 2026 14:00:00 +0000",
-      "source": "IndieWire",
-      "sourceId": "indiewire_film",
-      "tab": "news"
-    },
-    {
-      "id": "c1928eeb6e",
-      "title": "TIFF adds 11 titles including ‘The Liberation’ starring Carrie Coon, ‘The Idiot(s)’ with Aimee Lou Wood",
-      "link": "https://www.screendaily.com/news/tiff-adds-11-titles-including-the-liberation-starring-carrie-coon-the-idiots-with-aimee-lou-wood/5219257.article",
-      "pubDate": "Tue, 11 Aug 2026 14:00:00 GMT",
-      "source": "Screen Daily",
-      "sourceId": "screen_main",
-      "tab": "industry"
     },
     {
       "id": "59eb226c88",
       "title": "WDR & MDR wollen \"Mauerjahre\" via AR-App erlebbar machen",
       "link": "https://www.dwdl.de/nachrichten/107453/wdr__mdr_wollen_mauerjahre_via_arapp_erlebbar_machen/",
       "pubDate": "Tue, 11 Aug 2026 15:32:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
     },
     {
@@ -799,8 +943,8 @@
       "title": "Disney+ sichert sich weltweite Live-Rechte an der Formel E",
       "link": "https://www.dwdl.de/nachrichten/107455/disney_sichert_sich_weltweite_liverechte_an_der_formel_e/",
       "pubDate": "Tue, 11 Aug 2026 15:28:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
     },
     {
@@ -808,8 +952,8 @@
       "title": "Elf Jahre nach dem Ende: \"Two and a Half Men\" sticht Konkurrenz aus",
       "link": "https://www.dwdl.de/nachrichten/107454/elf_jahre_nach_dem_ende_two_and_a_half_men_sticht_konkurrenz_aus/",
       "pubDate": "Tue, 11 Aug 2026 15:25:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
     },
     {
@@ -826,8 +970,8 @@
       "title": "FFA verschärft Anforderungen für Filmförder-Anträge",
       "link": "https://www.dwdl.de/nachrichten/107452/ffa_verschaerft_anforderungen_fuer_filmfoerderantraege/",
       "pubDate": "Tue, 11 Aug 2026 14:06:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
     },
     {
@@ -835,8 +979,8 @@
       "title": "AGF führt neue TV-Konvergenz-Hitliste für TV und Streaming ein",
       "link": "https://www.dwdl.de/nachrichten/107450/agf_fuehrt_neue_tvkonvergenzhitliste_fuer_tv_und_streaming_ein/",
       "pubDate": "Tue, 11 Aug 2026 12:54:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
+      "source": "DWDL Nachrichten",
+      "sourceId": "dwdl_nachrichten",
       "tab": "german"
     },
     {
@@ -844,42 +988,6 @@
       "title": "Sport1 überträgt Testspiel von Borussia Mönchengladbach",
       "link": "https://www.dwdl.de/nachrichten/107451/sport1_uebertraegt_testspiel_von_borussia_moenchengladbach/",
       "pubDate": "Tue, 11 Aug 2026 12:16:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
-      "tab": "german"
-    },
-    {
-      "id": "23028c9985",
-      "title": "ARD setzt erstmals am Vorabend auf die \"Werwölfe\"",
-      "link": "https://www.dwdl.de/nachrichten/107449/ard_setzt_erstmals_am_vorabend_auf_die_werwoelfe/",
-      "pubDate": "Tue, 11 Aug 2026 10:53:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
-      "tab": "german"
-    },
-    {
-      "id": "db1e4977fc",
-      "title": "Neue \"Sommerhaus\"-Staffel steht in den Startlöchern",
-      "link": "https://www.dwdl.de/nachrichten/107448/neue_sommerhausstaffel_steht_in_den_startloechern/",
-      "pubDate": "Tue, 11 Aug 2026 09:56:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
-      "tab": "german"
-    },
-    {
-      "id": "df0ba3df14",
-      "title": "Kabel Eins stürmt mit \"Fast and the Furious\" in die Top 5",
-      "link": "https://www.dwdl.de/zahlenzentrale/107447/kabel_eins_stuermt_mit_fast_and_the_furious_in_die_top_5/",
-      "pubDate": "Tue, 11 Aug 2026 09:26:00 +0200",
-      "source": "DWDL",
-      "sourceId": "dwdl_all",
-      "tab": "german"
-    },
-    {
-      "id": "4ebb6c9f77",
-      "title": "RTL zieht Halbjahres-Bilanz: So groß ist der Sky-Effekt",
-      "link": "https://www.dwdl.de/nachrichten/107443/rtl_zieht_halbjahresbilanz_so_gross_ist_der_skyeffekt/",
-      "pubDate": "Tue, 11 Aug 2026 08:00:00 +0200",
       "source": "DWDL Nachrichten",
       "sourceId": "dwdl_nachrichten",
       "tab": "german"
@@ -939,15 +1047,6 @@
       "tab": "awards"
     },
     {
-      "id": "1ef18dabf4",
-      "title": "ZDF setzt \"Keine Talkshow\" mit Fleischhauer im Oktober fort",
-      "link": "https://www.dwdl.de/nachrichten/107444/zdf_setzt_keine_talkshow_mit_fleischhauer_im_oktober_fort/",
-      "pubDate": "Mon, 10 Aug 2026 17:06:00 +0200",
-      "source": "DWDL Nachrichten",
-      "sourceId": "dwdl_nachrichten",
-      "tab": "german"
-    },
-    {
       "id": "0326f5bfe6",
       "title": "Puerto Rico Needs More Than Thoughts and Prayers. Where Is Hollywood?",
       "link": "https://variety.com/2026/film/columns/puerto-rico-water-crisis-where-is-hollywood-ramon-rodriguez-1236831044/",
@@ -964,51 +1063,6 @@
       "source": "Variety Contenders",
       "sourceId": "variety_cont",
       "tab": "awards"
-    },
-    {
-      "id": "8110e01849",
-      "title": "‘Spider-Man: Brand New Day’, ‘The Odyssey’ both pass £60m at the UK-Ireland box office",
-      "link": "https://www.screendaily.com/news/spider-man-brand-new-day-the-odyssey-both-pass-60m-at-the-uk-ireland-box-office/5219237.article",
-      "pubDate": "Mon, 10 Aug 2026 13:40:00 GMT",
-      "source": "Screen Daily",
-      "sourceId": "screen_main",
-      "tab": "industry"
-    },
-    {
-      "id": "c64d76f61d",
-      "title": "Daniela Katzenberger versucht sich jetzt auch als Comedienne",
-      "link": "https://www.dwdl.de/nachrichten/107440/daniela_katzenberger_versucht_sich_jetzt_auch_als_comedienne/",
-      "pubDate": "Mon, 10 Aug 2026 13:45:00 +0200",
-      "source": "DWDL Nachrichten",
-      "sourceId": "dwdl_nachrichten",
-      "tab": "german"
-    },
-    {
-      "id": "dcdefd0936",
-      "title": "ZDF dreht gleich vier neue Folgen von \"Einfach Elli\"",
-      "link": "https://www.dwdl.de/nachrichten/107442/zdf_dreht_gleich_vier_neue_folgen_von_einfach_elli/",
-      "pubDate": "Mon, 10 Aug 2026 13:04:00 +0200",
-      "source": "DWDL Nachrichten",
-      "sourceId": "dwdl_nachrichten",
-      "tab": "german"
-    },
-    {
-      "id": "5166ba183e",
-      "title": "Pippa Harris and James Wilson to headline BFI London Film Festival 2026’s Industry Forum",
-      "link": "https://www.screendaily.com/news/pippa-harris-and-james-wilson-to-headline-bfi-london-film-festival-2026s-industry-forum/5219230.article",
-      "pubDate": "Mon, 10 Aug 2026 10:00:00 GMT",
-      "source": "Screen Daily",
-      "sourceId": "screen_main",
-      "tab": "industry"
-    },
-    {
-      "id": "4a81712263",
-      "title": "Neue Vox-\"Löwen\" feiern Anfang September ihre Premiere",
-      "link": "https://www.dwdl.de/nachrichten/107437/neue_voxloewen_feiern_anfang_september_ihre_premiere/",
-      "pubDate": "Mon, 10 Aug 2026 09:45:00 +0200",
-      "source": "DWDL Nachrichten",
-      "sourceId": "dwdl_nachrichten",
-      "tab": "german"
     },
     {
       "id": "2d2dd9a928",
@@ -1047,15 +1101,6 @@
       "tab": "awards"
     },
     {
-      "id": "b771605c62",
-      "title": "What’s It Going to Take for Steve Carell to Finally Win an Emmy?",
-      "link": "https://variety.com/2026/tv/awards/steve-carell-why-he-hasnt-won-an-emmy-award-1236830722/",
-      "pubDate": "Sun, 09 Aug 2026 17:15:00 +0000",
-      "source": "Variety Contenders",
-      "sourceId": "variety_cont",
-      "tab": "awards"
-    },
-    {
       "id": "c7580cc3e2",
       "title": "How the Late-Night Emmy Became the Anti-Trump Award",
       "link": "https://www.hollywoodreporter.com/tv/tv-features/how-late-night-emmy-anti-trump-1236668912/",
@@ -1083,15 +1128,6 @@
       "tab": "festivals"
     },
     {
-      "id": "9d6c0f2954",
-      "title": "Inside the ‘Summer House’ Scandal That Turned Bravo’s Little Show Into a Big (Emmy-Nominated) Deal",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/inside-summer-house-scandal-1236668939/",
-      "pubDate": "Sat, 08 Aug 2026 18:00:00 +0000",
-      "source": "THR Awards",
-      "sourceId": "thr_awards",
-      "tab": "awards"
-    },
-    {
       "id": "4d728a4afa",
       "title": "Giovanni Tortorici on Working With Monica Bellucci Who Plays an ‘Eccentric’ Aristocratic Matron in His Luca Guadagnino-Produced Film ‘Ketticè’",
       "link": "https://variety.com/2026/film/festivals/giovanni-tortorici-monica-bellucci-luca-guadagnino-kettice-1236828928/",
@@ -1099,15 +1135,6 @@
       "source": "Variety Festivals",
       "sourceId": "variety_fest",
       "tab": "festivals"
-    },
-    {
-      "id": "af1dae4dac",
-      "title": "Ariana Madix on Season Eight’s “Diabolical” Casa Amor Twist and How She Stays Ready for Whatever On Set",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/ariana-madix-love-island-usa-casa-amor-twist-1236666089/",
-      "pubDate": "Sat, 08 Aug 2026 17:00:00 +0000",
-      "source": "THR Awards",
-      "sourceId": "thr_awards",
-      "tab": "awards"
     },
     {
       "id": "f67b8c6cfa",
@@ -1119,15 +1146,6 @@
       "tab": "german"
     },
     {
-      "id": "e4867960d0",
-      "title": "Stanley Tucci on Why His Emmy-Nominated ‘Tucci In Italy’ Is Moving to the United Kingdom Next Season",
-      "link": "https://variety.com/2026/tv/awards/stanley-tucci-nat-geo-italy-moving-uk-next-season-why-1236830482/",
-      "pubDate": "Sat, 08 Aug 2026 00:41:27 +0000",
-      "source": "Variety Contenders",
-      "sourceId": "variety_cont",
-      "tab": "awards"
-    },
-    {
       "id": "6064ea9c0e",
       "title": "‘Paradise’ Director Hanelle M. Culpepper on Why Great Sci-Fi Shows Sweat the Small Stuff",
       "link": "https://www.indiewire.com/awards/consider-this/paradise-hanelle-m-culpepper-season-2-finale-interview-1235209275/",
@@ -1135,24 +1153,6 @@
       "source": "IndieWire TV",
       "sourceId": "indiewire_tv",
       "tab": "news"
-    },
-    {
-      "id": "a41dec3d20",
-      "title": "Jimmy Kimmel on His Wild, Whirlwind, Not So Terrible or Horrible TV Year",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/jimmy-kimmel-support-show-hiatus-future-late-night-1236666088/",
-      "pubDate": "Fri, 07 Aug 2026 18:30:00 +0000",
-      "source": "THR Awards",
-      "sourceId": "thr_awards",
-      "tab": "awards"
-    },
-    {
-      "id": "91e1217655",
-      "title": "‘Widow’s Bay’ Creator Katie Dippold on the ‘Halloween’ and ‘Scream’ Easter Eggs: “You Got Me”",
-      "link": "https://www.hollywoodreporter.com/tv/tv-features/widows-bay-creator-halloween-scream-easter-eggs-1236664112/",
-      "pubDate": "Fri, 07 Aug 2026 18:00:00 +0000",
-      "source": "THR Awards",
-      "sourceId": "thr_awards",
-      "tab": "awards"
     },
     {
       "id": "b55e8e441a",
@@ -1272,15 +1272,6 @@
       "tab": "news"
     },
     {
-      "id": "b1b66922ca",
-      "title": "Trans Pregnancy Drama ‘Aman’ Boards Nikkhil Advani and Dominique Welinski as Executive Producers Ahead of Toronto World Premiere (EXCLUSIVE)",
-      "link": "https://variety.com/2026/film/festivals/trans-pregnancy-toronto-aman-nikkhil-advani-dominique-welinski-1236827564/",
-      "pubDate": "Wed, 05 Aug 2026 14:27:24 +0000",
-      "source": "Variety Festivals",
-      "sourceId": "variety_fest",
-      "tab": "festivals"
-    },
-    {
       "id": "abc9231de0",
       "title": "‘Ted Lasso’ Season 4 Review: Jason Sudeikis’ Cheery Coach Is Still Off His Game",
       "link": "https://www.indiewire.com/criticism/shows/ted-lasso-season-4-review-1235208098/",
@@ -1290,22 +1281,13 @@
       "tab": "news"
     },
     {
-      "id": "09a336abda",
-      "title": "Juliette Lewis Recalls Robert De Niro on Set of Scorsese’s ‘Cape Fear’: ‘He Had an Organ Player and Was Speaking in Tongues’",
-      "link": "https://www.indiewire.com/features/interviews/juliette-lewis-cape-fear-finale-robert-de-niro-scorsese-1235208568/",
-      "pubDate": "Tue, 04 Aug 2026 23:37:09 +0000",
-      "source": "IndieWire TV",
-      "sourceId": "indiewire_tv",
-      "tab": "news"
-    },
-    {
       "id": "9245bedfe0",
       "title": "How ‘The Diplomat’ Supporting Stars Allison Janney and Bradley Whitford Stole the Show in Season 3",
       "link": "https://www.indiewire.com/awards/consider-this/the-diplomat-allison-janney-bradley-whitford-emmy-interview-1235208041/",
       "pubDate": "Tue, 04 Aug 2026 19:30:00 +0000",
-      "source": "IndieWire TV",
-      "sourceId": "indiewire_tv",
-      "tab": "news"
+      "source": "IndieWire Awards",
+      "sourceId": "indiewire_awards",
+      "tab": "awards"
     },
     {
       "id": "f73d3b344e",
@@ -1387,15 +1369,6 @@
       "source": "DWDL Interviews",
       "sourceId": "dwdl_interviews",
       "tab": "german"
-    },
-    {
-      "id": "295e05db1e",
-      "title": "The Academy Re-Elects Producer Lynette Howell Taylor as Its President",
-      "link": "https://www.indiewire.com/awards/industry/producer-lynette-howell-taylor-re-elected-academy-president-1235207493/",
-      "pubDate": "Wed, 29 Jul 2026 19:00:00 +0000",
-      "source": "IndieWire Awards",
-      "sourceId": "indiewire_awards",
-      "tab": "awards"
     },
     {
       "id": "0b50c7f93c",
@@ -1485,15 +1458,6 @@
       "pubDate": "Sat, 18 Jul 2026 00:01:00 +0200",
       "source": "DWDL Interviews",
       "sourceId": "dwdl_interviews",
-      "tab": "german"
-    },
-    {
-      "id": "5ebecca70a",
-      "title": "NBC Universal wird abgespalten: Käufer oder Kaufobjekt?",
-      "link": "https://www.dwdl.de/industry/107200/nbc_universal_wird_abgespalten_kaeufer_oder_kaufobjekt/",
-      "pubDate": "Fri, 17 Jul 2026 12:28:00 +0200",
-      "source": "DWDL Magazin",
-      "sourceId": "dwdl_magazin",
       "tab": "german"
     },
     {
