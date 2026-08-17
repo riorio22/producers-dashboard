@@ -1,8 +1,32 @@
 {
-  "checked_at": "2026-08-16T06:37:05.349475+00:00",
-  "skipped": true,
-  "last_full_check": "2026-08-10T07:38:48.559180+00:00",
-  "changed_count": 0,
-  "changed_pages": [],
-  "all_ok": true
+  "checked_at": "2026-08-17T06:53:09.310170+00:00",
+  "skipped": false,
+  "last_full_check": "2026-08-17T06:53:09.310178+00:00",
+  "total_checked": 8,
+  "changed_count": 4,
+  "error_count": 0,
+  "changed_pages": [
+    {
+      "institution": "FFA",
+      "label": "Einreich- & Sitzungstermine 2026",
+      "url": "https://www.ffa.de/einreich-sitzungstermine.html"
+    },
+    {
+      "institution": "FFF Bayern",
+      "label": "Stoffentwicklung",
+      "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
+    },
+    {
+      "institution": "FFF Bayern",
+      "label": "Produktion Kinofilm",
+      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
+    },
+    {
+      "institution": "FFF Bayern",
+      "label": "Internationale Kinofilme & Serien",
+      "url": "https://www.fff-bayern.de/foerderbereiche/internationale-kinofilme-und-serien/"
+    }
+  ],
+  "errors": [],
+  "all_ok": false
 }
