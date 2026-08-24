@@ -1,8 +1,27 @@
 {
-  "checked_at": "2026-08-23T06:38:11.694436+00:00",
-  "skipped": true,
-  "last_full_check": "2026-08-17T06:53:09.309744+00:00",
-  "changed_count": 0,
-  "changed_pages": [],
-  "all_ok": true
+  "checked_at": "2026-08-24T06:56:10.764014+00:00",
+  "skipped": false,
+  "last_full_check": "2026-08-24T06:56:10.764021+00:00",
+  "total_checked": 8,
+  "changed_count": 3,
+  "error_count": 0,
+  "changed_pages": [
+    {
+      "institution": "FFF Bayern",
+      "label": "Stoffentwicklung",
+      "url": "https://www.fff-bayern.de/foerderbereiche/stoffentwicklung/"
+    },
+    {
+      "institution": "FFF Bayern",
+      "label": "Produktion Kinofilm",
+      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
+    },
+    {
+      "institution": "MFG BW",
+      "label": "Einreichfristen",
+      "url": "https://www.mfg.de/service/einreichfristen/"
+    }
+  ],
+  "errors": [],
+  "all_ok": false
 }
