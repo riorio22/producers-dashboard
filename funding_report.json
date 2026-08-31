@@ -1,8 +1,17 @@
 {
-  "checked_at": "2026-08-30T11:18:48.894481+00:00",
-  "skipped": true,
-  "last_full_check": "2026-08-24T06:56:10.763662+00:00",
-  "changed_count": 0,
-  "changed_pages": [],
-  "all_ok": true
+  "checked_at": "2026-08-31T12:47:32.611748+00:00",
+  "skipped": false,
+  "last_full_check": "2026-08-31T12:47:32.611754+00:00",
+  "total_checked": 8,
+  "changed_count": 1,
+  "error_count": 0,
+  "changed_pages": [
+    {
+      "institution": "FFA",
+      "label": "Einreich- & Sitzungstermine 2026",
+      "url": "https://www.ffa.de/einreich-sitzungstermine.html"
+    }
+  ],
+  "errors": [],
+  "all_ok": false
 }
