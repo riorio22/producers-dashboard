@@ -1,17 +1,8 @@
 {
-  "checked_at": "2026-09-07T11:39:44.248169+00:00",
-  "skipped": false,
-  "last_full_check": "2026-09-07T11:39:44.248172+00:00",
-  "total_checked": 8,
-  "changed_count": 1,
-  "error_count": 0,
-  "changed_pages": [
-    {
-      "institution": "FFF Bayern",
-      "label": "Produktion Kinofilm",
-      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
-    }
-  ],
-  "errors": [],
-  "all_ok": false
+  "checked_at": "2026-09-08T10:38:28.754600+00:00",
+  "skipped": true,
+  "last_full_check": "2026-09-07T11:39:44.247821+00:00",
+  "changed_count": 0,
+  "changed_pages": [],
+  "all_ok": true
 }
