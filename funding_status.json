@@ -4,9 +4,9 @@
     "label": "Einreich- & Sitzungstermine 2026",
     "url": "https://www.ffa.de/einreich-sitzungstermine.html",
     "hint": "Jurybasierte Förderung, Produktionsförderung, Kinderfilm, Koproduktionsfonds",
-    "hash": "afe8889966b6fdac",
-    "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:17.374542+00:00",
+    "hash": "b1dbc102097ae2c7",
+    "status": "CHANGED",
+    "checked_at": "2026-09-21T12:04:32.009211+00:00",
     "prev_hash": "afe8889966b6fdac"
   },
   "fff_stoffe": {
@@ -16,7 +16,7 @@
     "hint": "Einreichfenster Langfilm & Serie",
     "hash": "d17f317a74062157",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:22.490359+00:00",
+    "checked_at": "2026-09-21T12:04:37.283705+00:00",
     "prev_hash": "d17f317a74062157"
   },
   "fff_produktion": {
@@ -26,7 +26,7 @@
     "hint": "Einreichfenster Produktion",
     "hash": "0581cb34ac8722a3",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:26.339137+00:00",
+    "checked_at": "2026-09-21T12:04:41.280359+00:00",
     "prev_hash": "0581cb34ac8722a3"
   },
   "fff_international": {
@@ -36,7 +36,7 @@
     "hint": "Jederzeit möglich",
     "hash": "bac60c48e7566a66",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:30.043538+00:00",
+    "checked_at": "2026-09-21T12:04:45.301970+00:00",
     "prev_hash": "bac60c48e7566a66"
   },
   "nrw_termine": {
@@ -46,7 +46,7 @@
     "hint": "Produktion & Stoffentwicklung",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:35.832838+00:00",
+    "checked_at": "2026-09-21T12:04:51.406371+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "moin_foerderung": {
@@ -56,7 +56,7 @@
     "hint": "NEST, High End, Director's Cut",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:41.592464+00:00",
+    "checked_at": "2026-09-21T12:04:56.961383+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "mfg_fristen": {
@@ -66,7 +66,7 @@
     "hint": "Stoffentwicklung & Produktion",
     "hash": "b7e34fcb08272b9f",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:46.310760+00:00",
+    "checked_at": "2026-09-21T12:05:01.871053+00:00",
     "prev_hash": "b7e34fcb08272b9f"
   },
   "medienboard_film": {
@@ -76,10 +76,10 @@
     "hint": "Stoff- & Projektentwicklung / Produktion",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-09-14T11:53:51.487323+00:00",
+    "checked_at": "2026-09-21T12:05:06.902119+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "_meta": {
-    "last_full_check": "2026-09-14T11:53:54.487506+00:00"
+    "last_full_check": "2026-09-21T12:05:09.902313+00:00"
   }
 }
