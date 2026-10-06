@@ -1,27 +1,8 @@
 {
-  "checked_at": "2026-10-05T13:41:59.211087+00:00",
-  "skipped": false,
-  "last_full_check": "2026-10-05T13:41:59.211095+00:00",
-  "total_checked": 8,
-  "changed_count": 3,
-  "error_count": 0,
-  "changed_pages": [
-    {
-      "institution": "FFF Bayern",
-      "label": "Produktion Kinofilm",
-      "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/"
-    },
-    {
-      "institution": "Filmstiftung NRW",
-      "label": "Einreichtermine",
-      "url": "https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/"
-    },
-    {
-      "institution": "MFG BW",
-      "label": "Einreichfristen",
-      "url": "https://www.mfg.de/service/einreichfristen/"
-    }
-  ],
-  "errors": [],
-  "all_ok": false
+  "checked_at": "2026-10-06T12:48:02.913909+00:00",
+  "skipped": true,
+  "last_full_check": "2026-10-05T13:41:59.210478+00:00",
+  "changed_count": 0,
+  "changed_pages": [],
+  "all_ok": true
 }
