@@ -4,9 +4,9 @@
     "label": "Einreich- & Sitzungstermine 2026",
     "url": "https://www.ffa.de/einreich-sitzungstermine.html",
     "hint": "Jurybasierte Förderung, Produktionsförderung, Kinderfilm, Koproduktionsfonds",
-    "hash": "50825cc9cf43a264",
-    "status": "unchanged",
-    "checked_at": "2026-10-05T13:41:22.034403+00:00",
+    "hash": "3a623f97cb565683",
+    "status": "CHANGED",
+    "checked_at": "2026-10-12T14:30:13.759104+00:00",
     "prev_hash": "50825cc9cf43a264"
   },
   "fff_stoffe": {
@@ -16,7 +16,7 @@
     "hint": "Einreichfenster Langfilm & Serie",
     "hash": "d17f317a74062157",
     "status": "unchanged",
-    "checked_at": "2026-10-05T13:41:27.196035+00:00",
+    "checked_at": "2026-10-12T14:30:18.449105+00:00",
     "prev_hash": "d17f317a74062157"
   },
   "fff_produktion": {
@@ -25,9 +25,9 @@
     "url": "https://www.fff-bayern.de/foerderbereiche/produktion-kinofilm/",
     "hint": "Einreichfenster Produktion",
     "hash": "bf977ca7ba8ae054",
-    "status": "CHANGED",
-    "checked_at": "2026-10-05T13:41:31.177868+00:00",
-    "prev_hash": "6c4e4f29d8e95cfb"
+    "status": "unchanged",
+    "checked_at": "2026-10-12T14:30:22.250348+00:00",
+    "prev_hash": "bf977ca7ba8ae054"
   },
   "fff_international": {
     "institution": "FFF Bayern",
@@ -36,7 +36,7 @@
     "hint": "Jederzeit möglich",
     "hash": "bac60c48e7566a66",
     "status": "unchanged",
-    "checked_at": "2026-10-05T13:41:35.162102+00:00",
+    "checked_at": "2026-10-12T14:30:26.036520+00:00",
     "prev_hash": "bac60c48e7566a66"
   },
   "nrw_termine": {
@@ -45,9 +45,9 @@
     "url": "https://www.filmstiftung.de/foerderung/servicecenter/einreichtermine/",
     "hint": "Produktion & Stoffentwicklung",
     "hash": "553f59f8c74b4d2a",
-    "status": "CHANGED",
-    "checked_at": "2026-10-05T13:41:40.998257+00:00",
-    "prev_hash": "e3b0c44298fc1c14"
+    "status": "unchanged",
+    "checked_at": "2026-10-12T14:30:31.947009+00:00",
+    "prev_hash": "553f59f8c74b4d2a"
   },
   "moin_foerderung": {
     "institution": "MOIN Hamburg/SH",
@@ -56,7 +56,7 @@
     "hint": "NEST, High End, Director's Cut",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-10-05T13:41:46.324016+00:00",
+    "checked_at": "2026-10-12T14:30:36.984922+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "mfg_fristen": {
@@ -65,9 +65,9 @@
     "url": "https://www.mfg.de/service/einreichfristen/",
     "hint": "Stoffentwicklung & Produktion",
     "hash": "2ab6350929547bd5",
-    "status": "CHANGED",
-    "checked_at": "2026-10-05T13:41:51.017815+00:00",
-    "prev_hash": "3846bb8b81bb7958"
+    "status": "unchanged",
+    "checked_at": "2026-10-12T14:30:41.469120+00:00",
+    "prev_hash": "2ab6350929547bd5"
   },
   "medienboard_film": {
     "institution": "Medienboard BB",
@@ -76,10 +76,10 @@
     "hint": "Stoff- & Projektentwicklung / Produktion",
     "hash": "e3b0c44298fc1c14",
     "status": "unchanged",
-    "checked_at": "2026-10-05T13:41:56.210339+00:00",
+    "checked_at": "2026-10-12T14:30:46.000689+00:00",
     "prev_hash": "e3b0c44298fc1c14"
   },
   "_meta": {
-    "last_full_check": "2026-10-05T13:41:59.210478+00:00"
+    "last_full_check": "2026-10-12T14:30:49.000821+00:00"
   }
 }
