@@ -1,8 +1,16 @@
 {
-  "checked_at": "2026-10-25T10:47:23.649193+00:00",
-  "skipped": true,
-  "last_full_check": "2026-10-19T12:13:33.954749+00:00",
+  "checked_at": "2026-10-26T12:19:23.841672+00:00",
+  "skipped": false,
+  "last_full_check": "2026-10-26T12:19:23.841678+00:00",
+  "total_checked": 7,
   "changed_count": 0,
+  "error_count": 1,
   "changed_pages": [],
-  "all_ok": true
+  "errors": [
+    {
+      "id": "medienboard_film",
+      "error": "_ssl.c:999: The handshake operation timed out"
+    }
+  ],
+  "all_ok": false
 }
